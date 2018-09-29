@@ -1,0 +1,26 @@
+{
+  "name": "visiretail-reactjs",
+  "description": "VisiRetail - React JS",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
