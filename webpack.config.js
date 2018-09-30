@@ -1,5 +1,5 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+let path = require('path');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -26,13 +26,32 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif|htc)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+       {
+         test: /\.(woff|woff2|eot|ttf|otf)$/,
+         use: [
+           'file-loader'
+        ]
+       }
     ]
   },
   plugins: [new HtmlWebpackPlugin({
+    favicon: './src/_assets/favicon.ico',
     template: './src/index.html',
-    filename: 'index.html',
-    inject: 'body'
+    filename: 'index.html'
   })],
   devServer: {
     historyApiFallback: true
@@ -43,4 +62,4 @@ module.exports = {
       apiUrl: 'http://localhost:8080'
     })
   }
-}
+};
