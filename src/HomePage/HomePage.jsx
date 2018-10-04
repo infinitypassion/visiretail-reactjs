@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { HeaderComponent } from '../_components'
+
 class HomePage extends React.Component {
   constructor() {
     super();
@@ -8,7 +10,7 @@ class HomePage extends React.Component {
   // Render
   render() {
     return (
-      <div>Home</div>
+      <HeaderComponent></HeaderComponent>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { logo, slide1, slide2, slide3 } from '../_helpers';
+import { logoImg, slide1Img, slide2Img, slide3Img } from '../_helpers';
 
 let slideIndex = 1;
 
@@ -65,7 +65,7 @@ class LoginPage extends React.Component {
               <a href="register.html" className="btn-primary login">Demander une démo</a>
             </div>
             <div className="registration_con">
-              <span className="logo"><img src={logo} className="img-responsive" alt="visiretail" /> </span>
+              <span className="logo"><img src={logoImg} className="img-responsive" alt="visiretail" /> </span>
               <h1>Simplifiez le déploiement de votre marketing digital</h1>
               <div className="form_main">
                 <form action="/home">
@@ -86,15 +86,15 @@ class LoginPage extends React.Component {
           <div className="col-sm-7 col-xs-12 registr_slider">
             <div className="slide_main">
               <div className="mySlides">
-                <img className="img-responsive" src={slide1} style={{ width: '100%' }} />
+                <img className="img-responsive" src={slide1Img} style={{ width: '100%' }} />
                 <h2>Mutualisez les créations et l’information à diffuser en local</h2>
               </div>
               <div className="mySlides">
-                <img className="img-responsive" src={slide2} style={{ width: '100%' }} />
+                <img className="img-responsive" src={slide2Img} style={{ width: '100%' }} />
                 <h2>Améliorez vos résultats grâce à toute l’expérience du réseau</h2>
               </div>
               <div className="mySlides">
-                <img className="img-responsive" src={slide3} style={{ width: '100%' }} />
+                <img className="img-responsive" src={slide3Img} style={{ width: '100%' }} />
                 <h2>Équipez vos points de vente d’un outil efficace et rentable</h2>
               </div>
               <div className="indicators">
