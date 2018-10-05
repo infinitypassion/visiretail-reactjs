@@ -45,7 +45,7 @@ export function decreaseValue(quantityAmount) {
 
   quantityAmount.value = value;
 }
-/** End CART related ********************************************************************************************** */
+/** End CART related *********************************************************************************************** */
 
 /** Start MENU related ******************************************************************************************* */
 export function menu(event) {
@@ -59,4 +59,36 @@ export function menu(event) {
 
   document.getElementsByClassName('prfile_wrap')[0].classList.remove('open');
 }
-/** End MENU related ******************************************************************************************* */
+/** End MENU related ******************************************************************************************** */
+
+/** Start Notification related ********************************************************************************* */
+export function sidebar(event) {
+  event.stopPropagation();
+  var element = document.getElementById("notification");
+  element.classList.toggle("active");
+
+  document.getElementsByClassName('hamburger')[0].classList.remove('active');
+
+  document.getElementsByClassName('basket_wrap')[0].classList.remove('open');
+
+  document.getElementsByClassName('prfile_wrap')[0].classList.remove('open');
+}
+export function close_sidebar() {
+  var element = document.getElementById("notification");
+  element.classList.remove("active");
+}
+/** End Notification related ********************************************************************************** */
+
+/** Start Profile related ************************************************************************************ */
+export function oprofile(event) {
+  event.stopPropagation();
+  var element = document.getElementById("user_profile");
+  element.classList.toggle("open");
+
+  document.getElementsByClassName('hamburger')[0].classList.remove('active');
+
+  document.getElementsByClassName('notification')[0].classList.remove('active');
+
+  document.getElementsByClassName('basket_wrap')[0].classList.remove('open');
+}
+/** End Profile related ************************************************************************************* */
