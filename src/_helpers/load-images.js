@@ -15,5 +15,7 @@ import tableauDeBordImg from '../_assets/images/tableau-de-bord.svg'
 import mesPointsDeVenteImg from '../_assets/images/mes-points-de-vente.svg';
 import mesCampagnesImg from '../_assets/images/mes-campagnes.svg';
 import facturationImg from '../_assets/images/facturation.svg';
+import icTimeMarkerImg from '../_assets/images/ic-time-marker.svg';
+import customPeriodImg from '../_assets/images/custom-period.svg';
 
-export {logoImg, slide1Img, slide2Img, slide3Img, icBasketImg, festivitiesImg, saintValentinImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg};
+export { logoImg, slide1Img, slide2Img, slide3Img, icBasketImg, festivitiesImg, saintValentinImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg, icTimeMarkerImg, customPeriodImg };

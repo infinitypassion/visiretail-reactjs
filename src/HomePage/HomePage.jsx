@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HeaderComponent } from '../_components'
+import { HeaderComponent, FooterComponent } from '../_components';
 
 class HomePage extends React.Component {
   constructor() {
@@ -10,7 +10,12 @@ class HomePage extends React.Component {
   // Render
   render() {
     return (
-      <HeaderComponent></HeaderComponent>
+      <div>
+        <section>
+          <HeaderComponent></HeaderComponent>
+        </section>
+        <FooterComponent></FooterComponent>
+      </div>
     );
   }
 }

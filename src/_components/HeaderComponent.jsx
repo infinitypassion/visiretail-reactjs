@@ -5,7 +5,7 @@ import { logoImg } from '../_helpers';
 import { CartComponent } from './CartComponent';
 import { Init as MenuComponentInit, Detail as MenuComponentDetail } from './MenuComponent';
 import { NotificationComponent } from './NotificationComponent';
-import { ProfileComponent } from './ProfileComponent'
+import { ProfileComponent } from './ProfileComponent';
 
 class HeaderComponent extends React.Component {
   constructor() {

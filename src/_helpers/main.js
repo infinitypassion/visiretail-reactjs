@@ -92,3 +92,37 @@ export function oprofile(event) {
   document.getElementsByClassName('basket_wrap')[0].classList.remove('open');
 }
 /** End Profile related ************************************************************************************* */
+
+/** Start document handle events related ******************************************************************** */
+document.onclick = function (e) {
+  if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
+    var element = document.querySelector('.hamburger .container');
+
+    if (!(e.target === element || element.contains(e.target))) {
+      document.getElementsByClassName('hamburger')[0].classList.remove('active');
+    }
+  }
+
+  if (document.getElementsByClassName('prfile_wrap')[0].classList.contains('open')) {
+    if (!(e.target === document.getElementsByClassName('prfile_wrap')[0] || document.querySelector(".prfile_wrap").querySelectorAll(e.target.tagName).length)) {
+      document.getElementsByClassName('prfile_wrap')[0].classList.remove('open');
+    }
+  }
+
+  if (document.getElementsByClassName('basket_wrap')[0].classList.contains('open')) {
+    var element = document.getElementsByClassName('basket_wrap')[0];
+
+    if (!(e.target === document.getElementsByClassName('basket_wrap')[0] || element.contains(e.target))) {
+      document.getElementsByClassName('basket_wrap')[0].classList.remove('open');
+    }
+  }
+
+  if (document.getElementsByClassName('notification')[0].classList.contains('active')) {
+    var element = document.getElementsByClassName('sidebar')[0];
+
+    if (!(e.target === document.getElementsByClassName('sidebar')[0] || element.contains(e.target))) {
+      document.getElementsByClassName('notification')[0].classList.remove('active');
+    }
+  }
+}
+/** End document handle events related ********************************************************************** */
