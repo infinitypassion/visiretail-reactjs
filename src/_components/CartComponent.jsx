@@ -15,10 +15,19 @@ class CartComponent extends React.Component {
   }
   // End -- React lifecycle methods
 
+  // Start -- Custom methods
+  // End -- Custom methods
+
   // Render
   render() {
     return (
-      <li className="cart"><a href="javascript:void(0)" onClick={opbasket.bind(this)}><div className="basket in"><img src={icBasketImg} alt="basket" className="img-responsive" /><span className="noof_item">2</span></div></a>
+      <li className="cart">
+        <a href="javascript:void(0)" onClick={opbasket.bind(this)}>
+          <div className="basket in">
+            <img src={icBasketImg} alt="basket" className="img-responsive" />
+            <span className="noof_item">2</span>
+          </div>
+        </a>
         <div className="basket_wrap" id="basket">
           <p>2 articles ont été ajoutés à votre panier !</p>
           <ul className="cart_item">

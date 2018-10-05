@@ -1,4 +1,4 @@
-/* Start CART Related *********************************************************************************************** */
+/** Start CART related ********************************************************************************************** */
 export function opbasket(event) {
   event.stopPropagation();
   var element = document.getElementById("basket");
@@ -45,4 +45,18 @@ export function decreaseValue(quantityAmount) {
 
   quantityAmount.value = value;
 }
-/* End CART Related *********************************************************************************************** */
+/** End CART related ********************************************************************************************** */
+
+/** Start MENU related ******************************************************************************************* */
+export function menu(event) {
+  event.stopPropagation();
+  var element = document.getElementById("hamburger");
+  element.classList.toggle("active");
+
+  document.getElementsByClassName('notification')[0].classList.remove('active');
+
+  document.getElementsByClassName('basket_wrap')[0].classList.remove('open');
+
+  document.getElementsByClassName('prfile_wrap')[0].classList.remove('open');
+}
+/** End MENU related ******************************************************************************************* */

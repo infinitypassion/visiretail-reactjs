@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { logoImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg } from '../_helpers';
+import { logoImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg } from '../_helpers';
 
 import { CartComponent } from './CartComponent';
+import { Init as MenuComponentInit, Detail as MenuComponentDetail } from './MenuComponent';
 
 class HeaderComponent extends React.Component {
   constructor() {
@@ -10,9 +11,10 @@ class HeaderComponent extends React.Component {
   }
 
   // Start -- React lifecycle methods
-  componentDidMount() {
-  }
   // End -- React lifecycle methods
+
+  // Start -- Custom methods
+  // End -- Custom methods
 
   // Render
   render() {
@@ -28,18 +30,12 @@ class HeaderComponent extends React.Component {
                 <div className="nav_main">
                   <ul>
                     <CartComponent></CartComponent>
+
                     {/*<li><a href="#"><div class="basket"><img src="images/ic-basket.svg" alt="basket" class="img-responsive"></div></a></li>*/}
                     <li className="campagne_btn"><a href="launch.html" className="launch_btn">LANCER UNE CAMPAGNE<i className="effect" /></a></li>
-                    <li className="menu"><a href="javascript:void(0)" onClick="menu(event)">Menu
-                        <div className="res_navigation">
-                        <div className="nav-toggle" id="trigger-overlay">
-                          <span className="top" />
-                          <span className="middle" />
-                          <span className="bottom" />
-                        </div>
-                      </div>
-                    </a>
-                    </li>
+
+                    <MenuComponentInit></MenuComponentInit>
+
                     <li className="notification" id="notification"><a href="javascript:void(0)" onClick="sidebar(event)">Notifications <span className="noof_noti">3</span></a>
                       <div className="sidebar">
                         <div className="notification_main">
@@ -124,48 +120,9 @@ class HeaderComponent extends React.Component {
             </div>
           </div>
         </div>
-        <div className="hamburger" id="hamburger">
-          <div className="container">
-            <div className="menu_main section">
-              <ul>
-                <li>
-                  <div className="menu_con">
-                    <span><img src={tableauDeBordImg} alt="tableau-de-bord" className="img-responsive" /></span>
-                    <a href="#">tableau de bord</a>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu_con">
-                    <span><img src={mesPointsDeVenteImg} alt="mes points de vente" className="img-responsive" /></span>
-                    <a href="#">mes points de vente</a>
-                    <ul className="has_sub">
-                      <li><a href="network-overview.html">Vue d’ensemble du réseau</a></li>
-                      <li><a href="point-sale-details.html">Détail par point de vente</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu_con">
-                    <span><img src={mesCampagnesImg} alt="mes-campagnes" className="img-responsive" /></span>
-                    <a href="#">mes campagnes</a>
-                    <ul className="has_sub">
-                      <li><a href="mes-campagnes.html">Camapagnes en cours</a></li>
-                      <li><a href="#">Campagnes à venir</a></li>
-                      <li><a href="#">Campagnes terminées</a></li>
-                      <li><a href="mes-conversions.html">Mes conversions</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu_con">
-                    <span><img src={facturationImg} alt="facturation" className="img-responsive" /></span>
-                    <a href="#">facturation</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+        <MenuComponentDetail></MenuComponentDetail>
+
       </header>
     );
   }
