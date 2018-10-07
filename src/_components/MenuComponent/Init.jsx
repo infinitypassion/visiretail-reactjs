@@ -18,6 +18,7 @@ class Init extends React.Component {
     return (
       <li className="menu">
         <a href="javascript:void(0)" onClick={menu.bind(this)}>Menu
+          {/* // TODO - Need to confrim */}
           <div className="res_navigation">
             <div className="nav-toggle" id="trigger-overlay">
               <span className="top" />

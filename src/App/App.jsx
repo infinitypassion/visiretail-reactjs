@@ -5,6 +5,7 @@ import { history } from '../_helpers';
 
 import { LoginPage } from '../LoginPage';
 import { HomePage } from '../HomePage';
+import { CampaignsPage } from '../CampaignsPage';
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +18,7 @@ class App extends React.Component {
         <div>
           <Route path='/login' component={LoginPage} />
           <Route path='/home' component={HomePage} />
+          <Route path='/campaignes' component={CampaignsPage} />
         </div>
       </Router>
     );

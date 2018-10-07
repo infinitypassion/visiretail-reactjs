@@ -17,5 +17,11 @@ import mesCampagnesImg from '../_assets/images/mes-campagnes.svg';
 import facturationImg from '../_assets/images/facturation.svg';
 import icTimeMarkerImg from '../_assets/images/ic-time-marker.svg';
 import customPeriodImg from '../_assets/images/custom-period.svg';
+import icGoogleImg from '../_assets/images/ic-google.svg';
+import icFacebookImg from '../_assets/images/ic-facebook.svg';
+import icImpressionsImg from '../_assets/images/ic-impressions.svg';
+import icClicsImg from '../_assets/images/ic-clics.svg';
+import icConversionsImg from '../_assets/images/ic-conversions.svg';
+import icEuroImg from '../_assets/images/ic-euro.svg';
 
-export { logoImg, slide1Img, slide2Img, slide3Img, icBasketImg, festivitiesImg, saintValentinImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg, icTimeMarkerImg, customPeriodImg };
+export { logoImg, slide1Img, slide2Img, slide3Img, icBasketImg, festivitiesImg, saintValentinImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg, icTimeMarkerImg, customPeriodImg, icGoogleImg, icFacebookImg, icImpressionsImg, icClicsImg, icConversionsImg, icEuroImg };

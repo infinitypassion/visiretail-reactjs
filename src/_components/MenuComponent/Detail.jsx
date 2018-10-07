@@ -41,7 +41,7 @@ class Detail extends React.Component {
                   <span><img src={mesCampagnesImg} alt="mes-campagnes" className="img-responsive" /></span>
                   <a href="#">mes campagnes</a>
                   <ul className="has_sub">
-                    <li><a href="mes-campagnes.html">Camapagnes en cours</a></li>
+                    <li><a href="/campaignes">Camapagnes en cours</a></li>
                     <li><a href="#">Campagnes à venir</a></li>
                     <li><a href="#">Campagnes terminées</a></li>
                     <li><a href="mes-conversions.html">Mes conversions</a></li>
