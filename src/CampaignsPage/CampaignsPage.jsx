@@ -19,7 +19,7 @@ class CampaignsPage extends React.Component {
           <div className="main section">
             <div className="main_wraper">
               <div className="container">
-                <TabContainer id="my-campaigns" defaultActiveKey="en-cours">
+                <TabContainer id="my-campaigns-tab-container" defaultActiveKey="en-cours">
                   <div>
                     <div className="row">
                       <div className="col-sm-6 col-xs-12">

@@ -26,6 +26,8 @@ class LoginPage extends React.Component {
 
   showSlides(n) {
     var i;
+
+    // TODO - Need to check document.getElementsByClassName can be converted to react
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
 
