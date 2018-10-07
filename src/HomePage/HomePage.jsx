@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HeaderComponent, FooterComponent } from '../_components';
+import { HeaderComponent, FooterComponent, SalesTopPointComponent, StatsDetailedComponent } from '../_components';
 
 class HomePage extends React.Component {
   constructor() {
@@ -10,9 +10,13 @@ class HomePage extends React.Component {
   // Render
   render() {
     return (
-      <div>
+      <div id="home">
+        <HeaderComponent></HeaderComponent>
         <section>
-          <HeaderComponent></HeaderComponent>
+          <div className="main homewraper section">
+            <SalesTopPointComponent></SalesTopPointComponent>
+            <StatsDetailedComponent></StatsDetailedComponent>
+          </div>
         </section>
         <FooterComponent></FooterComponent>
       </div>

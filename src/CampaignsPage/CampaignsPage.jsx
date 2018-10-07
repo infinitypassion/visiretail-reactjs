@@ -13,9 +13,8 @@ class CampaignsPage extends React.Component {
   render() {
     return (
       <div>
+        <HeaderComponent></HeaderComponent>
         <section>
-          <HeaderComponent></HeaderComponent>
-
           <div className="main section">
             <div className="main_wraper">
               <div className="container">
