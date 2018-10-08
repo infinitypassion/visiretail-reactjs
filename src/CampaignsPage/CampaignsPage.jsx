@@ -1,20 +1,168 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
 
-import { HeaderComponent, FooterComponent } from '../_components';
-
-import { icGoogleImg, icFacebookImg, icImpressionsImg, icClicsImg, icConversionsImg, icEuroImg } from '../_helpers';
+import { CampaignPage } from './CampaignPage';
 
 class CampaignsPage extends React.Component {
   constructor() {
     super();
+    this.state = {
+      campaignes: {
+        inProgress: [
+          {
+            campaignId: 1,
+            campagneMainClass: 'campagne_main rentree',
+            agencyName: 'préstation ponctuelle',
+            campaignName: 'Rentrée scolaire',
+            advanced: '70%',
+            advancedStyleWidth: '73%',
+            google: {
+              budget: '12 876,00€',
+              progress: '63%',
+              progressStyleWidth: '63%'
+            },
+            facebook: {
+              budget: '3 158,00€',
+              progress: '27%',
+              progressStyleWidth: '27%'
+            },
+            impressions: '187 987',
+            clicks: '13 504',
+            conversions: '89',
+            budgetSpent: '16 034,00€',
+            costPerClick: '1,2974€'
+          },
+          {
+            campaignId: 2,
+            campagneMainClass: 'campagne_main toussaint',
+            agencyName: 'ABONNEMENT',
+            campaignName: 'Toussaint',
+            advanced: '36%',
+            advancedStyleWidth: '36%',
+            google: {
+              budget: '5 900,00€',
+              progress: '57%',
+              progressStyleWidth: '63%'
+            },
+            facebook: {
+              budget: '4 200,00€',
+              progress: '43%',
+              progressStyleWidth: '57%'
+            },
+            impressions: '67 985',
+            clicks: '6 582',
+            conversions: '32',
+            budgetSpent: '10 100,00€',
+            costPerClick: '1,896€'
+          },
+          {
+            campaignId: 3,
+            campagneMainClass: 'campagne_main vacances',
+            agencyName: 'préstation ponctuelle',
+            campaignName: 'Vacances d’été',
+            advanced: '93%',
+            advancedStyleWidth: '93%',
+            google: {
+              budget: '3 900,00€',
+              progress: '19%',
+              progressStyleWidth: '19%'
+            },
+            facebook: {
+              budget: '17 200,00€',
+              progress: '81%',
+              progressStyleWidth: '81%'
+            },
+            impressions: '178 985',
+            clicks: '19 876',
+            conversions: '547',
+            budgetSpent: '21 800,00€',
+            costPerClick: '1,896€'
+          }
+        ],
+        future: [
+          {
+            campaignId: 4,
+            campagneMainClass: 'campagne_main vacances',
+            agencyName: 'préstation ponctuelle',
+            campaignName: 'Vacances d’été',
+            advanced: '93%',
+            advancedStyleWidth: '93%',
+            google: {
+              budget: '3 900,00€',
+              progress: '19%',
+              progressStyleWidth: '19%'
+            },
+            facebook: {
+              budget: '17 200,00€',
+              progress: '81%',
+              progressStyleWidth: '81%'
+            },
+            impressions: '178 985',
+            clicks: '19 876',
+            conversions: '547',
+            budgetSpent: '21 800,00€',
+            costPerClick: '1,896€'
+          }
+        ],
+        past: [
+          {
+            campaignId: 5,
+            campagneMainClass: 'campagne_main rentree',
+            agencyName: 'préstation ponctuelle',
+            campaignName: 'Rentrée scolaire',
+            advanced: '70%',
+            advancedStyleWidth: '73%',
+            google: {
+              budget: '12 876,00€',
+              progress: '63%',
+              progressStyleWidth: '63%'
+            },
+            facebook: {
+              budget: '3 158,00€',
+              progress: '27%',
+              progressStyleWidth: '27%'
+            },
+            impressions: '187 987',
+            clicks: '13 504',
+            conversions: '89',
+            budgetSpent: '16 034,00€',
+            costPerClick: '1,2974€'
+          },
+          {
+            campaignId: 6,
+            campagneMainClass: 'campagne_main toussaint',
+            agencyName: 'ABONNEMENT',
+            campaignName: 'Toussaint',
+            advanced: '36%',
+            advancedStyleWidth: '36%',
+            google: {
+              budget: '5 900,00€',
+              progress: '57%',
+              progressStyleWidth: '63%'
+            },
+            facebook: {
+              budget: '4 200,00€',
+              progress: '43%',
+              progressStyleWidth: '57%'
+            },
+            impressions: '67 985',
+            clicks: '6 582',
+            conversions: '32',
+            budgetSpent: '10 100,00€',
+            costPerClick: '1,896€'
+          }
+        ]
+      }
+    };
   }
+
+  // Start -- React lifecycle methods
+  // End -- React lifecycle methods
 
   // Render
   render() {
     return (
       <div>
-        <HeaderComponent></HeaderComponent>
         <section>
           <div className="main section">
             <div className="main_wraper">
@@ -38,448 +186,31 @@ class CampaignsPage extends React.Component {
                     <div className="mescampagn_wraper">
                       <TabContent>
                         <TabPane eventKey="en-cours">
-                          <div className="campagne_wraper">
-                            <a href="campagnes-details.html">
-                              <div className="campagne_main rentree">
-                                <div className="campagne_top section">
-                                  <div className="ovelay_left">
-                                    <h6>préstation ponctuelle</h6>
-                                    <h2>Rentrée scolaire</h2>
-                                  </div>
-                                  <div className="ovelay_center">
-                                    <div className="progress_main">
-                                      <h6>Avancée</h6>
-                                      <div className="progress">
-                                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
-                                        </div>
-                                      </div>
-                                      <span>70%</span>
-                                    </div>
-                                  </div>
-                                  <div className="ovelay_right">
-                                    <div className="social_data">
-                                      <div className="progress_main google">
-                                        <h6>12 876,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '63%' }}>
-                                            <span>63%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
-                                      </div>
-                                      <div className="progress_main facebook">
-                                        <h6>3 158,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '27%' }}>
-                                            <span>27%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="overlay_list">
-                                  <ul>
-                                    <li>
-                                      <span className="ico"><img src={icImpressionsImg} alt="impressions" className="img-responsive" /></span>
-                                      <span className="value">187 987</span>
-                                      <h6>impressions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icClicsImg} alt="clics" className="img-responsive" /></span>
-                                      <span className="value">13 504</span>
-                                      <h6>clics</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icConversionsImg} alt="conversions" className="img-responsive" /></span>
-                                      <span className="value">89</span>
-                                      <h6>conversions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">16 034,00€</span>
-                                      <h6>budget dépensé</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">1,2974€</span>
-                                      <h6>coût du clic</h6>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div className="campagne_wraper">
-                            <a href="#">
-                              <div className="campagne_main toussaint">
-                                <div className="campagne_top section">
-                                  <div className="ovelay_left">
-                                    <h6>ABONNEMENT</h6>
-                                    <h2>Toussaint</h2>
-                                  </div>
-                                  <div className="ovelay_center">
-                                    <div className="progress_main">
-                                      <h6>Avancée</h6>
-                                      <div className="progress">
-                                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '36%' }}>
-                                        </div>
-                                      </div>
-                                      <span>36%</span>
-                                    </div>
-                                  </div>
-                                  <div className="ovelay_right">
-                                    <div className="social_data">
-                                      <div className="progress_main google">
-                                        <h6>5 900,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '63%' }}>
-                                            <span>57%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
-                                      </div>
-                                      <div className="progress_main facebook">
-                                        <h6>4 200,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '57%' }}>
-                                            <span>43%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="overlay_list">
-                                  <ul>
-                                    <li>
-                                      <span className="ico"><img src={icImpressionsImg} alt="impressions" className="img-responsive" /></span>
-                                      <span className="value">67 985</span>
-                                      <h6>impressions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icClicsImg} alt="clics" className="img-responsive" /></span>
-                                      <span className="value">6 582</span>
-                                      <h6>clics</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icConversionsImg} alt="conversions" className="img-responsive" /></span>
-                                      <span className="value">32</span>
-                                      <h6>conversions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">10 100,00€</span>
-                                      <h6>budget dépensé</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">1,896€</span>
-                                      <h6>coût du clic</h6>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div className="campagne_wraper">
-                            <a href="#">
-                              <div className="campagne_main vacances">
-                                <div className="campagne_top section">
-                                  <div className="ovelay_left">
-                                    <h6>préstation ponctuelle</h6>
-                                    <h2>Vacances d’été</h2>
-                                  </div>
-                                  <div className="ovelay_center">
-                                    <div className="progress_main">
-                                      <h6>Avancée</h6>
-                                      <div className="progress">
-                                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '93%' }}>
-                                        </div>
-                                      </div>
-                                      <span>93%</span>
-                                    </div>
-                                  </div>
-                                  <div className="ovelay_right">
-                                    <div className="social_data">
-                                      <div className="progress_main google">
-                                        <h6>3 900,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '19%' }}>
-                                            <span>19%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
-                                      </div>
-                                      <div className="progress_main facebook">
-                                        <h6>17 200,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '81%' }}>
-                                            <span>81%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="overlay_list">
-                                  <ul>
-                                    <li>
-                                      <span className="ico"><img src={icImpressionsImg} alt="impressions" className="img-responsive" /></span>
-                                      <span className="value">178 985</span>
-                                      <h6>impressions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icClicsImg} alt="clics" className="img-responsive" /></span>
-                                      <span className="value">19 876</span>
-                                      <h6>clics</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icConversionsImg} alt="conversions" className="img-responsive" /></span>
-                                      <span className="value">547</span>
-                                      <h6>conversions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">21 800,00€</span>
-                                      <h6>budget dépensé</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">1,896€</span>
-                                      <h6>coût du clic</h6>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
+                          {
+                            this.state.campaignes.inProgress.map((campagin, key) => {
+                              return (
+                                <CampaignPage key={key} campagin={campagin} />
+                              );
+                            })
+                          }
                         </TabPane>
                         <TabPane eventKey="venir">
-                          <div className="campagne_wraper">
-                            <a href="campagnes-details.html">
-                              <div className="campagne_main vacances">
-                                <div className="campagne_top section">
-                                  <div className="ovelay_left">
-                                    <h6>préstation ponctuelle</h6>
-                                    <h2>Vacances d’été</h2>
-                                  </div>
-                                  <div className="ovelay_center">
-                                    <div className="progress_main">
-                                      <h6>Avancée</h6>
-                                      <div className="progress">
-                                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '93%' }}>
-                                        </div>
-                                      </div>
-                                      <span>93%</span>
-                                    </div>
-                                  </div>
-                                  <div className="ovelay_right">
-                                    <div className="social_data">
-                                      <div className="progress_main google">
-                                        <h6>3 900,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '19%' }}>
-                                            <span>19%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
-                                      </div>
-                                      <div className="progress_main facebook">
-                                        <h6>17 200,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '81%' }}>
-                                            <span>81%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="overlay_list">
-                                  <ul>
-                                    <li>
-                                      <span className="ico"><img src={icImpressionsImg} alt="impressions" className="img-responsive" /></span>
-                                      <span className="value">178 985</span>
-                                      <h6>impressions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icClicsImg} alt="clics" className="img-responsive" /></span>
-                                      <span className="value">19 876</span>
-                                      <h6>clics</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icConversionsImg} alt="conversions" className="img-responsive" /></span>
-                                      <span className="value">547</span>
-                                      <h6>conversions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">21 800,00€</span>
-                                      <h6>budget dépensé</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">1,896€</span>
-                                      <h6>coût du clic</h6>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
+                          {
+                            this.state.campaignes.future.map((campagin, key) => {
+                              return (
+                                <CampaignPage key={key} campagin={campagin} />
+                              );
+                            })
+                          }
                         </TabPane>
                         <TabPane eventKey="passees">
-                          <div className="campagne_wraper">
-                            <a href="#">
-                              <div className="campagne_main rentree">
-                                <div className="campagne_top section">
-                                  <div className="ovelay_left">
-                                    <h6>préstation ponctuelle</h6>
-                                    <h2>Rentrée scolaire</h2>
-                                  </div>
-                                  <div className="ovelay_center">
-                                    <div className="progress_main">
-                                      <h6>Avancée</h6>
-                                      <div className="progress">
-                                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
-                                        </div>
-                                      </div>
-                                      <span>70%</span>
-                                    </div>
-                                  </div>
-                                  <div className="ovelay_right">
-                                    <div className="social_data">
-                                      <div className="progress_main google">
-                                        <h6>12 876,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '63%' }}>
-                                            <span>63%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
-                                      </div>
-                                      <div className="progress_main facebook">
-                                        <h6>3 158,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '27%' }}>
-                                            <span>27%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="overlay_list">
-                                  <ul>
-                                    <li>
-                                      <span className="ico"><img src={icImpressionsImg} alt="impressions" className="img-responsive" /></span>
-                                      <span className="value">187 987</span>
-                                      <h6>impressions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icClicsImg} alt="clics" className="img-responsive" /></span>
-                                      <span className="value">13 504</span>
-                                      <h6>clics</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icConversionsImg} alt="conversions" className="img-responsive" /></span>
-                                      <span className="value">89</span>
-                                      <h6>conversions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">16 034,00€</span>
-                                      <h6>budget dépensé</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">1,2974€</span>
-                                      <h6>coût du clic</h6>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                          <div className="campagne_wraper">
-                            <a href="#">
-                              <div className="campagne_main toussaint">
-                                <div className="campagne_top section">
-                                  <div className="ovelay_left">
-                                    <h6>ABONNEMENT</h6>
-                                    <h2>Toussaint</h2>
-                                  </div>
-                                  <div className="ovelay_center">
-                                    <div className="progress_main">
-                                      <h6>Avancée</h6>
-                                      <div className="progress">
-                                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '36%' }}>
-                                        </div>
-                                      </div>
-                                      <span>36%</span>
-                                    </div>
-                                  </div>
-                                  <div className="ovelay_right">
-                                    <div className="social_data">
-                                      <div className="progress_main google">
-                                        <h6>5 900,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '63%' }}>
-                                            <span>57%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
-                                      </div>
-                                      <div className="progress_main facebook">
-                                        <h6>4 200,00€</h6>
-                                        <div className="progress">
-                                          <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '57%' }}>
-                                            <span>43%</span>
-                                          </div>
-                                        </div>
-                                        <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="overlay_list">
-                                  <ul>
-                                    <li>
-                                      <span className="ico"><img src={icImpressionsImg} alt="impressions" className="img-responsive" /></span>
-                                      <span className="value">67 985</span>
-                                      <h6>impressions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icClicsImg} alt="clics" className="img-responsive" /></span>
-                                      <span className="value">6 582</span>
-                                      <h6>clics</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icConversionsImg} alt="conversions" className="img-responsive" /></span>
-                                      <span className="value">32</span>
-                                      <h6>conversions</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">10 100,00€</span>
-                                      <h6>budget dépensé</h6>
-                                    </li>
-                                    <li>
-                                      <span className="ico"><img src={icEuroImg} alt="euro" className="img-responsive" /></span>
-                                      <span className="value">1,896€</span>
-                                      <h6>coût du clic</h6>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
+                          {
+                            this.state.campaignes.past.map((campagin, key) => {
+                              return (
+                                <CampaignPage key={key} campagin={campagin} />
+                              );
+                            })
+                          }
                         </TabPane>
                       </TabContent>
                     </div>
@@ -489,7 +220,6 @@ class CampaignsPage extends React.Component {
             </div>
           </div>
         </section>
-        <FooterComponent></FooterComponent>
       </div>
     );
   }

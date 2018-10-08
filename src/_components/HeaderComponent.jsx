@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { logoImg } from '../_helpers';
 
@@ -26,7 +27,7 @@ class HeaderComponent extends React.Component {
           <div className="header_top section">
             <div className="container">
               <div className="logo">
-                <a href="index.html"><img src={logoImg} className="img-responsive" alt="visiretail" /></a>
+                <Link to="/app/home"><img src={logoImg} className="img-responsive" alt="visiretail" /></Link>
               </div>
               <div className="header_right">
                 <div className="nav_main">

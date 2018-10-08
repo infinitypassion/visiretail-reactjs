@@ -3,9 +3,8 @@ import { Router, Route } from 'react-router-dom';
 
 import { history } from '../_helpers';
 
-import { LoginPage } from '../LoginPage';
-import { HomePage } from '../HomePage';
-import { CampaignsPage } from '../CampaignsPage';
+import { PublicLayout } from './PublicLayout';
+import { PrivateLayout } from './PrivateLayout';
 
 class App extends React.Component {
   constructor() {
@@ -16,9 +15,8 @@ class App extends React.Component {
     return (
       <Router history={history}>
         <div>
-          <Route path='/login' component={LoginPage} />
-          <Route path='/home' component={HomePage} />
-          <Route path='/campaignes' component={CampaignsPage} />
+          <Route path='/' component={PublicLayout} />
+          <Route path='/app' component={PrivateLayout} />
         </div>
       </Router>
     );

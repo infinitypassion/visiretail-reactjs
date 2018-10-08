@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg } from '../../_helpers';
+import { closeElement } from '../../_helpers/main';
 
 class Detail extends React.Component {
   constructor() {
@@ -41,7 +43,7 @@ class Detail extends React.Component {
                   <span><img src={mesCampagnesImg} alt="mes-campagnes" className="img-responsive" /></span>
                   <a href="#">mes campagnes</a>
                   <ul className="has_sub">
-                    <li><a href="/campaignes">Camapagnes en cours</a></li>
+                    <li><Link to="/app/campaignes" onClick={closeElement.bind(this)}>Camapagnes en cours</Link></li>
                     <li><a href="#">Campagnes à venir</a></li>
                     <li><a href="#">Campagnes terminées</a></li>
                     <li><a href="mes-conversions.html">Mes conversions</a></li>

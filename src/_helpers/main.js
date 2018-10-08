@@ -61,6 +61,12 @@ export function oprofile(event) {
 /** End Profile related ************************************************************************************* */
 
 /** Start document handle events related ******************************************************************** */
+export function closeElement(e) {
+  if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
+    document.getElementsByClassName('hamburger')[0].classList.remove('active');
+  }
+}
+
 document.onclick = function (e) {
   if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
     var element = document.querySelector('.hamburger .container');
