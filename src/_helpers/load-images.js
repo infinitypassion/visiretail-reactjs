@@ -36,5 +36,8 @@ import sellPostion2Img from '../_assets/images/sell-postion-2.svg';
 import sellPostion3Img from '../_assets/images/sell-postion-3.svg';
 import countryGraphImg from '../_assets/images/country-graph.svg';
 import coutMoyenImg from '../_assets/images/coût-moyen.svg';
+import icStartImg from '../_assets/images/ic-start.svg';
+import icEndImg from '../_assets/images/ic-end.svg';
+import icRepresentedImg from '../_assets/images/ic-represented.svg';
 
-export { logoImg, slide1Img, slide2Img, slide3Img, icBasketImg, festivitiesImg, saintValentinImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg, icTimeMarkerImg, customPeriodImg, icGoogleImg, icFacebookImg, icImpressionsImg, impressionsImg, icClicsImg, clicksImg, icConversionsImg, icEuroImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, sellPostion1Img, sellPostion2Img, sellPostion3Img, countryGraphImg, coutMoyenImg };
+export { logoImg, slide1Img, slide2Img, slide3Img, icBasketImg, festivitiesImg, saintValentinImg, digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg, fbProfileImg, tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg, icTimeMarkerImg, customPeriodImg, icGoogleImg, icFacebookImg, icImpressionsImg, impressionsImg, icClicsImg, clicksImg, icConversionsImg, icEuroImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, sellPostion1Img, sellPostion2Img, sellPostion3Img, countryGraphImg, coutMoyenImg, icStartImg, icEndImg, icRepresentedImg };
