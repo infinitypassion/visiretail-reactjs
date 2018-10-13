@@ -14,10 +14,10 @@ class PrivateLayout extends React.Component {
     return (
       <div>
         <HeaderComponent></HeaderComponent>
-        <div>
-          <Route path='/app/home' component={HomePage} />
-          <Route path='/app/campaignes' component={CampaignsPage} />
-        </div>
+
+        <Route path='/app/home' component={HomePage} />
+        <Route path='/app/campaignes' component={CampaignsPage} />
+
         <FooterComponent></FooterComponent>
       </div>
     );

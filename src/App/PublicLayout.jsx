@@ -2,6 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { LoginPage } from '../LoginPage';
+import { RegisterPage } from '../RegisterPage';
+import { ThanksPage } from '../RegisterPage';
 
 class PublicLayout extends React.Component {
   constructor() {
@@ -10,8 +12,10 @@ class PublicLayout extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="LoginWraper">
         <Route path='/login' component={LoginPage} />
+        <Route path='/register' component={RegisterPage} />
+        <Route path='/thanks' component={ThanksPage} />
       </div>
     );
   }
