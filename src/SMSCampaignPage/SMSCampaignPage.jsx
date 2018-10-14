@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { icMsgImg } from '../_helpers';
 
@@ -261,7 +262,7 @@ class SMSCampaignPage extends React.Component {
                 </div>
                 <div className="schedule_action">
                   <a href="#" className="btn-primary">Mettre ma campagne en brouillon</a>
-                  <a href="/app/smsCampaignCredit" className="btn-primary green pull-right">Valider ma campagne de prospection</a>
+                  <Link to="/app/smsCampaignCredit" className="btn-primary green pull-right">Valider ma campagne de prospection</Link>
                 </div>
               </div>
             </div>

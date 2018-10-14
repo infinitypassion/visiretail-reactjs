@@ -1,8 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { logoImg, icSendImg } from '../_helpers';
-
-import { SlidesComponent } from '../_components';
 
 class ThanksPage extends React.Component {
   constructor() {
@@ -18,29 +17,22 @@ class ThanksPage extends React.Component {
   // Render
   render() {
     return (
-      <section>
-        <div className="visiretail_registration section">
-          <div className="row">
-            <div className="col-sm-5 col-xs-12 registration_main">
-              <div className="registration_head">
-                <span>J’ai déjà un compte sur Visiretail</span>
-                <a href="/register" className="btn-primary login">Connexion</a>
-              </div>
-              <div className="registration_con">
-                <span className="logo"><img src={logoImg} className="img-responsive" alt="visiretail" /> </span>
-                <div className="thanks_con">
-                  <img src={icSendImg} className="img-responsive send" alt="send" />
-                  <p>Votre demande de démo a bien été prise en compte.
+      <div className="col-sm-5 col-xs-12 registration_main">
+        <div className="registration_head">
+          <span>J’ai déjà un compte sur Visiretail</span>
+          <Link to="/register" className="btn-primary login">Connexion</Link>
+        </div>
+        <div className="registration_con">
+          <span className="logo"><img src={logoImg} className="img-responsive" alt="visiretail" /> </span>
+          <div className="thanks_con">
+            <img src={icSendImg} className="img-responsive send" alt="send" />
+            <p>Votre demande de démo a bien été prise en compte.
                     Un expert prendra contact avec vous sous 24h.</p>
-                  <h5>A très vite !</h5>
-                  <span>Team </span>
-                </div>
-              </div>
-            </div>
-            <SlidesComponent></SlidesComponent>
+            <h5>A très vite !</h5>
+            <span>Team </span>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }

@@ -41,12 +41,12 @@ class Detail extends React.Component {
               <li>
                 <div className="menu_con">
                   <span><img src={mesCampagnesImg} alt="mes-campagnes" className="img-responsive" /></span>
-                  <a href="#">mes campagnes</a>
+                  <Link to="/app/campaigns" onClick={closeElement.bind(this)}>mes campagnes</Link>
                   <ul className="has_sub">
                     <li><Link to="/app/campaigns" onClick={closeElement.bind(this)}>Camapagnes en cours</Link></li>
-                    <li><a href="#">Campagnes à venir</a></li>
-                    <li><a href="#">Campagnes terminées</a></li>
-                    <li><a href="/app/conversions">Mes conversions</a></li>
+                    <li><Link to="/app/campaigns" onClick={closeElement.bind(this)}>Campagnes à venir</Link></li>
+                    <li><Link to="/app/campaigns" onClick={closeElement.bind(this)}>Campagnes terminées</Link></li>
+                    <li><Link to="/app/conversions" onClick={closeElement.bind(this)}>Mes conversions</Link></li>
                   </ul>
                 </div>
               </li>

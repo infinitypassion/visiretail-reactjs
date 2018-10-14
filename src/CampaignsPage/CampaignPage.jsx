@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ProgressBar } from 'react-bootstrap';
 
 import { icGoogleImg, icFacebookImg, icImpressionsImg, icClicsImg, icConversionsImg, icEuroImg } from '../_helpers';
@@ -18,7 +19,7 @@ class CampaignPage extends React.Component {
   render() {
     return (
       <div className="campagne_wraper">
-        <a href="/app/campagnsDetails">
+        <Link to="/app/campagnsDetails">
           <div className={this.props.campagin.campagneMainClass}>
             <div className="campagne_top section">
               <div className="ovelay_left">
@@ -77,7 +78,7 @@ class CampaignPage extends React.Component {
               </ul>
             </div>
           </div>
-        </a>
+        </Link>
       </div>
     );
   }

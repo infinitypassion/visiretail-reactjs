@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ProgressBar, Table } from 'react-bootstrap';
 
 import { icGoogleImg, icFacebookImg, playButtonImg } from '../_helpers';
@@ -26,7 +27,7 @@ class CampaignDetailPage extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-sm-6 col-xs-12">
-                  <h1 className="bread_crumb"><a href="/app/campaigns">Mes Campagnes</a><span>{this.state.campaign.campaignName}</span></h1>
+                  <h1 className="bread_crumb"><Link to="/app/campaigns">Mes Campagnes</Link><span>{this.state.campaign.campaignName}</span></h1>
                 </div>
                 <div className="col-sm-6 col-xs-12">
                   <div className="campagne_advance">
