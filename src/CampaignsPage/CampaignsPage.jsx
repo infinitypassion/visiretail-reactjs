@@ -9,7 +9,10 @@ class CampaignsPage extends React.Component {
   constructor() {
     super();
 
+    // Load fake data
     this.state = campaignsFakeData;
+
+    this.campaginState = 'en-cours';
   }
 
   // Start -- React lifecycle methods
@@ -25,7 +28,7 @@ class CampaignsPage extends React.Component {
         <div className="main section">
           <div className="main_wraper">
             <div className="container">
-              <TabContainer id="my-campaigns-tab-container" defaultActiveKey="en-cours">
+              <TabContainer id="my-campaigns-tab-container" defaultActiveKey={this.campaginState}>
                 <div>
                   <div className="row">
                     <div className="col-sm-6 col-xs-12">

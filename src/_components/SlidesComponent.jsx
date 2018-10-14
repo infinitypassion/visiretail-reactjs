@@ -2,8 +2,6 @@ import React from 'react';
 
 import { slide1Img, slide2Img, slide3Img } from '../_helpers';
 
-let slideIndex = 1;
-
 class SlidesComponent extends React.Component {
   constructor() {
     super();
@@ -11,32 +9,32 @@ class SlidesComponent extends React.Component {
 
   // Start -- React lifecycle methods
   componentDidMount() {
-    this.showSlides(slideIndex);
+    this.slideIndex = 1;
+    this.showSlides(this.slideIndex);
   }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
   plusSlides(n) {
-    this.showSlides(slideIndex += n);
+    this.showSlides(this.slideIndex += n);
   }
 
   currentSlide(e) {
-    this.showSlides(slideIndex = e.currentTarget.dataset.id);
+    this.showSlides(this.slideIndex = e.currentTarget.dataset.id);
   }
 
   showSlides(n) {
     var i;
 
-    // TODO - Need to check document.getElementsByClassName can be converted to react
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
 
     if (n > slides.length) {
-      slideIndex = 1;
+      this.slideIndex = 1;
     }
 
     if (n < 1) {
-      slideIndex = slides.length
+      this.slideIndex = slides.length
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -47,11 +45,11 @@ class SlidesComponent extends React.Component {
     }
 
     if (slides && slides.length > 0) {
-      slides[slideIndex - 1].style.display = "block";
+      slides[this.slideIndex - 1].style.display = "block";
     }
 
     if (dots && dots.length > 0) {
-      dots[slideIndex - 1].className += " active";
+      dots[this.slideIndex - 1].className += " active";
     }
   }
   // End -- Custom methods

@@ -20,6 +20,7 @@ class PublicLayout extends React.Component {
               <Route path='/login' component={LoginPage} />
               <Route path='/register' component={RegisterPage} />
               <Route path='/thanks' component={ThanksPage} />
+
               <SlidesComponent></SlidesComponent>
             </div>
           </div>

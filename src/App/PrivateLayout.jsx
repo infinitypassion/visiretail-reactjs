@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { HeaderComponent, FooterComponent } from '../_components';
+
 import { HomePage } from '../HomePage';
 import { CampaignsPage, CampaignDetailPage } from '../CampaignsPage';
 import { ConversionsPage } from '../ConversionsPage';
@@ -19,7 +20,7 @@ class PrivateLayout extends React.Component {
 
         <Route path='/app/home' component={HomePage} />
         <Route path='/app/campaigns' component={CampaignsPage} />
-        <Route path='/app/campagnsDetails' component={CampaignDetailPage} />
+        <Route path='/app/campaignsDetails' component={CampaignDetailPage} />
         <Route path='/app/conversions' component={ConversionsPage} />
         <Route path='/app/smsCampaign' component={SMSCampaignPage} />
         <Route path='/app/smsCampaignCredit' component={SMSCampaignCreditPage} />

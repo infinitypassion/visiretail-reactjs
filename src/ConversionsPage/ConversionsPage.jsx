@@ -4,28 +4,24 @@ import { TabContainer, Nav, NavItem, TabContent, TabPane, Table } from 'react-bo
 import { icTriangleImg } from '../_helpers';
 import { conversionsFakeData } from '../_helpers/fake-data';
 
+import { ConversionPage } from './ConversionPage';
+
 class ConversionsPage extends React.Component {
   constructor() {
     super();
 
+    // Load fake data
     this.state = conversionsFakeData;
   }
 
   // Start -- React lifecycle methods
   componentDidMount() {
-    // TODO - Need to convert into react code
     document.body.id = 'conversions';
 
-    window.addEventListener('mousewheel', mouseWheelEvent);
-    window.addEventListener('DOMMouseScroll', mouseWheelEvent);
-    function mouseWheelEvent(e) {
-      var delta = e.wheelDelta ? e.wheelDelta : -e.detail;
+    window.addEventListener('mousewheel', this.mouseWheelEvent);
+    window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
 
-      if (delta > 0) document.getElementById('conversions').classList.remove('closed');
-      else document.getElementById('conversions').classList.add('closed');
-      return true; // this line is only added so the whole page won't scroll in the demo
-    }
-
+    // TODO - Need to convert into react code
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
@@ -56,9 +52,21 @@ class ConversionsPage extends React.Component {
       });
     }
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('mousewheel', this.mouseWheelEvent);
+    window.removeEventListener('DOMMouseScroll', this.mouseWheelEvent);
+  }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
+  mouseWheelEvent(e) {
+    var delta = e.wheelDelta ? e.wheelDelta : -e.detail;
+
+    if (delta > 0) document.getElementById('conversions').classList.remove('closed');
+    else document.getElementById('conversions').classList.add('closed');
+    return true; // this line is only added so the whole page won't scroll in the demo
+  }
   // End -- Custom methods
 
   // Render
@@ -106,30 +114,7 @@ class ConversionsPage extends React.Component {
                             {
                               this.state.myFormsConversions.map((conversion, key) => {
                                 return (
-                                  <React.Fragment key={key}>
-                                    <tr className="collapsible">
-                                      <td>{conversion.dt}</td>
-                                      <td className="purple">{conversion.customerName}</td>
-                                      <td>{conversion.name}</td>
-                                      <td>{conversion.firstName}</td>
-                                      <td><a href={"mailto:" + conversion.email}>{conversion.email}</a></td>
-                                      <td><a href={"tel:" + conversion.mobile}>{conversion.mobileStr}</a></td>
-                                      <td className="uper">{conversion.society}</td>
-                                      <td>{conversion.messageShort}<span /></td>
-                                    </tr>
-                                    <tr>
-                                      <td className="pad0" />
-                                      <td className="pad0" colSpan={7}>
-                                        <div className="content">
-                                          <div className="con_l">
-                                            <h5>{conversion.message.title}</h5>
-                                            <p>{conversion.message.content}</p>
-                                          </div>
-                                          <div className="con_r"><a href={"mailto:" + conversion.email} className="email">Envoyer un e-mail</a></div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  </React.Fragment>
+                                  <ConversionPage key={key} conversion={conversion} />
                                 );
                               })
                             }
@@ -154,30 +139,7 @@ class ConversionsPage extends React.Component {
                             {
                               this.state.myAppealsConversions.map((conversion, key) => {
                                 return (
-                                  <React.Fragment key={key}>
-                                    <tr className="collapsible">
-                                      <td>{conversion.dt}</td>
-                                      <td className="purple">{conversion.customerName}</td>
-                                      <td>{conversion.name}</td>
-                                      <td>{conversion.firstName}</td>
-                                      <td><a href={"mailto:" + conversion.email}>{conversion.email}</a></td>
-                                      <td><a href={"tel:" + conversion.mobile}>{conversion.mobileStr}</a></td>
-                                      <td className="uper">{conversion.society}</td>
-                                      <td>{conversion.messageShort}<span /></td>
-                                    </tr>
-                                    <tr>
-                                      <td className="pad0" />
-                                      <td className="pad0" colSpan={7}>
-                                        <div className="content">
-                                          <div className="con_l">
-                                            <h5>{conversion.message.title}</h5>
-                                            <p>{conversion.message.content}</p>
-                                          </div>
-                                          <div className="con_r"><a href={"mailto:" + conversion.email} className="email">Envoyer un e-mail</a></div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  </React.Fragment>
+                                  <ConversionPage key={key} conversion={conversion} />
                                 );
                               })
                             }
@@ -187,8 +149,8 @@ class ConversionsPage extends React.Component {
                     </TabContent>
                   </div>
                   {/* TODO - 
-                      1) Tab wise content 
-                      2) Mobile View 
+                      1) Tab wise content is missing for mobile view
+                      2) Mobile view 
                   */}
                   <div className="col-sm-12 col-xs-12 conversions_mobile">
                     <div className="conver_box">
