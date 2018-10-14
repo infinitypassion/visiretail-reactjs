@@ -2,8 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { LoginPage } from '../LoginPage';
-import { RegisterPage } from '../RegisterPage';
-import { ThanksPage } from '../RegisterPage';
+import { RegisterPage, ThanksPage } from '../RegisterPage';
 
 class PublicLayout extends React.Component {
   constructor() {
