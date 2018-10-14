@@ -1,7 +1,7 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
 
-import { campaignesFakeData } from '../_helpers/fake-data';
+import { campaignsFakeData } from '../_helpers/fake-data';
 
 import { CampaignPage } from './CampaignPage';
 
@@ -9,7 +9,7 @@ class CampaignsPage extends React.Component {
   constructor() {
     super();
 
-    this.state = campaignesFakeData;
+    this.state = campaignsFakeData;
   }
 
   // Start -- React lifecycle methods
@@ -45,7 +45,7 @@ class CampaignsPage extends React.Component {
                     <TabContent>
                       <TabPane eventKey="en-cours">
                         {
-                          this.state.campaignes.inProgress.map((campagin, key) => {
+                          this.state.campaigns.inProgress.map((campagin, key) => {
                             return (
                               <CampaignPage key={key} campagin={campagin} />
                             );
@@ -54,7 +54,7 @@ class CampaignsPage extends React.Component {
                       </TabPane>
                       <TabPane eventKey="venir">
                         {
-                          this.state.campaignes.future.map((campagin, key) => {
+                          this.state.campaigns.future.map((campagin, key) => {
                             return (
                               <CampaignPage key={key} campagin={campagin} />
                             );
@@ -63,7 +63,7 @@ class CampaignsPage extends React.Component {
                       </TabPane>
                       <TabPane eventKey="passees">
                         {
-                          this.state.campaignes.past.map((campagin, key) => {
+                          this.state.campaigns.past.map((campagin, key) => {
                             return (
                               <CampaignPage key={key} campagin={campagin} />
                             );

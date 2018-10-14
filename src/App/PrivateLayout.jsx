@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import { HeaderComponent, FooterComponent } from '../_components';
 import { HomePage } from '../HomePage';
-import { CampaignsPage } from '../CampaignsPage';
+import { CampaignsPage, CampaignDetailPage } from '../CampaignsPage';
 import { SMSCampaignPage, SMSCampaignCreditPage, SMSCampaignAddCreditPage, SMSCampaignPackPage } from '../SMSCampaignPage';
 
 class PrivateLayout extends React.Component {
@@ -17,7 +17,8 @@ class PrivateLayout extends React.Component {
         <HeaderComponent></HeaderComponent>
 
         <Route path='/app/home' component={HomePage} />
-        <Route path='/app/campaignes' component={CampaignsPage} />
+        <Route path='/app/campaigns' component={CampaignsPage} />
+        <Route path='/app/campagnsDetails' component={CampaignDetailPage} />
         <Route path='/app/smsCampaign' component={SMSCampaignPage} />
         <Route path='/app/smsCampaignCredit' component={SMSCampaignCreditPage} />
         <Route path='/app/smsAddCampaignCredit' component={SMSCampaignAddCreditPage} />

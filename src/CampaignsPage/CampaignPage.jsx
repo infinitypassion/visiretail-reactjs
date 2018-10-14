@@ -18,7 +18,7 @@ class CampaignPage extends React.Component {
   render() {
     return (
       <div className="campagne_wraper">
-        <a href="/app/campagnesDetails">
+        <a href="/app/campagnsDetails">
           <div className={this.props.campagin.campagneMainClass}>
             <div className="campagne_top section">
               <div className="ovelay_left">
