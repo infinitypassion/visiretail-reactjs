@@ -1,4 +1,5 @@
 import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
 
 import { icGoogleImg, icFacebookImg, icImpressionsImg, icClicsImg, icConversionsImg, icEuroImg } from '../_helpers';
 
@@ -10,11 +11,14 @@ class CampaignPage extends React.Component {
   // Start -- React lifecycle methods
   // End -- React lifecycle methods
 
+  // Start -- Custom methods
+  // End -- Custom methods
+
   // Render
   render() {
     return (
       <div className="campagne_wraper">
-        <a href="campagnes-details.html">
+        <a href="/app/campagnesDetails">
           <div className={this.props.campagin.campagneMainClass}>
             <div className="campagne_top section">
               <div className="ovelay_left">
@@ -24,31 +28,20 @@ class CampaignPage extends React.Component {
               <div className="ovelay_center">
                 <div className="progress_main">
                   <h6>Avancée</h6>
-                  <div className="progress">
-                    <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: this.props.campagin.advancedStyleWidth }}>
-                    </div>
-                  </div>
-                  <span>{this.props.campagin.advanced}</span>
+                  <ProgressBar now={this.props.campagin.advanced} />
+                  <span>{this.props.campagin.advancedStr}</span>
                 </div>
               </div>
               <div className="ovelay_right">
                 <div className="social_data">
                   <div className="progress_main google">
                     <h6>{this.props.campagin.google.budget}</h6>
-                    <div className="progress">
-                      <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: this.props.campagin.google.progressStyleWidth }} >
-                        <span>{this.props.campagin.google.progress}</span>
-                      </div>
-                    </div>
+                    <ProgressBar now={this.props.campagin.google.progress} label={this.props.campagin.google.progressStr} />
                     <span className="ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span>
                   </div>
                   <div className="progress_main facebook">
                     <h6>{this.props.campagin.facebook.budget}</h6>
-                    <div className="progress">
-                      <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: this.props.campagin.facebook.progressStyleWidth }}>
-                        <span>{this.props.campagin.facebook.progress}</span>
-                      </div>
-                    </div>
+                    <ProgressBar now={this.props.campagin.facebook.progress} label={this.props.campagin.facebook.progressStr} />
                     <span className="ico"><img src={icFacebookImg} alt="facebook" className="img-responsive" /></span>
                   </div>
                 </div>
