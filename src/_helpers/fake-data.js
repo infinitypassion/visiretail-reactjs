@@ -294,3 +294,155 @@ export let campaignDetailFakeData = {
     ]
   }
 };
+
+// *********************************************************************************************************************
+export let conversionsFakeData = {
+  myFormsConversions: [
+    {
+      id: 1,
+      dt: "01-05-2018",
+      customerName: "Richard lenoir",
+      name: "Nenot",
+      firstName: "Baptiste",
+      email: "baptiste.nenot@gmail.com",
+      mobileStr: "01 98 76 85 78",
+      mobile: "0198768578",
+      society: "visiperf",
+      messageShort: "Lorem ipsum dolor sit amet, sectetur...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 2,
+      dt: "31-04-2018",
+      customerName: "cadet",
+      name: "Marie",
+      firstName: "Rosalie",
+      email: "rosalie.marie@gmail.com",
+      mobileStr: "06 58 65 87 26",
+      mobile: "0658658726",
+      society: "orixa media",
+      messageShort: "In hac habitasse platea dictumst que...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 3,
+      dt: "31-04-2018",
+      customerName: "voltaire",
+      name: "boulanger",
+      firstName: "adrien",
+      email: "baptiste.nenot@gmail.com",
+      mobileStr: "07 89 54 21 30",
+      mobile: "0789542130",
+      society: "carglass",
+      messageShort: "Lorem ipsum dolor sit amet, sectetur...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 4,
+      dt: "31-04-2018",
+      customerName: "cadet",
+      name: "Marie",
+      firstName: "Rosalie",
+      email: "rosalie.marie@gmail.com",
+      mobileStr: "06 58 65 87 26",
+      mobile: "0658658726",
+      society: "orixa media",
+      messageShort: "In hac habitasse platea dictumst que...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 5,
+      dt: "28-04-2018",
+      customerName: "nation",
+      name: "Guillaume",
+      firstName: "katell",
+      email: "kguillaume@gmail.com",
+      mobileStr: "01 55 48 32 36",
+      mobile: "0155483236",
+      society: "N/R",
+      messageShort: "Suspendisse non nulla a sem efficitus...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 6,
+      dt: "31-04-2018",
+      customerName: "cadet",
+      name: "Marie",
+      firstName: "Rosalie",
+      email: "rosalie.marie@gmail.com",
+      mobileStr: "06 58 65 87 26",
+      mobile: "0658658726",
+      society: "orixa media",
+      messageShort: "In hac habitasse platea dictumst que...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 7,
+      dt: "31-04-2018",
+      customerName: "voltaire",
+      name: "boulanger",
+      firstName: "adrien",
+      email: "baptiste.nenot@gmail.com",
+      mobileStr: "07 89 54 21 30",
+      mobile: "0789542130",
+      society: "carglass",
+      messageShort: "Lorem ipsum dolor sit amet, sectetur...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    }
+  ],
+  myAppealsConversions: [
+    {
+      id: 1,
+      dt: "01-05-2018",
+      customerName: "Richard lenoir",
+      name: "Nenot",
+      firstName: "Baptiste",
+      email: "baptiste.nenot@gmail.com",
+      mobileStr: "01 98 76 85 78",
+      mobile: "0198768578",
+      society: "visiperf",
+      messageShort: "Lorem ipsum dolor sit amet, sectetur...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    },
+    {
+      id: 2,
+      dt: "31-04-2018",
+      customerName: "cadet",
+      name: "Marie",
+      firstName: "Rosalie",
+      email: "rosalie.marie@gmail.com",
+      mobileStr: "06 58 65 87 26",
+      mobile: "0658658726",
+      society: "orixa media",
+      messageShort: "In hac habitasse platea dictumst que...",
+      message: {
+        title: "Demande de devis de Baptiste Nenot :",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
+      }
+    }
+  ]
+}

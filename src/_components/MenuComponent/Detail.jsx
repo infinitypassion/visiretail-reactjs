@@ -46,7 +46,7 @@ class Detail extends React.Component {
                     <li><Link to="/app/campaigns" onClick={closeElement.bind(this)}>Camapagnes en cours</Link></li>
                     <li><a href="#">Campagnes à venir</a></li>
                     <li><a href="#">Campagnes terminées</a></li>
-                    <li><a href="mes-conversions.html">Mes conversions</a></li>
+                    <li><a href="/app/conversions">Mes conversions</a></li>
                   </ul>
                 </div>
               </li>
