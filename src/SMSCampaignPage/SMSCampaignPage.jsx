@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DateTimePicker from 'react-datetime';
 
 import { icMsgImg } from '../_helpers';
 
@@ -12,40 +13,40 @@ class SMSCampaignPage extends React.Component {
   componentDidMount() {
     document.body.id = 'campaign';
 
-    window.addEventListener('mousewheel', mouseWheelEvent);
-    window.addEventListener('DOMMouseScroll', mouseWheelEvent);
-
-    function mouseWheelEvent(e) {
-      var delta = e.wheelDelta ? e.wheelDelta : -e.detail;
-
-      if (delta > 0) document.getElementById('campaign').classList.remove('closed');
-      else document.getElementById('campaign').classList.add('closed');
-      return true; // this line is only added so the whole page won't scroll in the demo
-    }
-
-    $('.input-group.date').datepicker({
-    });
-
-    $('#timepicker1').timepicker();
+    window.addEventListener('mousewheel', this.mouseWheelEvent);
+    window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
 
     this.rangeSlider();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mousewheel', this.mouseWheelEvent);
+    window.removeEventListener('DOMMouseScroll', this.mouseWheelEvent);
   }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
+  mouseWheelEvent(e) {
+    var delta = e.wheelDelta ? e.wheelDelta : -e.detail;
+
+    if (delta > 0) document.getElementById('campaign').classList.remove('closed');
+    else document.getElementById('campaign').classList.add('closed');
+    return true; // this line is only added so the whole page won't scroll in the demo
+  }
+
   rangeSlider() {
+    // TODO - Need to convert into react code
     var slider = document.getElementsByClassName("range-slider");
     var range = document.getElementsByClassName("range-slider__range");
     var value = document.getElementsByClassName("range-slider__value");
 
     for (var i = 0; i < slider.length; i++) {
-
       for (var j = 0; j < value.length; j++) {
         value[j].innerHTML = value[j].previousElementSibling.getAttribute('value');
       }
+
       range[i].oninput = function () {
         this.nextElementSibling.innerHTML = this.value;
-
       };
     }
   }
@@ -128,6 +129,7 @@ class SMSCampaignPage extends React.Component {
                       <label>Âge</label>
                     </div>
                     <div className="schedule_r">
+                      {/* TODO - Need to check react-bootstrap-slider */}
                       <div className="range-slider">
                         <span>18</span>
                         <input className="range-slider__range" type="range" defaultValue={48} min={0} max={100} />
@@ -172,6 +174,7 @@ class SMSCampaignPage extends React.Component {
                       <label>Proximité</label>
                     </div>
                     <div className="schedule_r">
+                      {/* TODO - Need to check react-bootstrap-slider */}
                       <div className="range-slider km_range">
                         <input className="range-slider__range" type="range" step={1} defaultValue={15} min={0} max={500} />
                         <span className="range-slider__value">0</span>km
@@ -201,12 +204,14 @@ class SMSCampaignPage extends React.Component {
                           </li>
                           <li>
                             <div className="input-group date">
-                              <input type="text" className="form-control input-group-addon" placeholder="MM/DD/YYYY" />
+                              {/* TODO - Need to fix CSS as it is not inheriting bootstrape */}
+                              <DateTimePicker dateFormat="MM/DD/YYYY" timeFormat={false} inputProps={{ placeholder: 'MM/DD/YYYY' }} />
                             </div>
                           </li>
                           <li>
-                            <div className="input-group bootstrap-timepicker timepicker">
-                              <input id="timepicker1" type="text" className="form-control input-group-addon" />
+                            <div className="input-group timepicker">
+                              {/* TODO - Need to fix CSS as it is not inheriting bootstrape */}
+                              <DateTimePicker viewMode="time" dateFormat={false} inputProps={{ id: 'timepicker1' }} />
                             </div>
                           </li>
                         </ul>
