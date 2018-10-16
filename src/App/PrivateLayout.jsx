@@ -7,6 +7,7 @@ import { HomePage } from '../HomePage';
 import { CampaignsPage, CampaignDetailPage } from '../CampaignsPage';
 import { ConversionsPage } from '../ConversionsPage';
 import { SMSCampaignPage, SMSCampaignCreditPage, SMSCampaignAddCreditPage, SMSCampaignPackPage } from '../SMSCampaignPage';
+import { PaymentPage } from '../PaymentPage';
 
 class PrivateLayout extends React.Component {
   constructor() {
@@ -26,6 +27,7 @@ class PrivateLayout extends React.Component {
         <Route path='/app/smsCampaignCredit' component={SMSCampaignCreditPage} />
         <Route path='/app/smsAddCampaignCredit' component={SMSCampaignAddCreditPage} />
         <Route path='/app/smsCampaignPack' component={SMSCampaignPackPage} />
+        <Route path='/app/payment' component={PaymentPage} />
 
         <FooterComponent></FooterComponent>
       </div>
