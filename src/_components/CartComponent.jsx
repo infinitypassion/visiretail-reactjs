@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { icBasketImg, festivitiesImg, saintValentinImg } from '../_helpers';
 
@@ -80,7 +81,7 @@ class CartComponent extends React.Component {
               })
             }
           </ul>
-          <a href="payment.html" className="btn-primary">PAIEMENT</a>
+          <Link to="/app/payment" className="btn-primary">PAIEMENT</Link>
         </div>
       </li>
     );
