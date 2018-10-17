@@ -66,7 +66,7 @@ class LaunchDetails extends React.Component {
                           <button id="demo-btn" style={{ float: 'left', marginTop: '-80px' }} className="btn-primary">Demo Button for jquery</button>
                         </div>
                         <div className="col-sm-3 col-xs-12 campain_left lefttSidebar">
-                          {/* TODO - Need to fix sticky issuw while scroll */}
+                          {/* TODO - Need to fix sticky issue while scroll */}
                           <StickyBox offsetTop={20} offsetBottom={20}>
                             <div className="campain_det">
                               <span className="cate popular">populaire</span>
