@@ -33,8 +33,8 @@ class Detail extends React.Component {
                   <span><img src={mesPointsDeVenteImg} alt="mes points de vente" className="img-responsive" /></span>
                   <a href="#">mes points de vente</a>
                   <ul className="has_sub">
-                    <li><a href="network-overview.html">Vue d’ensemble du réseau</a></li>
-                    <li><a href="point-sale-details.html">Détail par point de vente</a></li>
+                    <li><Link to="/app/networkOverview" onClick={closeElement.bind(this)}>Vue d’ensemble du réseau</Link></li>
+                    <li><Link to="/app/pointSaleDetails" onClick={closeElement.bind(this)}>Détail par point de vente</Link></li>
                   </ul>
                 </div>
               </li>

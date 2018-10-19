@@ -8,6 +8,10 @@ import { CampaignsPage, CampaignDetailPage } from '../CampaignsPage';
 import { ConversionsPage } from '../ConversionsPage';
 import { SMSCampaignPage, SMSCampaignCreditPage, SMSCampaignAddCreditPage, SMSCampaignPackPage } from '../SMSCampaignPage';
 import { PaymentPage } from '../PaymentPage';
+import { LaunchPage, LaunchDetails } from '../LaunchPage';
+import { NetworkOverviewPage } from '../NetworkOverviewPage';
+import { MapOverviewPage } from '../MapOverviewPage';
+import { CartPage } from '../CartPage';
 
 class PrivateLayout extends React.Component {
   constructor() {
@@ -28,6 +32,11 @@ class PrivateLayout extends React.Component {
         <Route path='/app/smsAddCampaignCredit' component={SMSCampaignAddCreditPage} />
         <Route path='/app/smsCampaignPack' component={SMSCampaignPackPage} />
         <Route path='/app/payment' component={PaymentPage} />
+        <Route path='/app/launch' component={LaunchPage} />
+        <Route path='/app/launchDetails' component={LaunchDetails} />
+        <Route path='/app/networkOverview' component={NetworkOverviewPage} />
+        <Route path='/app/mapOverview' component={MapOverviewPage} />
+        <Route path='/app/cart' component={CartPage} />
 
         <FooterComponent></FooterComponent>
       </div>

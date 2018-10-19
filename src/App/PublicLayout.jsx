@@ -21,6 +21,7 @@ class PublicLayout extends React.Component {
               <Route path='/register' component={RegisterPage} />
               <Route path='/thanks' component={ThanksPage} />
 
+              {/* TODO - Need to fix issue - It is viisble in http://localhost:8080/app/mapOverview */}
               <SlidesComponent></SlidesComponent>
             </div>
           </div>

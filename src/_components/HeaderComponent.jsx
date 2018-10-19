@@ -35,7 +35,7 @@ class HeaderComponent extends React.Component {
                     <CartComponent></CartComponent>
 
                     {/*<li><a href="#"><div class="basket"><img src="images/ic-basket.svg" alt="basket" class="img-responsive"></div></a></li>*/}
-                    <li className="campagne_btn"><a href="launch.html" className="launch_btn">LANCER UNE CAMPAGNE<i className="effect" /></a></li>
+                    <li className="campagne_btn"><Link to="/app/launch" className="launch_btn">LANCER UNE CAMPAGNE<i className="effect" /></Link></li>
 
                     <MenuComponentInit></MenuComponentInit>
 
