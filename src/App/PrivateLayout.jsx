@@ -9,6 +9,8 @@ import { ConversionsPage } from '../ConversionsPage';
 import { SMSCampaignPage, SMSCampaignCreditPage, SMSCampaignAddCreditPage, SMSCampaignPackPage } from '../SMSCampaignPage';
 import { PaymentPage } from '../PaymentPage';
 import { LaunchPage, LaunchDetails } from '../LaunchPage';
+import { NetworkOverviewPage } from '../NetworkOverviewPage';
+import { MapOverviewPage } from '../MapOverviewPage';
 
 class PrivateLayout extends React.Component {
   constructor() {
@@ -31,6 +33,8 @@ class PrivateLayout extends React.Component {
         <Route path='/app/payment' component={PaymentPage} />
         <Route path='/app/launch' component={LaunchPage} />
         <Route path='/app/launchDetails' component={LaunchDetails} />
+        <Route path='/app/networkOverview' component={NetworkOverviewPage} />
+        <Route path='/app/mapOverview' component={MapOverviewPage} />
 
         <FooterComponent></FooterComponent>
       </div>
