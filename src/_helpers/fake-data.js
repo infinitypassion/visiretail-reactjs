@@ -1,9 +1,14 @@
-import { sellPostion1Img, sellPostion2Img, sellPostion3Img } from '../_helpers';
+import {
+  sellPostion1Img,
+  sellPostion2Img,
+  sellPostion3Img,
+  laSemaineImg,
+  festivitiesImg
+} from '../_helpers';
 
 export let campaignsFakeData = {
   campaigns: {
-    inProgress: [
-      {
+    inProgress: [{
         campaignId: 1,
         campagneMainClass: 'campagne_main rentree',
         agencyName: 'préstation ponctuelle',
@@ -73,33 +78,30 @@ export let campaignsFakeData = {
         costPerClick: '1,896€'
       }
     ],
-    future: [
-      {
-        campaignId: 4,
-        campagneMainClass: 'campagne_main vacances',
-        agencyName: 'préstation ponctuelle',
-        campaignName: 'Vacances d’été',
-        advanced: 93,
-        advancedStr: '93%',
-        google: {
-          budget: '3 900,00€',
-          progress: 19,
-          progressStr: '19%'
-        },
-        facebook: {
-          budget: '17 200,00€',
-          progress: 81,
-          progressStr: '81%'
-        },
-        impressions: '178 985',
-        clicks: '19 876',
-        conversions: '547',
-        budgetSpent: '21 800,00€',
-        costPerClick: '1,896€'
-      }
-    ],
-    past: [
-      {
+    future: [{
+      campaignId: 4,
+      campagneMainClass: 'campagne_main vacances',
+      agencyName: 'préstation ponctuelle',
+      campaignName: 'Vacances d’été',
+      advanced: 93,
+      advancedStr: '93%',
+      google: {
+        budget: '3 900,00€',
+        progress: 19,
+        progressStr: '19%'
+      },
+      facebook: {
+        budget: '17 200,00€',
+        progress: 81,
+        progressStr: '81%'
+      },
+      impressions: '178 985',
+      clicks: '19 876',
+      conversions: '547',
+      budgetSpent: '21 800,00€',
+      costPerClick: '1,896€'
+    }],
+    past: [{
         campaignId: 5,
         campagneMainClass: 'campagne_main rentree',
         agencyName: 'préstation ponctuelle',
@@ -169,8 +171,7 @@ export let campaignDetailFakeData = {
     conversions: '89',
     budgetSpent: '16 034,00€',
     costPerClick: '1,2974€',
-    franchisees: [
-      {
+    franchisees: [{
         id: 1,
         name: "richard lenoir",
         sellPostionImg: sellPostion1Img,
@@ -297,8 +298,7 @@ export let campaignDetailFakeData = {
 
 // *********************************************************************************************************************
 export let conversionsFakeData = {
-  myFormsConversions: [
-    {
+  myFormsConversions: [{
       id: 1,
       dt: "01-05-2018",
       customerName: "Richard lenoir",
@@ -411,8 +411,7 @@ export let conversionsFakeData = {
       }
     }
   ],
-  myAppealsConversions: [
-    {
+  myAppealsConversions: [{
       id: 1,
       dt: "01-05-2018",
       customerName: "Richard lenoir",
@@ -443,6 +442,90 @@ export let conversionsFakeData = {
         title: "Demande de devis de Baptiste Nenot :",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. Vestibulum lorem tellus, blandit at est eget, efficitur condimentum velit."
       }
+    }
+  ]
+}
+
+// *********************************************************************************************************************
+export let cartFakeData = {
+  orderData: [{
+    id: 1,
+    recipientName: "Visiperf (Moi)",
+    recipientEmail: "matthieu@visiperf.com",
+    items: [{
+      id: 1,
+      name: "La semaine du goût",
+      image: laSemaineImg,
+      unitPrice: "150,00€",
+      quantity: 1,
+      total: "300,00€"
+    }, {
+      id: 1,
+      name: "Fêtes de fin d’année 2018",
+      image: festivitiesImg,
+      unitPrice: "150,00€",
+      quantity: 1,
+      total: "300,00€"
+    }]
+  }, {
+    id: 2,
+    recipientName: "Visiperf Voltaire",
+    recipientEmail: "jerome-voltaire@visiperf.com",
+    items: [{
+      id: 1,
+      name: "La semaine du goût",
+      image: laSemaineImg,
+      unitPrice: "150,00€",
+      quantity: 1,
+      total: "300,00€"
+    }, {
+      id: 1,
+      name: "Fêtes de fin d’année 2018",
+      image: festivitiesImg,
+      unitPrice: "150,00€",
+      quantity: 1,
+      total: "300,00€"
+    }]
+  }],
+  orderRecipients: [{
+      id: 1,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 2,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 3,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 4,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 5,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 6,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 7,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
+    },
+    {
+      id: 8,
+      name: "Visiperf voltaire",
+      email: "jeremy@visiperf-voltaire.com"
     }
   ]
 }
