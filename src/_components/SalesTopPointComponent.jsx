@@ -2,6 +2,7 @@ import React from 'react';
 
 import { sellPostion1Img, sellPostion2Img, sellPostion3Img } from '../_helpers';
 
+// TODO - pending for review
 class SalesTopPointComponent extends React.Component {
   constructor() {
     super();

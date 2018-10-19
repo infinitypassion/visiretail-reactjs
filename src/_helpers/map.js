@@ -1,3 +1,4 @@
+// TODO - Need to convert to react
 export function loadMap() {
   var locations = [
     ['<h4>Bondi Beach</h4>', 48.860266, 2.372026],

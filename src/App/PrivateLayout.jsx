@@ -25,7 +25,7 @@ class PrivateLayout extends React.Component {
 
         <Route path='/app/home' component={HomePage} />
         <Route path='/app/campaigns' component={CampaignsPage} />
-        <Route path='/app/campaignsDetails' component={CampaignDetailPage} />
+        <Route path='/app/campaignDetails' component={CampaignDetailPage} />
         <Route path='/app/conversions' component={ConversionsPage} />
         <Route path='/app/smsCampaign' component={SMSCampaignPage} />
         <Route path='/app/smsCampaignCredit' component={SMSCampaignCreditPage} />

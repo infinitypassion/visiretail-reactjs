@@ -133,7 +133,7 @@ class CampaignDetailPage extends React.Component {
                     </tbody>
                   </Table>
                 </div>
-                {/* TODO - Mobile view */}
+                {/* TODO - Need to work on mobile view */}
                 <div className="selling_list Mobile section">
                   <label>Point de vente le plus performant</label>
                   <ul>

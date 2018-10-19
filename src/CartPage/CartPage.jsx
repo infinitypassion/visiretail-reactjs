@@ -52,10 +52,10 @@ class CartPage extends React.Component {
   remove() {
     this.setState({ showDeletedAlert: true });
   }
-  suchide() {
+  hideSuccess() {
     this.setState({ showSuccessAlert: false });
   }
-  hide() {
+  hideDeleted() {
     this.setState({ showDeletedAlert: false });
   }
   // End -- Custom methods
@@ -224,11 +224,11 @@ class CartPage extends React.Component {
 
                     <Alert id="alert-success" bsStyle="success" className={"alertbox" + (this.state.showSuccessAlert ? " active" : "")}>
                       <p>Visiperf Voltaire ajouté !</p>
-                      <span onClick={this.suchide.bind(this)}>Annuler</span>
+                      <span onClick={this.hideSuccess.bind(this)}>Annuler</span>
                     </Alert>
                     <Alert id="alert-delete" bsStyle="danger" className={"alertbox deleted" + (this.state.showDeletedAlert ? " active" : "")}>
                       <p>Visiperf Voltaire supprimé !</p>
-                      <span onClick={this.hide.bind(this)}>Annuler</span>
+                      <span onClick={this.hideDeleted.bind(this)}>Annuler</span>
                     </Alert>
                   </div>
                 </div>

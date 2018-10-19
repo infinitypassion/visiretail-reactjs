@@ -3,6 +3,7 @@ import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap
 
 import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
 
+// TODO - pending for review
 class StatsDetailedComponent extends React.Component {
   constructor() {
     super();

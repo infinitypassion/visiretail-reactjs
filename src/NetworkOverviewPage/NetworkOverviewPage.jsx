@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TabContainer, Nav, NavItem, TabContent, TabPane, Table } from 'react-bootstrap';
+import { TabContainer, Nav, NavItem, Table } from 'react-bootstrap';
 
 import { playButtonImg, sellPostion1Img, sellPostion2Img, sellPostion3Img } from '../_helpers';
 
@@ -41,11 +41,13 @@ class NetworkOverviewPage extends React.Component {
                                 <path d="M2.184,0.485H0.016v2.168h2.168V0.485z" />
                                 <path d="M2.184,4.821H0.016v2.168h2.168V4.821z" />
                                 <path d="M2.184,9.158H0.016v2.168h2.168V9.158z" />
-                              </svg><span>LISTE</span></Link>
+                              </svg><span>LISTE</span>
+                            </Link>
                           </NavItem>
                           <NavItem eventKey="map-overview">
-                            <Link to="/app/mapOverview"><svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
-                            <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
+                            <Link to="/app/mapOverview">
+                              <svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
+                              <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
                               c-1.348-1.347-3.138-2.088-5.042-2.088S4.171,1.623,2.825,2.97C1.479,4.316,0.737,6.106,0.737,8.011s0.742,3.694,2.088,5.042
                               c1.347,1.346,3.137,2.088,5.042,2.088S11.561,14.398,12.908,13.053z M12.277,3.6c0.878,0.878,1.462,1.972,1.703,3.162
                               c-0.188-0.276-0.367-0.379-0.479,0.239c-0.115,1.008-1.041,0.364-1.623,0.722c-0.612-0.413-1.99,0.803-1.756-0.568
@@ -59,7 +61,8 @@ class NetworkOverviewPage extends React.Component {
                               c0.288-0.132,0.451-0.296,0.174-0.506c-0.215-0.642-1.088-1.502-1.855-1.38c-0.398-0.687-0.66-1.443-0.772-2.235
                               c0.642-0.212,0.79-0.633,0.652-0.773c-0.327-0.286-0.528-0.69-0.632-1.132C1.92,5.713,2.521,4.534,3.455,3.6
                               C4.633,2.421,6.2,1.772,7.866,1.772C9.533,1.772,11.1,2.421,12.277,3.6z" />
-                            </svg><span>CARTE</span></Link>
+                              </svg><span>CARTE</span>
+                            </Link>
                           </NavItem>
                         </Nav>
                       </div>

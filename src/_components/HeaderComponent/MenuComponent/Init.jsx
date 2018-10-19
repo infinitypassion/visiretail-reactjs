@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { menu } from '../../_helpers/main';
+import { menu } from '../../../_helpers/main';
 
 class Init extends React.Component {
   constructor() {
