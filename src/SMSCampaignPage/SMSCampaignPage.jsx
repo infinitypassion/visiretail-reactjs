@@ -4,10 +4,6 @@ import DateTimePicker from 'react-datetime';
 
 import { icMsgImg } from '../_helpers';
 
-/**
- * TODO
- *  - Need to fix render issue while scrool and moved to http://localhost:8080/app/smsCampaignCredit
- */
 class SMSCampaignPage extends React.Component {
   constructor() {
     super();
@@ -26,6 +22,8 @@ class SMSCampaignPage extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('mousewheel', this.mouseWheelEvent);
     window.removeEventListener('DOMMouseScroll', this.mouseWheelEvent);
+    document.getElementById('campaign').classList.remove('closed');
+    document.body.id = '';
   }
   // End -- React lifecycle methods
 

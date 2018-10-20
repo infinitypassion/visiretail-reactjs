@@ -142,47 +142,31 @@ class CartPage extends React.Component {
                     }
                     <Link to="/app/payment" className="btn-primary">continuer</Link>
                   </div>
-                  {/* TODO - Need to work on mobile view and loop through cartFakeData.orderData */}
                   <div className="cart_mobile section">
-                    <div className="cart_box">
-                      <div className="cart_avtar">
-                        <img src={laSemaineImg} alt="La-semaine" className="img-responsive" />
-                      </div>
-                      <div className="item_name">
-                        <h5>La semaine du goût</h5>
-                        <span className="price">300,00€</span>
-                      </div>
-                      <div className="cart_r pull-right">
-                        <span className="number">2</span>
-                        <a href="#" className="more_btn" />
-                      </div>
-                    </div>
-                    <div className="cart_box">
-                      <div className="cart_avtar">
-                        <img src={festivitiesImg} alt="festivities" className="img-responsive" />
-                      </div>
-                      <div className="item_name">
-                        <h5>Fêtes de fin d’année 2018</h5>
-                        <span className="price">250,00€</span>
-                      </div>
-                      <div className="cart_r pull-right">
-                        <span className="number">1</span>
-                        <a href="#" className="more_btn" />
-                      </div>
-                    </div>
-                    <div className="cart_box">
-                      <div className="cart_avtar">
-                        <img src={saintValentinImg} alt="Valentin" className="img-responsive" />
-                      </div>
-                      <div className="item_name">
-                        <h5>Saint-Valentin</h5>
-                        <span className="price">750,00€</span>
-                      </div>
-                      <div className="cart_r pull-right">
-                        <span className="number">3</span>
-                        <a href="#" className="more_btn" />
-                      </div>
-                    </div>
+                    {
+                      this.cartFakeData.orderData.map((orderData, orderKey) => {
+                        return (
+
+                          orderData.items.map((item, itemKey) => {
+                            return (
+                              <div className="cart_box" key={itemKey}>
+                                <div className="cart_avtar">
+                                  <img src={item.image} alt="La-semaine" className="img-responsive" />
+                                </div>
+                                <div className="item_name">
+                                  <h5>{item.name}</h5>
+                                  <span className="price">{item.total}</span>
+                                </div>
+                                <div className="cart_r pull-right">
+                                  <span className="number">{item.quantity}</span>
+                                  <a href="#" className="more_btn" />
+                                </div>
+                              </div>
+                            );
+                          })
+                        );
+                      })
+                    }
                     <div className="summery_list section">
                       <ul>
                         <li><label>Sous-Total</label><p>1 205,00€</p></li>

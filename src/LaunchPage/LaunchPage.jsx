@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { festivitiesImg, icClockWhiteImg, icGoogleImg, icBingImg, icYahooImg, icSMSImg, icWazeImg, icDisplayImg, icRemarketingImg, rentreeScolaireImg, saintValentinImg, laSemaineImg, icMsgImg } from '../_helpers';
 
-// TODO - Need to work on mobile view
 class LaunchPage extends React.Component {
   constructor() {
     super();
