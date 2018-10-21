@@ -64,6 +64,7 @@ import banner1Img from '../_assets/images/banner1.svg';
 import banner2Img from '../_assets/images/banner2.svg';
 import banner3Img from '../_assets/images/banner3.svg';
 import banner4Img from '../_assets/images/banner4.svg';
+import graphImg from '../_assets/images/graph.jpg';
 
 export {
   logoImg,
@@ -131,5 +132,6 @@ export {
   banner1Img,
   banner2Img,
   banner3Img,
-  banner4Img
+  banner4Img,
+  graphImg
 };

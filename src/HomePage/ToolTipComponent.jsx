@@ -11,14 +11,12 @@ class ToolTipComponent extends React.Component {
       modal1Show: true,
       modal2Show: false,
       modal3Show: false
-    }
+    };
+
     document.getElementsByTagName('html')[0].classList.add('Home');
   }
 
   // Start -- React lifecycle methods
-  componentDidMount() {
-    // this.loadModal1();
-  }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
@@ -27,7 +25,7 @@ class ToolTipComponent extends React.Component {
       modal1Show: false,
       modal2Show: false,
       modal3Show: false
-    })
+    });
   }
 
   model1NextHandleClick(e) {
