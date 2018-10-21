@@ -329,7 +329,7 @@ a:hover {
 @font-face {
 	font-family: 'Rhesmanisa-Regular';
 	src: url('./fonts/Rhesmanisa-Regular.eot?#iefix') format('embedded-opentype'),
-		/* TODO - url('./fonts/Rhesmanisa-Regular.otf')  format('opentype'), */
+		/* TODO - This is missing url('./fonts/Rhesmanisa-Regular.otf')  format('opentype'), */
 		url('./fonts/Rhesmanisa-Regular.woff') format('woff'),
 		url('./fonts/Rhesmanisa-Regular.ttf') format('truetype'),
 		url('./fonts/Rhesmanisa-Regular.svg#Rhesmanisa-Regular') format('svg');
