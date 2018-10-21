@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { HeaderComponent, FooterComponent } from '../_components';
 
@@ -23,20 +23,22 @@ class PrivateLayout extends React.Component {
       <div>
         <HeaderComponent></HeaderComponent>
 
-        <Route path='/app/home' component={HomePage} />
-        <Route path='/app/campaigns' component={CampaignsPage} />
-        <Route path='/app/campaignDetails' component={CampaignDetailPage} />
-        <Route path='/app/conversions' component={ConversionsPage} />
-        <Route path='/app/smsCampaign' component={SMSCampaignPage} />
-        <Route path='/app/smsCampaignCredit' component={SMSCampaignCreditPage} />
-        <Route path='/app/smsAddCampaignCredit' component={SMSCampaignAddCreditPage} />
-        <Route path='/app/smsCampaignPack' component={SMSCampaignPackPage} />
-        <Route path='/app/payment' component={PaymentPage} />
-        <Route path='/app/launch' component={LaunchPage} />
-        <Route path='/app/launchDetails' component={LaunchDetails} />
-        <Route path='/app/networkOverview' component={NetworkOverviewPage} />
-        <Route path='/app/mapOverview' component={MapOverviewPage} />
-        <Route path='/app/cart' component={CartPage} />
+        <Switch>
+          <Route path='/app/home' component={HomePage} />
+          <Route path='/app/campaigns' component={CampaignsPage} />
+          <Route path='/app/campaignDetails' component={CampaignDetailPage} />
+          <Route path='/app/conversions' component={ConversionsPage} />
+          <Route path='/app/smsCampaign' component={SMSCampaignPage} />
+          <Route path='/app/smsCampaignCredit' component={SMSCampaignCreditPage} />
+          <Route path='/app/smsAddCampaignCredit' component={SMSCampaignAddCreditPage} />
+          <Route path='/app/smsCampaignPack' component={SMSCampaignPackPage} />
+          <Route path='/app/payment' component={PaymentPage} />
+          <Route path='/app/launch' component={LaunchPage} />
+          <Route path='/app/launchDetails' component={LaunchDetails} />
+          <Route path='/app/networkOverview' component={NetworkOverviewPage} />
+          <Route path='/app/mapOverview' component={MapOverviewPage} />
+          <Route path='/app/cart' component={CartPage} />
+        </Switch>
 
         <FooterComponent></FooterComponent>
       </div>

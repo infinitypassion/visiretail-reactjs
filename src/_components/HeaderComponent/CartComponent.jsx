@@ -38,7 +38,7 @@ class CartComponent extends React.Component {
   render() {
     return (
       <li className="cart">
-        <a href="javascript:void(0)" onClick={opbasket.bind(this)}>
+        <a href="javascript:void(0)" className="basket_wrap_menu" onClick={opbasket.bind(this)}>
           <div className="basket in">
             <img src={icBasketImg} alt="basket" className="img-responsive" />
             <span className="noof_item">{this.state.cartItems.length}</span>
@@ -66,7 +66,7 @@ class CartComponent extends React.Component {
               })
             }
           </ul>
-          <Link to="/app/payment" className="btn-primary">PAIEMENT</Link>
+          <Link to="/app/payment" onClick={opbasket.bind(this)} className="btn-primary">PAIEMENT</Link>
         </div>
       </li>
     );

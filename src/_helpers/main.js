@@ -1,5 +1,3 @@
-// TODO - Need to convert entire code to React
-// *******************************************************************************************************************
 /** Start CART related ********************************************************************************************** */
 export function opbasket(event) {
   event.stopPropagation();
@@ -68,33 +66,35 @@ export function closeElement(e) {
 }
 
 document.onclick = function (e) {
-  if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
-    var element = document.querySelector('.hamburger .container');
-
-    if (!(e.target === element || element.contains(e.target))) {
-      document.getElementsByClassName('hamburger')[0].classList.remove('active');
-    }
-  }
-
-  if (document.getElementsByClassName('prfile_wrap')[0].classList.contains('open')) {
-    if (!(e.target === document.getElementsByClassName('prfile_wrap')[0] || document.querySelector(".prfile_wrap").querySelectorAll(e.target.tagName).length)) {
-      document.getElementsByClassName('prfile_wrap')[0].classList.remove('open');
-    }
-  }
-
   if (document.getElementsByClassName('basket_wrap')[0].classList.contains('open')) {
-    var element = document.getElementsByClassName('basket_wrap')[0];
+    var element = document.getElementsByClassName('basket_wrap_menu')[0];
 
-    if (!(e.target === document.getElementsByClassName('basket_wrap')[0] || element.contains(e.target))) {
+    if (!(document.getElementsByClassName('basket_wrap')[0].contains(e.target) || element.contains(e.target))) {
       document.getElementsByClassName('basket_wrap')[0].classList.remove('open');
     }
   }
 
-  if (document.getElementsByClassName('notification')[0].classList.contains('active')) {
-    var element = document.getElementsByClassName('sidebar')[0];
+  if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
+    var element = document.getElementsByClassName('hamburger_menu')[0];
 
-    if (!(e.target === document.getElementsByClassName('sidebar')[0] || element.contains(e.target))) {
+    if (!(e.target === document.getElementsByClassName('hamburger')[0] || element.contains(e.target))) {
+      document.getElementsByClassName('hamburger')[0].classList.remove('active');
+    }
+  }
+
+  if (document.getElementsByClassName('notification')[0].classList.contains('active')) {
+    var element = document.getElementsByClassName('notification')[0];
+
+    if (!(element.contains(e.target))) {
       document.getElementsByClassName('notification')[0].classList.remove('active');
+    }
+  }
+
+  if (document.getElementsByClassName('prfile_wrap')[0].classList.contains('open')) {
+    var element = document.getElementsByClassName('profile')[0];
+
+    if (!(element.contains(e.target))) {
+      document.getElementsByClassName('prfile_wrap')[0].classList.remove('open');
     }
   }
 }
