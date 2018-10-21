@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { logoImg } from '../_helpers';
+import { logoImg } from '../../_helpers';
 
 import { CartComponent } from './CartComponent';
 import { Init as MenuComponentInit, Detail as MenuComponentDetail } from './MenuComponent';
@@ -34,7 +34,7 @@ class HeaderComponent extends React.Component {
                   <ul>
                     <CartComponent></CartComponent>
 
-                    {/*<li><a href="#"><div class="basket"><img src="images/ic-basket.svg" alt="basket" class="img-responsive"></div></a></li>*/}
+                    {/* <li><a href="#"><div class="basket"><img src="images/ic-basket.svg" alt="basket" class="img-responsive"></div></a></li>*/}
                     <li className="campagne_btn"><Link to="/app/launch" className="launch_btn">LANCER UNE CAMPAGNE<i className="effect" /></Link></li>
 
                     <MenuComponentInit></MenuComponentInit>

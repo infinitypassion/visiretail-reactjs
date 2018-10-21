@@ -1,7 +1,8 @@
 import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
 
-import { digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg } from '../_helpers';
-import { sidebar, close_sidebar } from '../_helpers/main';
+import { digitalisesImg, campagnesImg, medal1Img, medal1kImg, medalImg } from '../../_helpers';
+import { sidebar, close_sidebar } from '../../_helpers/main';
 
 class NotificationComponent extends React.Component {
   constructor() {
@@ -35,10 +36,7 @@ class NotificationComponent extends React.Component {
                     <h6>Points de vente <br />digitalisés</h6>
                     <div className="progress_main">
                       <span>260/358</span>
-                      <div className="progress">
-                        <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
-                        </div>
-                      </div>
+                      <ProgressBar now={73} />
                     </div>
                   </li>
                   <li>

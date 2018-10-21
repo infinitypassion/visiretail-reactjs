@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import { history } from '../_helpers';
 
@@ -15,8 +15,10 @@ class App extends React.Component {
     return (
       <Router history={history}>
         <div>
-          <Route path='/' component={PublicLayout} />
-          <Route path='/app' component={PrivateLayout} />
+          <Switch>
+            <Route path='/app' component={PrivateLayout} />
+            <Route path='/' component={PublicLayout} />
+          </Switch>
         </div>
       </Router>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg } from '../../_helpers';
-import { closeElement } from '../../_helpers/main';
+import { tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg } from '../../../_helpers';
+import { closeElement } from '../../../_helpers/main';
 
 class Detail extends React.Component {
   constructor() {

@@ -56,6 +56,8 @@ class ConversionsPage extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('mousewheel', this.mouseWheelEvent);
     window.removeEventListener('DOMMouseScroll', this.mouseWheelEvent);
+    document.getElementById('conversions').classList.remove('closed');
+    document.body.id = '';
   }
   // End -- React lifecycle methods
 
@@ -148,9 +150,7 @@ class ConversionsPage extends React.Component {
                       </TabPane>
                     </TabContent>
                   </div>
-                  {/* TODO - 
-                      1) Tab wise content is missing for mobile view
-                      2) Mobile view 
+                  {/* TODO - Tab wise content is missing for mobile view
                   */}
                   <div className="col-sm-12 col-xs-12 conversions_mobile">
                     <div className="conver_box">

@@ -3,7 +3,8 @@ import {
   sellPostion2Img,
   sellPostion3Img,
   laSemaineImg,
-  festivitiesImg
+  festivitiesImg,
+  saintValentinImg
 } from '../_helpers';
 
 export let campaignsFakeData = {
@@ -447,6 +448,22 @@ export let conversionsFakeData = {
 }
 
 // *********************************************************************************************************************
+export let headerCartFakeData = {
+  cartItems: [{
+      itemId: 0,
+      itemName: 'Fêtes de fin d’années',
+      itemImg: festivitiesImg,
+      itemQuantity: 2
+    },
+    {
+      itemId: 1,
+      itemName: 'Saint Valentin',
+      itemImg: saintValentinImg,
+      itemQuantity: 1
+    }
+  ]
+};
+
 export let cartFakeData = {
   orderData: [{
     id: 1,

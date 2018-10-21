@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { fbProfileImg } from '../_helpers';
-import { oprofile } from '../_helpers/main';
+import { fbProfileImg } from '../../_helpers';
+import { oprofile } from '../../_helpers/main';
 
 class ProfileComponent extends React.Component {
   constructor() {

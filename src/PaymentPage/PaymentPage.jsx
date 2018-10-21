@@ -3,7 +3,6 @@ import { PanelGroup, Panel } from 'react-bootstrap';
 
 import { paymentOptionImg, festivitiesImg, laSemaineImg } from '../_helpers';
 
-
 class PaymentPage extends React.Component {
   constructor() {
     super();

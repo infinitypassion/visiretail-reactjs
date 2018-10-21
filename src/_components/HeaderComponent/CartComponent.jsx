@@ -1,30 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { icBasketImg, festivitiesImg, saintValentinImg } from '../_helpers';
-
-import { opbasket } from '../_helpers/main';
+import { icBasketImg } from '../../_helpers';
+import { opbasket } from '../../_helpers/main';
+import { headerCartFakeData } from '../../_helpers/fake-data';
 
 class CartComponent extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      cartItems: [
-        {
-          itemId: 0,
-          itemName: 'Fêtes de fin d’années',
-          itemImg: festivitiesImg,
-          itemQuantity: 2
-        },
-        {
-          itemId: 1,
-          itemName: 'Saint Valentin',
-          itemImg: saintValentinImg,
-          itemQuantity: 1
-        }
-      ]
-    };
+    this.state = headerCartFakeData;
   }
 
   // Start -- React lifecycle methods

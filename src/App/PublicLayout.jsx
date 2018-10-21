@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { SlidesComponent } from '../_components';
 
@@ -17,11 +17,11 @@ class PublicLayout extends React.Component {
         <section>
           <div className="visiretail_registration section">
             <div className="row">
-              <Route path='/login' component={LoginPage} />
-              <Route path='/register' component={RegisterPage} />
-              <Route path='/thanks' component={ThanksPage} />
-
-              {/* TODO - Need to fix issue - It is viisble in http://localhost:8080/app/mapOverview */}
+              <Switch>
+                <Route path='/login' component={LoginPage} />
+                <Route path='/register' component={RegisterPage} />
+                <Route path='/thanks' component={ThanksPage} />
+              </Switch>
               <SlidesComponent></SlidesComponent>
             </div>
           </div>

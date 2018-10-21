@@ -1,20 +1,23 @@
-select{
-	appearance:none;
-	-webkit-appearance:none;
-	-moz-appearance:none;
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
+
 ::selection {
-	background:#8E54E9;
-	color:#FFFFFF;
-	text-shadow:none;
+	background: #8E54E9;
+	color: #FFFFFF;
+	text-shadow: none;
 }
+
 ::-moz-selection {
-	background:#8E54E9;
-	color:#FFFFFF;
-	text-shadow:none;
+	background: #8E54E9;
+	color: #FFFFFF;
+	text-shadow: none;
 }
-input[type=text]{
-	appearance:none;
-	-webkit-appearance:none;
-	-moz-appearance:none;
+
+input[type=text] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
