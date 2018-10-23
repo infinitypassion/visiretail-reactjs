@@ -1,4 +1,5 @@
 import React from 'react';
+import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
@@ -86,7 +87,7 @@ class HomePage extends React.Component {
   }
 
   handleDRPApplyEvent(event, picker) {
-    this.setState({ from: picker.startDate.format('DD-MM-YYYY'), to: picker.endDate.format('DD-MM-YYYY') })
+    this.setState({ from: picker.startDate.format('DD-MM-YYYY'), to: picker.endDate.format('DD-MM-YYYY') });
   }
   // End -- Custom methods
 
@@ -136,97 +137,88 @@ class HomePage extends React.Component {
                 <div className="title">
                   <h6>MES CAMPAGNES</h6>
                 </div>
-                <div className="activity_tab">
-                  <ul className="nav-tabs">
-                    <li className="active"><a data-toggle="tab" href="#en-cours1">en cours</a></li>
-                    <li><a data-toggle="tab" href="#venir1">a venir</a></li>
-                    <li><a data-toggle="tab" href="#passe1">passé</a></li>
-                  </ul>
-                  <div className="tab-content">
-                    <div id="en-cours1" className="tab-pane fade in active">
-                      <div className="activity_list">
-                        <ul>
-                          <li>
-                            <div className="activity_l">
-                              <h5>Fêtes de fin d’année</h5>
-                              <span className="date">18/12/18 - 20/01/18</span>
-                            </div>
-                            <div className="activity_r">
-                              <div className="progress_main">
-                                <div className="progress">
-                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
-                                  </div>
-                                </div>
-                                <span>73%</span>
+                <TabContainer id="slaes_activity-mobile-tab-container" defaultActiveKey="encours1">
+                  <div className="activity_tab">
+                    <Nav className="nav-tabs">
+                      <NavItem eventKey="encours1">en cours</NavItem>
+                      <NavItem eventKey="avenir1">a venir</NavItem>
+                      <NavItem eventKey="passe1">passé</NavItem>
+                    </Nav>
+
+                    <TabContent>
+                      <TabPane eventKey="encours1">
+                        <div className="activity_list">
+                          <ul>
+                            <li>
+                              <div className="activity_l">
+                                <h5>Fêtes de fin d’année</h5>
+                                <span className="date">18/12/18 - 20/01/18</span>
                               </div>
-                              <div className="outof_point">19/25</div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="activity_l">
-                              <h5>Soldes d’hiver 2018</h5>
-                              <span className="date">18/12/18 - 20/01/18</span>
-                            </div>
-                            <div className="activity_r">
-                              <div className="progress_main">
-                                <div className="progress">
-                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '44%' }}>
-                                  </div>
+                              <div className="activity_r">
+                                <div className="progress_main">
+                                  <ProgressBar now={73} />
+                                  <span>73%</span>
                                 </div>
-                                <span>44%</span>
+                                <div className="outof_point">19/25</div>
                               </div>
-                              <div className="outof_point">25/25</div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div id="venir1" className="tab-pane fade">
-                      <div className="activity_list">
-                        <ul>
-                          <li>
-                            <div className="activity_l">
-                              <h5>Soldes d’hiver 2018</h5>
-                              <span className="date">18/12/18 - 20/01/18</span>
-                            </div>
-                            <div className="activity_r">
-                              <div className="progress_main">
-                                <div className="progress">
-                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '44%' }}>
-                                  </div>
+                            </li>
+                            <li>
+                              <div className="activity_l">
+                                <h5>Soldes d’hiver 2018</h5>
+                                <span className="date">18/12/18 - 20/01/18</span>
+                              </div>
+                              <div className="activity_r">
+                                <div className="progress_main">
+                                  <ProgressBar now={44} />
+                                  <span>44%</span>
                                 </div>
-                                <span>44%</span>
+                                <div className="outof_point">25/25</div>
                               </div>
-                              <div className="outof_point">25/25</div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div id="passe1" className="tab-pane fade">
-                      <div className="activity_list">
-                        <ul>
-                          <li>
-                            <div className="activity_l">
-                              <h5>Fêtes de fin d’année</h5>
-                              <span className="date">18/12/18 - 20/01/18</span>
-                            </div>
-                            <div className="activity_r">
-                              <div className="progress_main">
-                                <div className="progress">
-                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
-                                  </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </TabPane>
+                      <TabPane eventKey="avenir1">
+                        <div className="activity_list">
+                          <ul>
+                            <li>
+                              <div className="activity_l">
+                                <h5>Soldes d’hiver 2018</h5>
+                                <span className="date">18/12/18 - 20/01/18</span>
+                              </div>
+                              <div className="activity_r">
+                                <div className="progress_main">
+                                  <ProgressBar now={44} />
+                                  <span>44%</span>
                                 </div>
-                                <span>73%</span>
+                                <div className="outof_point">25/25</div>
                               </div>
-                              <div className="outof_point">19/25</div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </TabPane>
+                      <TabPane eventKey="passe1">
+                        <div className="activity_list">
+                          <ul>
+                            <li>
+                              <div className="activity_l">
+                                <h5>Fêtes de fin d’année</h5>
+                                <span className="date">18/12/18 - 20/01/18</span>
+                              </div>
+                              <div className="activity_r">
+                                <div className="progress_main">
+                                  <ProgressBar now={73} />
+                                  <span>73%</span>
+                                </div>
+                                <div className="outof_point">19/25</div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </TabPane>
+                    </TabContent>
                   </div>
-                </div>
+                </TabContainer>
               </div>
             </div>
           </div>

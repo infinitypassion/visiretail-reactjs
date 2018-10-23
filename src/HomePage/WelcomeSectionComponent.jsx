@@ -98,10 +98,7 @@ class WelcomeSectionComponent extends React.Component {
                               </div>
                               <div className="activity_r">
                                 <div className="progress_main">
-                                  <div className="progress">
-                                    <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
-                                    </div>
-                                  </div>
+                                  <ProgressBar now={73} />
                                   <span>73%</span>
                                 </div>
                                 <div className="outof_point">19/25</div>
