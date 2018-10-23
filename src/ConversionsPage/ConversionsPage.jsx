@@ -56,6 +56,7 @@ class ConversionsPage extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('mousewheel', this.mouseWheelEvent);
     window.removeEventListener('DOMMouseScroll', this.mouseWheelEvent);
+
     document.getElementById('conversions').classList.remove('closed');
     document.body.id = '';
   }

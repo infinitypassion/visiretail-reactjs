@@ -1,70 +1,11 @@
 import React from 'react';
 
-import { sellPostion1Img, sellPostion2Img, sellPostion3Img } from '../_helpers';
+import { homeCampaignSalesTopFakeData } from '../_helpers/fake-data';
 
-// TODO - pending for review
 class SalesTopPointComponent extends React.Component {
   constructor() {
     super();
-    this.state = {
-      campaignSales: [
-        {
-          id: 1,
-          sellPostionImg: sellPostion1Img,
-          agencyName: 'Visiperf Charles de Gaulle',
-          campaignName: 'Tremblay-en-France',
-          impressions: '1 879 048',
-          clicks: '187 964',
-          conversions: '1 568',
-          budgetSpent: '35 187€',
-          costPerClick: '2,87€'
-        },
-        {
-          id: 2,
-          sellPostionImg: sellPostion2Img,
-          agencyName: 'Visiperf Charles de Gaulle',
-          campaignName: 'Tremblay-en-France',
-          impressions: '1 879 048',
-          clicks: '187 964',
-          conversions: '1 568',
-          budgetSpent: '35 187€',
-          costPerClick: '2,87€'
-        },
-        {
-          id: 3,
-          sellPostionImg: sellPostion3Img,
-          agencyName: 'Visiperf Marseille Prado',
-          campaignName: 'Marseille 13008',
-          impressions: '1 879 048',
-          clicks: '187 964',
-          conversions: '2 487',
-          budgetSpent: '35 187€',
-          costPerClick: '2,87€'
-        },
-        {
-          id: 4,
-          sellPostionNo: 4,
-          agencyName: 'Visiperf Merignac',
-          campaignName: 'Bordeaux 33700',
-          impressions: '1 879 048',
-          clicks: '187 964',
-          conversions: '1 568',
-          budgetSpent: '68 785€',
-          costPerClick: '2,87€'
-        },
-        {
-          id: 5,
-          sellPostionNo: 5,
-          agencyName: 'Visiperf Paris Menilmontant',
-          campaignName: 'Paris 75020',
-          impressions: '1 879 048',
-          clicks: '187 964',
-          conversions: '1 568',
-          budgetSpent: '35 187€',
-          costPerClick: '2,87€'
-        }
-      ]
-    };
+    this.state = homeCampaignSalesTopFakeData;
   }
 
   // Start -- React lifecycle methods
@@ -97,7 +38,10 @@ class SalesTopPointComponent extends React.Component {
                         <li key={key}>
                           <div className="sell_point_raw">
                             <div className="sell_left">
-                              <span className="sell_no"><img src={campaignSale.sellPostionImg} className="img-responsive" alt="#" /></span>
+                              {
+                                campaignSale.sellPostionImg ?
+                                  (<span className="sell_no"><img src={campaignSale.sellPostionImg} className="img-responsive" alt="#" /></span>) : (<span className="sell_no bg">{campaignSale.sellPostionNo}</span>)
+                              }f
                               <div className="sell_des">
                                 <h6>{campaignSale.agencyName}</h6>
                                 <p>{campaignSale.campaignName}</p>
