@@ -2,12 +2,13 @@ import React from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
-import { SalesTopPointComponent, StatsDetailedComponent } from '../_components';
-import { ToolTipComponent } from './ToolTipComponent';
+import { drawChart, drawRegionsMap } from '../_helpers/chart';
+
 import { WelcomeSectionComponent } from './WelcomeSectionComponent';
 import { GraphSectionComponent } from './GraphSectionComponent';
-
-import { drawChart, drawRegionsMap } from '../_helpers/chart';
+import { SalesTopPointComponent } from './SalesTopPointComponent';
+import { StatsDetailedComponent } from './StatsDetailedComponent';
+import { ToolTipComponent } from './ToolTipComponent';
 
 const DRP_LOCALE = {
   "daysOfWeek": [
@@ -62,9 +63,10 @@ class HomePage extends React.Component {
       });
     });
 
-    // drawChart();
-    // drawRegionsMap();
+    drawChart();
+    drawRegionsMap();
   }
+
   componentWillUnmount() {
     window.removeEventListener('mousewheel', this.mouseWheelEvent);
     window.removeEventListener('DOMMouseScroll', this.mouseWheelEvent);
@@ -128,6 +130,105 @@ class HomePage extends React.Component {
             <GraphSectionComponent></GraphSectionComponent>
             <SalesTopPointComponent></SalesTopPointComponent>
             <StatsDetailedComponent></StatsDetailedComponent>
+
+            <div className="col-sm-4 col-xs-12 sales_mobile">
+              <div className="slaes_activity">
+                <div className="title">
+                  <h6>MES CAMPAGNES</h6>
+                </div>
+                <div className="activity_tab">
+                  <ul className="nav-tabs">
+                    <li className="active"><a data-toggle="tab" href="#en-cours1">en cours</a></li>
+                    <li><a data-toggle="tab" href="#venir1">a venir</a></li>
+                    <li><a data-toggle="tab" href="#passe1">passé</a></li>
+                  </ul>
+                  <div className="tab-content">
+                    <div id="en-cours1" className="tab-pane fade in active">
+                      <div className="activity_list">
+                        <ul>
+                          <li>
+                            <div className="activity_l">
+                              <h5>Fêtes de fin d’année</h5>
+                              <span className="date">18/12/18 - 20/01/18</span>
+                            </div>
+                            <div className="activity_r">
+                              <div className="progress_main">
+                                <div className="progress">
+                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
+                                  </div>
+                                </div>
+                                <span>73%</span>
+                              </div>
+                              <div className="outof_point">19/25</div>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="activity_l">
+                              <h5>Soldes d’hiver 2018</h5>
+                              <span className="date">18/12/18 - 20/01/18</span>
+                            </div>
+                            <div className="activity_r">
+                              <div className="progress_main">
+                                <div className="progress">
+                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '44%' }}>
+                                  </div>
+                                </div>
+                                <span>44%</span>
+                              </div>
+                              <div className="outof_point">25/25</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="venir1" className="tab-pane fade">
+                      <div className="activity_list">
+                        <ul>
+                          <li>
+                            <div className="activity_l">
+                              <h5>Soldes d’hiver 2018</h5>
+                              <span className="date">18/12/18 - 20/01/18</span>
+                            </div>
+                            <div className="activity_r">
+                              <div className="progress_main">
+                                <div className="progress">
+                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '44%' }}>
+                                  </div>
+                                </div>
+                                <span>44%</span>
+                              </div>
+                              <div className="outof_point">25/25</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="passe1" className="tab-pane fade">
+                      <div className="activity_list">
+                        <ul>
+                          <li>
+                            <div className="activity_l">
+                              <h5>Fêtes de fin d’année</h5>
+                              <span className="date">18/12/18 - 20/01/18</span>
+                            </div>
+                            <div className="activity_r">
+                              <div className="progress_main">
+                                <div className="progress">
+                                  <div className="progress-bar  active" role="progressbar" aria-valuemin={0} aria-valuemax={100} style={{ width: '73%' }}>
+                                  </div>
+                                </div>
+                                <span>73%</span>
+                              </div>
+                              <div className="outof_point">19/25</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <ToolTipComponent></ToolTipComponent>
