@@ -41,7 +41,7 @@ class SalesTopPointComponent extends React.Component {
                               {
                                 campaignSale.sellPostionImg ?
                                   (<span className="sell_no"><img src={campaignSale.sellPostionImg} className="img-responsive" alt="#" /></span>) : (<span className="sell_no bg">{campaignSale.sellPostionNo}</span>)
-                              }f
+                              }
                               <div className="sell_des">
                                 <h6>{campaignSale.agencyName}</h6>
                                 <p>{campaignSale.campaignName}</p>

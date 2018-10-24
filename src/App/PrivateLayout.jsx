@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { HeaderComponent, FooterComponent } from '../_components';
 
 import { HomePage } from '../HomePage';
+import { PointSaleDetailPage } from '../PointSaleDetailPage';
 import { CampaignsPage, CampaignDetailPage } from '../CampaignsPage';
 import { ConversionsPage } from '../ConversionsPage';
 import { SMSCampaignPage, SMSCampaignCreditPage, SMSCampaignAddCreditPage, SMSCampaignPackPage } from '../SMSCampaignPage';
@@ -25,6 +26,7 @@ class PrivateLayout extends React.Component {
 
         <Switch>
           <Route path='/app/home' component={HomePage} />
+          <Route path='/app/pointSaleDetails' component={PointSaleDetailPage} />
           <Route path='/app/campaigns' component={CampaignsPage} />
           <Route path='/app/campaignDetails' component={CampaignDetailPage} />
           <Route path='/app/conversions' component={ConversionsPage} />
