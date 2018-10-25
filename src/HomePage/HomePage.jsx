@@ -3,6 +3,7 @@ import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 're
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
+import { graphImg } from '../_helpers';
 import { drawChart, drawRegionsMap } from '../_helpers/chart';
 
 import { WelcomeSectionComponent } from './WelcomeSectionComponent';
@@ -89,6 +90,11 @@ class HomePage extends React.Component {
   handleDRPApplyEvent(event, picker) {
     this.setState({ from: picker.startDate.format('DD-MM-YYYY'), to: picker.endDate.format('DD-MM-YYYY') });
   }
+
+  active() {
+    var element = document.getElementById("campagne_wraper");
+    element.classList.toggle("active");
+  }
   // End -- Custom methods
 
   // Render
@@ -128,9 +134,25 @@ class HomePage extends React.Component {
             </div>
 
             <WelcomeSectionComponent></WelcomeSectionComponent>
-            <GraphSectionComponent></GraphSectionComponent>
+            <div className="graph section" onClick={this.active.bind(this)}>
+              <img src={graphImg} alt="#" className="img-responsive" />
+
+              <GraphSectionComponent></GraphSectionComponent>
+            </div>
+
             <SalesTopPointComponent></SalesTopPointComponent>
-            <StatsDetailedComponent></StatsDetailedComponent>
+
+            <div className="statistiques section">
+              <div className="container">
+                <div className="title">
+                  <h6>STAT. DÉTAILLÉES </h6>
+                  <p>Ces statistiques vous permettent de mieux connaître votre cible
+                    <br />et les personnes interessées par vos produits.
+                  </p>
+                </div>
+                <StatsDetailedComponent></StatsDetailedComponent>
+              </div>
+            </div>
 
             <div className="col-sm-4 col-xs-12 sales_mobile">
               <div className="slaes_activity">

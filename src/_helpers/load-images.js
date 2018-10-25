@@ -65,6 +65,8 @@ import banner2Img from '../_assets/images/banner2.svg';
 import banner3Img from '../_assets/images/banner3.svg';
 import banner4Img from '../_assets/images/banner4.svg';
 import graphImg from '../_assets/images/graph.jpg';
+import icClicsGreenImg from '../_assets/images/ic-clics-green.svg';
+import icClicsRedImg from '../_assets/images/ic-clics-red.svg';
 
 export {
   logoImg,
@@ -133,5 +135,7 @@ export {
   banner2Img,
   banner3Img,
   banner4Img,
-  graphImg
+  graphImg,
+  icClicsGreenImg,
+  icClicsRedImg
 };
