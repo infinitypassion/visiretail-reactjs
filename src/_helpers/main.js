@@ -66,7 +66,7 @@ export function closeElement(e) {
 }
 
 document.onclick = function (e) {
-  if (document.getElementsByClassName('basket_wrap')[0].classList.contains('open')) {
+  if (document.getElementsByClassName('basket_wrap')[0] && document.getElementsByClassName('basket_wrap')[0].classList.contains('open')) {
     var element = document.getElementsByClassName('basket_wrap_menu')[0];
 
     if (!(document.getElementsByClassName('basket_wrap')[0].contains(e.target) || element.contains(e.target))) {
@@ -74,7 +74,7 @@ document.onclick = function (e) {
     }
   }
 
-  if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
+  if (document.getElementsByClassName('hamburger')[0] && document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
     var element = document.getElementsByClassName('hamburger_menu')[0];
 
     if (!(e.target === document.getElementsByClassName('hamburger')[0] || element.contains(e.target))) {
@@ -82,7 +82,7 @@ document.onclick = function (e) {
     }
   }
 
-  if (document.getElementsByClassName('notification')[0].classList.contains('active')) {
+  if (document.getElementsByClassName('notification')[0] && document.getElementsByClassName('notification')[0].classList.contains('active')) {
     var element = document.getElementsByClassName('notification')[0];
 
     if (!(element.contains(e.target))) {
@@ -90,7 +90,7 @@ document.onclick = function (e) {
     }
   }
 
-  if (document.getElementsByClassName('prfile_wrap')[0].classList.contains('open')) {
+  if (document.getElementsByClassName('prfile_wrap')[0] && document.getElementsByClassName('prfile_wrap')[0].classList.contains('open')) {
     var element = document.getElementsByClassName('profile')[0];
 
     if (!(element.contains(e.target))) {

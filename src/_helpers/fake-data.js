@@ -67,6 +67,41 @@ export let homeCampaignSalesTopFakeData = {
   ]
 };
 
+// ********************************************************************************************************************* 
+export let pointSalesFakeData = {
+  franchisees: [{
+      id: 1,
+      sellPostionImg: sellPostion1Img,
+      agencyName: 'VISIPERF',
+      custName: 'Richard Lenoir'
+    },
+    {
+      id: 2,
+      sellPostionImg: sellPostion2Img,
+      agencyName: 'VISIPERF',
+      custName: 'Richard Lenoir'
+    },
+    {
+      id: 3,
+      sellPostionImg: sellPostion3Img,
+      agencyName: 'VISIPERF',
+      custName: 'Voltaire'
+    },
+    {
+      id: 4,
+      sellPostionNo: 4,
+      agencyName: 'VISIPERF',
+      custName: 'Richard Lenoir'
+    },
+    {
+      id: 5,
+      sellPostionNo: 5,
+      agencyName: 'VISIPERF',
+      custName: 'Nation'
+    }
+  ]
+};
+
 // *********************************************************************************************************************
 export let campaignsFakeData = {
   campaigns: {

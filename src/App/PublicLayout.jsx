@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { SlidesComponent } from '../_components';
 
@@ -21,6 +21,7 @@ class PublicLayout extends React.Component {
                 <Route path='/login' component={LoginPage} />
                 <Route path='/register' component={RegisterPage} />
                 <Route path='/thanks' component={ThanksPage} />
+                <Redirect from="/" to="/login" />
               </Switch>
               <SlidesComponent></SlidesComponent>
             </div>
