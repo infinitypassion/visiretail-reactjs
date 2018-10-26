@@ -38,6 +38,8 @@ const DRP_LOCALE = {
   ],
   "firstDay": 0
 };
+
+// TODO - Need to stop scroll when model is opened
 class HomePage extends React.Component {
   constructor() {
     super();
@@ -55,7 +57,6 @@ class HomePage extends React.Component {
     window.addEventListener('mousewheel', this.mouseWheelEvent);
     window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
 
-    // TODO - need to convert into react
     $(function () {
       $("#bars li .bar").each(function (key, bar) {
         var percentage = $(this).data('percentage');
