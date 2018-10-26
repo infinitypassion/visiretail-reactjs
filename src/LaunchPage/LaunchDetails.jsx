@@ -31,6 +31,15 @@ class LaunchDetails extends React.Component {
         }
       });
     });
+
+    var element3 = document.querySelector('#demo-btn');
+    if (document.contains(element3)) {
+      $("#demo-btn").click(function () {
+        $('html, body').animate({
+          scrollTop: $(".campain_right").offset().top
+        }, 800);
+      });
+    }
   }
   // End -- React lifecycle methods
 
