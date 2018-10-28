@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack"
+    "build": "rm -rf ./dist && webpack -p"
   },
   "dependencies": {
     "bootstrap-daterangepicker": "^3.0.3",
