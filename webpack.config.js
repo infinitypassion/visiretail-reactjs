@@ -2,7 +2,8 @@ let path = require('path');
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const VISI_BASE_URL = '/visi-react/';
+const VISI_BASE_URL = '/visi-react/'; // Change this valu to deploy under subpath
+// const VISI_BASE_URL = ''; // Keep it blank if there is no need of subfolder
 
 module.exports = {
   entry: './src/index.jsx',

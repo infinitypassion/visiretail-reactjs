@@ -26,7 +26,7 @@ class RegisterPage extends React.Component {
           <span className="logo"><img src={logoImg} className="img-responsive" alt="visiretail" /> </span>
           <h1>Programmez une démonstration avec l’un de nos experts dédié</h1>
           <div className="form_main">
-            <form action={`${VISI_BASE_URL}` + "thanks"}>
+            <form action={`${VISI_BASE_URL}` + "#/thanks"}>
               <div className="form_raw">
                 <div className="form_col">
                   <label>Nom*</label>

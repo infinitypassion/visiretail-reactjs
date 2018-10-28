@@ -26,7 +26,7 @@ class LoginPage extends React.Component {
           <span className="logo"><img src={logoImg} className="img-responsive" alt="visiretail" /> </span>
           <h1>Simplifiez le déploiement de votre marketing digital</h1>
           <div className="form_main">
-            <form action={`${VISI_BASE_URL}` + "app/home"}>
+            <form action={`${VISI_BASE_URL}` + "#/app/home"}>
               <div className="form_raw">
                 <label>Username</label>
                 <input type="text" className="form-control" required />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter  as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import { history } from '../_helpers';
 
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router basename={`${VISI_BASE_URL}`}>
+      <Router history={history}>
         <div>
           <Switch>
             <Route path='/app' component={PrivateLayout} />
