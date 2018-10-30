@@ -1,12 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DateTimePicker from 'react-datetime';
+import ReactBootstrapSlider from 'react-bootstrap-slider';
 
 import { icMsgImg } from '../_helpers';
 
 class SMSCampaignPage extends React.Component {
   constructor() {
     super();
+    this.sexRange = {
+      min: 18,
+      max: 100,
+      current: 48
+    };
+
+    this.kmRange = {
+      min: 0,
+      max: 500,
+      current: 15
+    };
   }
 
   // Start -- React lifecycle methods
@@ -15,8 +27,6 @@ class SMSCampaignPage extends React.Component {
 
     window.addEventListener('mousewheel', this.mouseWheelEvent);
     window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
-
-    this.rangeSlider();
   }
 
   componentWillUnmount() {
@@ -36,76 +46,14 @@ class SMSCampaignPage extends React.Component {
     return true; // this line is only added so the whole page won't scroll in the demo
   }
 
-  rangeSlider() {
-    // TODO - Need to convert into react code
-    var range_els = document.querySelectorAll('input[type=range]'),
-      n = range_els.length,
-      style_el = document.createElement('style'),
-      styles = [],
-      track_sel = [
-        '::-moz-range-track',
-        '::-webkit-slider-runnable-track', ' /deep/ #track'],
-      thumb_sel = ['::-webkit-slider-thumb', ' /deep/ #thumb'],
-      a = ':after', b = ':before',
-      s = ['', '%', '%'];
+  sexCurrentValue(e) {
+    this.sexRange.current = e.target.value;
+    this.forceUpdate();
+  }
 
-    document.body.appendChild(style_el);
-
-    for (var i = 0; i < n; i++) {
-      styles.push('');
-
-      range_els[i].addEventListener('input', function () {
-        var idx = this.id.split('r')[1] - 1,
-          base_sel = '.js #' + this.id,
-          str = '',
-          min = this.min || 0, max = this.max || 100,
-          c_style, u, edge_w, val;
-
-        this.setAttribute('value', this.value);
-
-        if (this.classList.contains('tip')) {
-          str += base_sel + thumb_sel[0] + a + ',' +
-            base_sel + thumb_sel[1] + a +
-            '{content:"' + this.value + s[idx] + '"}';
-        }
-
-        if (this.classList.contains('fill')) {
-          if (idx == 0) {
-            c_style = getComputedStyle(this);
-            u = c_style.backgroundSize.split(' ')[0].split('px')[0];
-            edge_w = (c_style.width.split('px')[0] - u * (max - min)) / 2;
-            val = ((this.value - min) * u + edge_w) + 'px';
-          }
-          else {
-            val = this.value + '%';
-          }
-
-          if (this.classList.contains('fill-replace')) {
-            str += base_sel + track_sel[0] + '{background-size:' + val + '}';
-          }
-
-          str += base_sel + track_sel[1] + a + ',' +
-            base_sel + track_sel[2] + a + '{width:' + val + '}';
-        }
-
-        styles[idx] = str;
-        style_el.textContent = styles.join('');
-      }, false);
-    }
-
-    var slider = document.getElementsByClassName("range-slider");
-    var range = document.getElementsByClassName("range-slider__range");
-    var value = document.getElementsByClassName("range-slider__value");
-
-    for (var i = 0; i < slider.length; i++) {
-      for (var j = 0; j < value.length; j++) {
-        value[j].innerHTML = value[j].previousElementSibling.getAttribute('value');
-      }
-
-      range[i].oninput = function () {
-        this.nextElementSibling.innerHTML = this.value;
-      };
-    }
+  kmCurrentValue(e) {
+    this.kmRange.current = e.target.value;
+    this.forceUpdate();
   }
   // End -- Custom methods
 
@@ -186,12 +134,17 @@ class SMSCampaignPage extends React.Component {
                       <label>Âge</label>
                     </div>
                     <div className="schedule_r">
-                      {/* TODO - Need to check react-bootstrap-slider */}
-                      <div className="range-slider">
-                        <span>18</span>
-                        <input className="range-slider__range" type="range" defaultValue={48} min={0} max={100} />
-                        <span className="range-slider__value">0</span>
-                      </div>
+                      {/* TODO - Need to fix CSS */}
+                      <span>{this.sexRange.min}</span>
+                      <ReactBootstrapSlider
+                        value={this.sexRange.current}
+                        change={this.sexCurrentValue.bind(this)}
+                        step={1}
+                        max={this.sexRange.max}
+                        min={this.sexRange.min}
+                        orientation="horizontal"
+                        tooltip="show" />
+                      <span>{this.sexRange.current}</span>
                     </div>
                   </div>
                 </div>
@@ -231,11 +184,16 @@ class SMSCampaignPage extends React.Component {
                       <label>Proximité</label>
                     </div>
                     <div className="schedule_r">
-                      {/* TODO - Need to check react-bootstrap-slider */}
-                      <div className="range-slider km_range">
-                        <input className="range-slider__range" type="range" step={1} defaultValue={15} min={0} max={500} />
-                        <span className="range-slider__value">0</span>km
-                      </div>
+                      {/* TODO - Need to fix CSS */}
+                      <ReactBootstrapSlider
+                        value={this.kmRange.current}
+                        change={this.kmCurrentValue.bind(this)}
+                        step={1}
+                        max={this.kmRange.max}
+                        min={this.kmRange.min}
+                        orientation="horizontal"
+                        tooltip="show" />
+                      <span>{this.kmRange.current}</span>km
                     </div>
                   </div>
                 </div>

@@ -53,7 +53,6 @@ class PointSaleDetailPage extends React.Component {
     window.addEventListener('mousewheel', this.mouseWheelEvent);
     window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
 
-    // TODO - need to convert into react
     $(function () {
       $("#bars li .bar").each(function (key, bar) {
         var percentage = $(this).data('percentage');
