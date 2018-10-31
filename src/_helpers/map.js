@@ -14,8 +14,6 @@ export function loadMap() {
   ]
   var iconsLength = icons.length;
 
-  console.log('----', document.getElementById('map'))
-
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
     center: new google.maps.LatLng(48.864716, 2.349014),

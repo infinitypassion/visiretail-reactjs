@@ -29,24 +29,20 @@ class MapOverviewPage extends React.Component {
                 <div className="overview_left">
                   <h1>Overview</h1>
                   <TabContainer id="overviwe-tab-container" defaultActiveKey="map-overview">
-                    {/* TODO - Need to fix - link-cannot-appear-as-a-descendant-of-a-link */}
                     <div className="overviwe_tab">
                       <Nav className="nav-tabs">
-                        <NavItem eventKey="network-overview">
-                          <Link to="/app/networkOverview">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.112px" height="10.841px" viewBox="0.016 0.485 15.112 10.841" enableBackground="new 0.016 0.485 15.112 10.841" xmlSpace="preserve">
-                              <path d="M15.128,0.485H3.587v2.168h11.541V0.485z" />
-                              <path d="M15.128,4.821H3.587v2.168h11.541V4.821z" />
-                              <path d="M15.128,9.158H3.587v2.168h11.541V9.158z" />
-                              <path d="M2.184,0.485H0.016v2.168h2.168V0.485z" />
-                              <path d="M2.184,4.821H0.016v2.168h2.168V4.821z" />
-                              <path d="M2.184,9.158H0.016v2.168h2.168V9.158z" />
-                            </svg><span>LISTE</span>
-                          </Link>
+                        <NavItem eventKey="network-overview" href="#/app/networkOverview">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.112px" height="10.841px" viewBox="0.016 0.485 15.112 10.841" enableBackground="new 0.016 0.485 15.112 10.841" xmlSpace="preserve">
+                            <path d="M15.128,0.485H3.587v2.168h11.541V0.485z" />
+                            <path d="M15.128,4.821H3.587v2.168h11.541V4.821z" />
+                            <path d="M15.128,9.158H3.587v2.168h11.541V9.158z" />
+                            <path d="M2.184,0.485H0.016v2.168h2.168V0.485z" />
+                            <path d="M2.184,4.821H0.016v2.168h2.168V4.821z" />
+                            <path d="M2.184,9.158H0.016v2.168h2.168V9.158z" />
+                          </svg><span>LISTE</span>
                         </NavItem>
-                        <NavItem eventKey="map-overview">
-                          <Link to="/app/mapOverview">
-                            <svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
+                        <NavItem eventKey="map-overview" href="/app/mapOverview">
+                          <svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
                               <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
                               c-1.348-1.347-3.138-2.088-5.042-2.088S4.171,1.623,2.825,2.97C1.479,4.316,0.737,6.106,0.737,8.011s0.742,3.694,2.088,5.042
                               c1.347,1.346,3.137,2.088,5.042,2.088S11.561,14.398,12.908,13.053z M12.277,3.6c0.878,0.878,1.462,1.972,1.703,3.162
@@ -62,7 +58,6 @@ class MapOverviewPage extends React.Component {
                               c0.642-0.212,0.79-0.633,0.652-0.773c-0.327-0.286-0.528-0.69-0.632-1.132C1.92,5.713,2.521,4.534,3.455,3.6
                               C4.633,2.421,6.2,1.772,7.866,1.772C9.533,1.772,11.1,2.421,12.277,3.6z" />
                             </svg><span>CARTE</span>
-                          </Link>
                         </NavItem>
                       </Nav>
                     </div>

@@ -19,7 +19,6 @@ class LaunchDetails extends React.Component {
 
   // Start -- React lifecycle methods
   componentDidMount() {
-    // TODO - Need to convert into react
     $(document).ready(function () {
       $('#camain-action').hide();
       $(window).scroll(function () {

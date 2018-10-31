@@ -21,7 +21,6 @@ class ConversionsPage extends React.Component {
     window.addEventListener('mousewheel', this.mouseWheelEvent);
     window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
 
-    // TODO - Need to convert into react code
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
