@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
+import Slider from "react-slick";
 import moment from 'moment';
 
 import { pointSalesFakeData } from '../_helpers/fake-data';
@@ -36,6 +37,20 @@ const DRP_LOCALE = {
   ],
   "firstDay": 0
 };
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <button className={className} style={{ ...style }} aria-label="Next" type="button" onClick={onClick} />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <button className={className} style={{ ...style }} aria-label="Previous" type="button" onClick={onClick} />
+  );
+}
 class PointSaleDetailPage extends React.Component {
   constructor() {
     super();
@@ -44,45 +59,31 @@ class PointSaleDetailPage extends React.Component {
       from: moment().format('DD-MM-YYYY'),
       to: moment().format('DD-MM-YYYY')
     };
-  }
 
-  // Start -- React lifecycle methods
-  componentDidMount() {
-    document.body.id = 'points-sale';
+    this.nav1 = null;
+    this.nav2 = null;
 
-    window.addEventListener('mousewheel', this.mouseWheelEvent);
-    window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
-
-    $(function () {
-      $("#bars li .bar").each(function (key, bar) {
-        var percentage = $(this).data('percentage');
-        $(this).animate({
-          'height': percentage / 10 + '%'
-        }, 1000);
-      });
-    });
-
-    $('.slider').slick({
+    this.slickSliderSettings = {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       fade: true,
       draggable: false,
-      asNavFor: '.slider-nav-thumbnails',
       focusOnSelect: false
-    });
+    };
 
-    $('.slider-nav-thumbnails').slick({
+    this.slickSliderNavThumbnailsSettings = {
       slidesToShow: 4,
       slidesToScroll: 1,
-      asNavFor: '.slider',
       dots: true,
       focusOnSelect: true,
       autoplay: false,
       swipeLeft: null,
       infinite: false,
-      prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"></button>',
-      nextArrow: '<button class="slick-next" aria-label="Next" type="button"></button>',
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+      afterChange: current => console.log(current),
+      beforeChange: this.handleBeforeChange,
       responsive: [
         {
           breakpoint: 1200,
@@ -129,11 +130,30 @@ class PointSaleDetailPage extends React.Component {
             dots: true
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
+    };
+  }
+
+  // Start -- React lifecycle methods
+  componentDidMount() {
+    document.body.id = 'points-sale';
+
+    window.addEventListener('mousewheel', this.mouseWheelEvent);
+    window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
+
+    $(function () {
+      $("#bars li .bar").each(function (key, bar) {
+        var percentage = $(this).data('percentage');
+        $(this).animate({
+          'height': percentage / 10 + '%'
+        }, 1000);
+      });
     });
+
+    this.nav1 = this.slider1;
+    this.nav2 = this.slider2;
+
+    this.forceUpdate();
 
     drawChart();
     drawRegionsMap();
@@ -165,6 +185,10 @@ class PointSaleDetailPage extends React.Component {
     var element = document.getElementById("campagne_wraper");
     element.classList.toggle("active");
   }
+  handleBeforeChange(oldIndex, newIndex) {
+    console.log('bbboldIndexb==', oldIndex)
+    console.log('bbbb=newIndex=', newIndex)
+  }
   // End -- Custom methods
 
   // Render
@@ -179,7 +203,7 @@ class PointSaleDetailPage extends React.Component {
               </div>
               <div className="pointsale_slider">
                 {/* THUMBNAILS */}
-                <div className="slider-nav-thumbnails">
+                <Slider asNavFor={this.nav2} ref={slider => (this.slider1 = slider)} {...this.slickSliderNavThumbnailsSettings} className="slider-nav-thumbnails">
                   {
                     pointSalesFakeData.franchisees.map((saleData, key) => {
                       return (
@@ -197,14 +221,14 @@ class PointSaleDetailPage extends React.Component {
                       );
                     })
                   }
-                </div>
+                </Slider>
               </div>
             </div>
           </div>
 
           <div className="section">
             {/* MAIN SLIDES */}
-            <div className="slider">
+            <Slider asNavFor={this.nav1} ref={slider => (this.slider2 = slider)} {...this.slickSliderSettings} className="slider">
               {
                 pointSalesFakeData.franchisees.map((saleData, key) => {
                   return (
@@ -414,7 +438,7 @@ class PointSaleDetailPage extends React.Component {
                   );
                 })
               }
-            </div>
+            </Slider>
           </div>
         </div>
 
