@@ -12,7 +12,7 @@ html {
 
 html.Home,
 .Home body {
-	/* overflow: hidden;	 TODO - Commented as it causes issue in React SPA*/
+	overflow: hidden;
 }
 
 html,

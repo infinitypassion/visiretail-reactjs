@@ -62,6 +62,7 @@ class PointSaleDetailPage extends React.Component {
       });
     });
 
+    // TODO - Need to convert to react https://github.com/akiran/react-slick
     $('.slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,

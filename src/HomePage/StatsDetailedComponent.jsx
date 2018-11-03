@@ -1,11 +1,57 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Cell } from 'recharts';
 
 import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
+
+function CustomizedLabel(props) {
+  const { x, y, fill, value } = props;
+  return <text
+    x={x}
+    y={y}
+    dx={7}
+    dy={-4}
+    fontSize='11'
+    fill={fill}
+    textAnchor="middle">{value}</text>
+}
 
 class StatsDetailedComponent extends React.Component {
   constructor() {
     super();
+
+    this.barData = [
+      {
+        "id": 1,
+        "ageGroup": '18-24',
+        "clickCount": 242
+      },
+      {
+        "id": 2,
+        "ageGroup": '25-34',
+        "clickCount": 398
+      },
+      {
+        "id": 3,
+        "ageGroup": '35-44',
+        "clickCount": 487
+      },
+      {
+        "id": 4,
+        "ageGroup": '45-54',
+        "clickCount": 741
+      },
+      {
+        "id": 5,
+        "ageGroup": '55-64',
+        "clickCount": 512
+      },
+      {
+        "id": 6,
+        "ageGroup": '65+',
+        "clickCount": 385
+      }
+    ];
   }
 
   // Start -- React lifecycle methods
@@ -268,7 +314,7 @@ class StatsDetailedComponent extends React.Component {
                         </NavItem>
                         <NavItem eventKey="regions">
                           <svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
-                          <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
+                            <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
                               c-1.348-1.347-3.138-2.088-5.042-2.088S4.171,1.623,2.825,2.97C1.479,4.316,0.737,6.106,0.737,8.011s0.742,3.694,2.088,5.042
                               c1.347,1.346,3.137,2.088,5.042,2.088S11.561,14.398,12.908,13.053z M12.277,3.6c0.878,0.878,1.462,1.972,1.703,3.162
                               c-0.188-0.276-0.367-0.379-0.479,0.239c-0.115,1.008-1.041,0.364-1.623,0.722c-0.612-0.413-1.99,0.803-1.756-0.568
@@ -358,15 +404,31 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div id="chart">
-                              <ul id="bars">
-                                <li><div data-percentage={242} className="bar" /><span>18-24</span></li>
-                                <li><div data-percentage={398} className="bar" /><span>25-34</span></li>
-                                <li><div data-percentage={487} className="bar" /><span>35-44</span></li>
-                                <li className="high"><div data-percentage={741} className="bar" /><span>45-54</span></li>
-                                <li><div data-percentage={512} className="bar" /><span>55-64</span></li>
-                                <li><div data-percentage={385} className="bar" /><span>65+</span></li>
-                              </ul>
+                            <div style={{ 'margin-left': '5%', width: "100%", height: "100%" }}>
+                              <ResponsiveContainer width="90%" height="100%">
+                                <BarChart
+                                  data={this.barData}
+                                  margin={{ top: 10, right: 0, left: 10, bottom: 0 }}>
+                                  <XAxis
+                                    dataKey="ageGroup"
+                                    fontSize='11'
+                                    axisLine={false}
+                                    tickLine={false}
+                                    dy={0}
+                                  />
+                                  <YAxis hide />
+                                  <Bar
+                                    dataKey="clickCount"
+                                    barSize={15}
+                                    label={<CustomizedLabel />}>
+                                    {
+                                      this.barData.map((entry, index) => (
+                                        <Cell key={index} fill={this.barData[index].id === 4 ? '#3B5998' : '#D1D1D1'} />
+                                      ))
+                                    }
+                                  </Bar>
+                                </BarChart>
+                              </ResponsiveContainer>
                             </div>
                           </div>
                           <div className="spent_des">

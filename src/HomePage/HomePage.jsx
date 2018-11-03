@@ -39,7 +39,6 @@ const DRP_LOCALE = {
   "firstDay": 0
 };
 
-// TODO - Need to stop scroll when model is opened
 class HomePage extends React.Component {
   constructor() {
     super();
