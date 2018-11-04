@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Cell } from 'recharts';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Cell, PieChart, Pie, Legend } from 'recharts';
 
 import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
 
@@ -52,6 +52,11 @@ class StatsDetailedComponent extends React.Component {
         "clickCount": 385
       }
     ];
+
+    this.pieData = [{ id: 1, name: 'Hommes : 63.45%', value: 65 },
+    { id: 2, name: 'Femmes : 25.12%', value: 25 },
+    { id: 3, name: 'Inconnu : 12.06%', value: 12 }];
+    this.pieColors = ['#3B5998', '#AFBDD4', '#D1D1D1']
   }
 
   // Start -- React lifecycle methods
@@ -393,7 +398,26 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div id="piechart" />
+                            <div id="piechart">
+                            <ResponsiveContainer width="100%" height="100%">
+                              <PieChart style={{width:"60%", height:"45%"}}>
+                                <Legend layout="vertical" verticalAlign="middle" align="right" iconSize={14} iconType="circle" />
+                                <Pie
+                                  data={this.pieData}
+                                  dataKey="value" 
+                                  nameKey="name"
+                                  valueKey="value"
+                                  labelLine={false}
+                                  cx="38%" cy="45%"
+                                  outerRadius={50} 
+                                  fill="#8884d8">
+                                  {
+                                    this.pieData.map((entry, index) => <Cell key={index} fill={this.pieColors[index % this.pieColors.length]} />)
+                                  }
+                                </Pie>
+                              </PieChart>
+                            </ResponsiveContainer>
+                            </div>
                           </div>
                           <div className="spent_des">
                             <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
@@ -404,7 +428,7 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div style={{ 'margin-left': '5%', width: "100%", height: "100%" }}>
+                            <div style={{ marginLeft: '5%', width: "100%", height: "100%" }}>
                               <ResponsiveContainer width="90%" height="100%">
                                 <BarChart
                                   data={this.barData}
