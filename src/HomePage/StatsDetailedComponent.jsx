@@ -1,62 +1,123 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Cell, PieChart, Pie, Legend } from 'recharts';
+import { Chart } from 'react-google-charts';
 
 import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
-
-function CustomizedLabel(props) {
-  const { x, y, fill, value } = props;
-  return <text
-    x={x}
-    y={y}
-    dx={7}
-    dy={-4}
-    fontSize='11'
-    fill={fill}
-    textAnchor="middle">{value}</text>
-}
 
 class StatsDetailedComponent extends React.Component {
   constructor() {
     super();
 
-    this.barData = [
-      {
-        "id": 1,
-        "ageGroup": '18-24',
-        "clickCount": 242
-      },
-      {
-        "id": 2,
-        "ageGroup": '25-34',
-        "clickCount": 398
-      },
-      {
-        "id": 3,
-        "ageGroup": '35-44',
-        "clickCount": 487
-      },
-      {
-        "id": 4,
-        "ageGroup": '45-54',
-        "clickCount": 741
-      },
-      {
-        "id": 5,
-        "ageGroup": '55-64',
-        "clickCount": 512
-      },
-      {
-        "id": 6,
-        "ageGroup": '65+',
-        "clickCount": 385
-      }
+    this.geoData = [
+      ['Destination', 'Popularity'],
+      ['FR-A', 0],
+      ['FR-B', 105],
+      ['FR-C', 110],
+      ['FR-P', 115],
+      ['FR-D', 120],
+      ['FR-E', 125],
+      ['FR-F', 130],
+      ['FR-G', 140],
+      ['FR-H', 0],
+      ['FR-I', 160],
+      ['FR-Q', 175],
+      ['FR-J', 700],
+      ['FR-K', 215],
+      ['FR-L', 235],
+      ['FR-M', 255],
+      ['FR-N', 100],
+      ['FR-O', 305],
+      ['FR-R', 335],
+      ['FR-S', 365],
+      ['FR-T', 400],
+      ['FR-U', 440],
+      ['FR-V', 100]
     ];
 
-    this.pieData = [{ id: 1, name: 'Hommes : 63.45%', value: 65 },
-    { id: 2, name: 'Femmes : 25.12%', value: 25 },
-    { id: 3, name: 'Inconnu : 12.06%', value: 12 }];
-    this.pieColors = ['#3B5998', '#AFBDD4', '#D1D1D1']
+    this.geoOptions = {
+      region: 'FR',
+      displayMode: 'regions',
+      colorAxis: {
+        colors: ['#A8BFDA', '#3973B4']
+      },
+      backgroundColor: '#ffffff',
+      datalessRegionColor: '#F6F5F6',
+      defaultColor: '#f5f5f5',
+      resolution: 'provinces'
+    };
+
+    this.barData = [
+      ['AgeGroup', 'Clicks', { role: 'style' }, { role: 'annotation' }],
+      ['18-24', 242, '#D1D1D1', 242],
+      ['25-34', 398, '#D1D1D1', 398],
+      ['35-44', 487, '#D1D1D1', 487],
+      ['45-54', 741, '#3B5998', 741],
+      ['55-64', 512, '#D1D1D1', 512],
+      ['65+', 385, '#D1D1D1', 385]
+    ];
+    this.barOptions = {
+      chartArea: {
+        left: "15%",
+        top: 0,
+        width: '70%',
+        height: '40%'
+      },
+      bar: { groupWidth: '40%' },
+      legend: { position: "none" },
+      vAxis: {
+        textPosition: 'none', baselineColor: 'none',
+        ticks: []
+      },
+      hAxis: {
+        baselineColor: 'none',
+        ticks: [],
+        textStyle: {
+          fontName: 'Barlow',
+          fontSize: 11,
+          color: '#93A1AD'
+        }
+      }
+    };
+
+    this.pieData = [
+      ['Cumulative', 'Clicks'],
+      ['Hommes : 63.45%', 63],
+      ['Femmes : 25.12%', 25],
+      ['Inconnu : 12.06%', 12],
+    ];
+    this.pieOptions = {
+      pieStartAngle: 130,
+      pieSliceText: 'none',
+      tooltip: {
+        trigger: 'none'
+      },
+      sliceVisibilityThreshold: 0,
+      slices: {
+        0: {
+          color: '#3B5998'
+        },
+        1: {
+          color: '#AFBDD4'
+        },
+        2: {
+          color: '#D1D1D1'
+        },
+      },
+      legendShape: 'square',
+      legend: {
+        textStyle: {
+          color: '#6E6E6E',
+          fontName: 'Barlow',
+          fontSize: 14
+        }
+      },
+      chartArea: {
+        left: 0,
+        top: 0,
+        width: '60%',
+        height: '45%'
+      }
+    };
   }
 
   // Start -- React lifecycle methods
@@ -341,7 +402,14 @@ class StatsDetailedComponent extends React.Component {
                           <img src={countryGraphImg} className="img-responsive" alt="country" />
                         </TabPane>
                         <TabPane eventKey="regions">
-                          <div id="regions_div" style={{ width: 900, height: 500 }} />
+                          <div id="regions_div" style={{ width: 900, height: 500 }}>
+                            <Chart
+                              chartType="GeoChart"
+                              data={this.geoData}
+                              options={this.geoOptions}
+                              mapsApiKey="AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
+                            />
+                          </div>
                         </TabPane>
                       </TabContent>
                     </div>
@@ -399,24 +467,11 @@ class StatsDetailedComponent extends React.Component {
                         <div className="spent_box">
                           <div className="spent_top">
                             <div id="piechart">
-                            <ResponsiveContainer width="100%" height="100%">
-                              <PieChart style={{width:"60%", height:"45%"}}>
-                                <Legend layout="vertical" verticalAlign="middle" align="right" iconSize={14} iconType="circle" />
-                                <Pie
-                                  data={this.pieData}
-                                  dataKey="value" 
-                                  nameKey="name"
-                                  valueKey="value"
-                                  labelLine={false}
-                                  cx="38%" cy="45%"
-                                  outerRadius={50} 
-                                  fill="#8884d8">
-                                  {
-                                    this.pieData.map((entry, index) => <Cell key={index} fill={this.pieColors[index % this.pieColors.length]} />)
-                                  }
-                                </Pie>
-                              </PieChart>
-                            </ResponsiveContainer>
+                              <Chart
+                                chartType="PieChart"
+                                data={this.pieData}
+                                options={this.pieOptions}
+                              />
                             </div>
                           </div>
                           <div className="spent_des">
@@ -428,31 +483,12 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div style={{ marginLeft: '5%', width: "100%", height: "100%" }}>
-                              <ResponsiveContainer width="90%" height="100%">
-                                <BarChart
-                                  data={this.barData}
-                                  margin={{ top: 10, right: 0, left: 10, bottom: 0 }}>
-                                  <XAxis
-                                    dataKey="ageGroup"
-                                    fontSize='11'
-                                    axisLine={false}
-                                    tickLine={false}
-                                    dy={0}
-                                  />
-                                  <YAxis hide />
-                                  <Bar
-                                    dataKey="clickCount"
-                                    barSize={15}
-                                    label={<CustomizedLabel />}>
-                                    {
-                                      this.barData.map((entry, index) => (
-                                        <Cell key={index} fill={this.barData[index].id === 4 ? '#3B5998' : '#D1D1D1'} />
-                                      ))
-                                    }
-                                  </Bar>
-                                </BarChart>
-                              </ResponsiveContainer>
+                            <div style={{ marginLeft: '5%', width: "50%", height: "100%" }}>
+                              <Chart
+                                chartType="ColumnChart"
+                                data={this.barData}
+                                options={this.barOptions}
+                              />
                             </div>
                           </div>
                           <div className="spent_des">

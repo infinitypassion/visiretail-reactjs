@@ -4,7 +4,6 @@ import DateRangePicker from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
 import { pointSalesFakeData } from '../_helpers/fake-data';
-import { drawRegionsMap } from '../_helpers/chart';
 import { graphImg, icImpressionsImg, icClicsRedImg, icClicsImg, icConversionsImg, icEuroImg, rentreeScolaireImg, icClicsGreenImg, laSemaineImg, saintValentinImg } from '../_helpers';
 
 import { StatsDetailedComponent } from '../HomePage/StatsDetailedComponent';
@@ -135,8 +134,6 @@ class PointSaleDetailPage extends React.Component {
         // instead of a settings object
       ]
     });
-
-    drawRegionsMap();
   }
 
   componentWillUnmount() {

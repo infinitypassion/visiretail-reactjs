@@ -4,7 +4,6 @@ import DateRangePicker from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
 import { graphImg } from '../_helpers';
-import { drawRegionsMap } from '../_helpers/chart';
 
 import { WelcomeSectionComponent } from './WelcomeSectionComponent';
 import { GraphSectionComponent } from './GraphSectionComponent';
@@ -64,8 +63,6 @@ class HomePage extends React.Component {
         }, 1000);
       });
     });
-
-    drawRegionsMap();
   }
 
   componentWillUnmount() {
