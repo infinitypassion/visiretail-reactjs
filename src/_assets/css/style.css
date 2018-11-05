@@ -6723,6 +6723,16 @@ input[type='range']::-ms-thumb {
 	float: right;
 }
 
+#barchart {
+	position: relative;
+}
+
+#barchart div {
+	width: 100% !important;
+	height: 100px !important;
+	position: relative;
+}
+
 #piechart {
 	position: relative;
 }

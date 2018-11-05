@@ -33,7 +33,6 @@ class StatsDetailedComponent extends React.Component {
       ['FR-U', 440],
       ['FR-V', 100]
     ];
-
     this.geoOptions = {
       region: 'FR',
       displayMode: 'regions',
@@ -47,30 +46,45 @@ class StatsDetailedComponent extends React.Component {
     };
 
     this.barData = [
-      ['AgeGroup', 'Clicks', { role: 'style' }, { role: 'annotation' }],
-      ['18-24', 242, '#D1D1D1', 242],
-      ['25-34', 398, '#D1D1D1', 398],
-      ['35-44', 487, '#D1D1D1', 487],
-      ['45-54', 741, '#3B5998', 741],
-      ['55-64', 512, '#D1D1D1', 512],
-      ['65+', 385, '#D1D1D1', 385]
+      ['AgeGroup', 'Clicks', { role: 'style' }, { role: 'annotation', calc: "stringify" }],
+      ['18-24', 242, '#D1D1D1', '242'],
+      ['25-34', 398, '#D1D1D1', '398'],
+      ['35-44', 487, '#D1D1D1', '487'],
+      ['45-54', 741, '#3B5998', '741'],
+      ['55-64', 512, '#D1D1D1', '512'],
+      ['65+', 385, '#D1D1D1', '385']
     ];
     this.barOptions = {
       chartArea: {
-        left: "15%",
+        left: "5%",
         top: 0,
         width: '70%',
         height: '40%'
       },
-      bar: { groupWidth: '40%' },
+      bar: { groupWidth: '35%' },
       legend: { position: "none" },
       vAxis: {
         textPosition: 'none', baselineColor: 'none',
         ticks: []
       },
       hAxis: {
+        viewWindowMode: 'maximized',
         baselineColor: 'none',
         ticks: [],
+        textStyle: {
+          fontName: 'Barlow',
+          fontSize: 11,
+          color: '#93A1AD'
+        }
+      },
+      tooltip: {
+        trigger: 'none'
+      },
+      annotations: {
+        alwaysOutside: true,
+        boxStyle:{
+          strokeWidth:5
+        },
         textStyle: {
           fontName: 'Barlow',
           fontSize: 11,
@@ -483,7 +497,7 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div style={{ marginLeft: '5%', width: "50%", height: "100%" }}>
+                            <div id="barchart">
                               <Chart
                                 chartType="ColumnChart"
                                 data={this.barData}
