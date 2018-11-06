@@ -81,10 +81,7 @@ class StatsDetailedComponent extends React.Component {
         trigger: 'none'
       },
       annotations: {
-        alwaysOutside: true,
-        boxStyle:{
-          strokeWidth:5
-        },
+        alwaysOutside: false,
         textStyle: {
           fontName: 'Barlow',
           fontSize: 11,
