@@ -1,11 +1,134 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
+import { Chart } from 'react-google-charts';
 
 import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
 
 class StatsDetailedComponent extends React.Component {
   constructor() {
     super();
+
+    this.geoData = [
+      ['Destination', 'Popularity'],
+      ['FR-A', 0],
+      ['FR-B', 105],
+      ['FR-C', 110],
+      ['FR-P', 115],
+      ['FR-D', 120],
+      ['FR-E', 125],
+      ['FR-F', 130],
+      ['FR-G', 140],
+      ['FR-H', 0],
+      ['FR-I', 160],
+      ['FR-Q', 175],
+      ['FR-J', 700],
+      ['FR-K', 215],
+      ['FR-L', 235],
+      ['FR-M', 255],
+      ['FR-N', 100],
+      ['FR-O', 305],
+      ['FR-R', 335],
+      ['FR-S', 365],
+      ['FR-T', 400],
+      ['FR-U', 440],
+      ['FR-V', 100]
+    ];
+    this.geoOptions = {
+      region: 'FR',
+      displayMode: 'regions',
+      colorAxis: {
+        colors: ['#A8BFDA', '#3973B4']
+      },
+      backgroundColor: '#ffffff',
+      datalessRegionColor: '#F6F5F6',
+      defaultColor: '#f5f5f5',
+      resolution: 'provinces'
+    };
+
+    this.barData = [
+      ['AgeGroup', 'Clicks', { role: 'style' }, { role: 'annotation', calc: "stringify" }],
+      ['18-24', 242, '#D1D1D1', '242'],
+      ['25-34', 398, '#D1D1D1', '398'],
+      ['35-44', 487, '#D1D1D1', '487'],
+      ['45-54', 741, '#3B5998', '741'],
+      ['55-64', 512, '#D1D1D1', '512'],
+      ['65+', 385, '#D1D1D1', '385']
+    ];
+    this.barOptions = {
+      chartArea: {
+        left: "5%",
+        top: 0,
+        width: '70%',
+        height: '40%'
+      },
+      bar: { groupWidth: '35%' },
+      legend: { position: "none" },
+      vAxis: {
+        textPosition: 'none', baselineColor: 'none',
+        ticks: []
+      },
+      hAxis: {
+        viewWindowMode: 'maximized',
+        baselineColor: 'none',
+        ticks: [],
+        textStyle: {
+          fontName: 'Barlow',
+          fontSize: 11,
+          color: '#93A1AD'
+        }
+      },
+      tooltip: {
+        trigger: 'none'
+      },
+      annotations: {
+        alwaysOutside: false,
+        textStyle: {
+          fontName: 'Barlow',
+          fontSize: 11,
+          color: '#93A1AD'
+        }
+      }
+    };
+
+    this.pieData = [
+      ['Cumulative', 'Clicks'],
+      ['Hommes : 63.45%', 63],
+      ['Femmes : 25.12%', 25],
+      ['Inconnu : 12.06%', 12],
+    ];
+    this.pieOptions = {
+      pieStartAngle: 130,
+      pieSliceText: 'none',
+      tooltip: {
+        trigger: 'none'
+      },
+      sliceVisibilityThreshold: 0,
+      slices: {
+        0: {
+          color: '#3B5998'
+        },
+        1: {
+          color: '#AFBDD4'
+        },
+        2: {
+          color: '#D1D1D1'
+        },
+      },
+      legendShape: 'square',
+      legend: {
+        textStyle: {
+          color: '#6E6E6E',
+          fontName: 'Barlow',
+          fontSize: 14
+        }
+      },
+      chartArea: {
+        left: 0,
+        top: 0,
+        width: '60%',
+        height: '45%'
+      }
+    };
   }
 
   // Start -- React lifecycle methods
@@ -268,7 +391,7 @@ class StatsDetailedComponent extends React.Component {
                         </NavItem>
                         <NavItem eventKey="regions">
                           <svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
-                          <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
+                            <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
                               c-1.348-1.347-3.138-2.088-5.042-2.088S4.171,1.623,2.825,2.97C1.479,4.316,0.737,6.106,0.737,8.011s0.742,3.694,2.088,5.042
                               c1.347,1.346,3.137,2.088,5.042,2.088S11.561,14.398,12.908,13.053z M12.277,3.6c0.878,0.878,1.462,1.972,1.703,3.162
                               c-0.188-0.276-0.367-0.379-0.479,0.239c-0.115,1.008-1.041,0.364-1.623,0.722c-0.612-0.413-1.99,0.803-1.756-0.568
@@ -290,7 +413,14 @@ class StatsDetailedComponent extends React.Component {
                           <img src={countryGraphImg} className="img-responsive" alt="country" />
                         </TabPane>
                         <TabPane eventKey="regions">
-                          <div id="regions_div" style={{ width: 900, height: 500 }} />
+                          <div id="regions_div" style={{ width: 900, height: 500 }}>
+                            <Chart
+                              chartType="GeoChart"
+                              data={this.geoData}
+                              options={this.geoOptions}
+                              mapsApiKey="AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
+                            />
+                          </div>
                         </TabPane>
                       </TabContent>
                     </div>
@@ -347,7 +477,13 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div id="piechart" />
+                            <div id="piechart">
+                              <Chart
+                                chartType="PieChart"
+                                data={this.pieData}
+                                options={this.pieOptions}
+                              />
+                            </div>
                           </div>
                           <div className="spent_des">
                             <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
@@ -358,15 +494,12 @@ class StatsDetailedComponent extends React.Component {
                       <li>
                         <div className="spent_box">
                           <div className="spent_top">
-                            <div id="chart">
-                              <ul id="bars">
-                                <li><div data-percentage={242} className="bar" /><span>18-24</span></li>
-                                <li><div data-percentage={398} className="bar" /><span>25-34</span></li>
-                                <li><div data-percentage={487} className="bar" /><span>35-44</span></li>
-                                <li className="high"><div data-percentage={741} className="bar" /><span>45-54</span></li>
-                                <li><div data-percentage={512} className="bar" /><span>55-64</span></li>
-                                <li><div data-percentage={385} className="bar" /><span>65+</span></li>
-                              </ul>
+                            <div id="barchart">
+                              <Chart
+                                chartType="ColumnChart"
+                                data={this.barData}
+                                options={this.barOptions}
+                              />
                             </div>
                           </div>
                           <div className="spent_des">

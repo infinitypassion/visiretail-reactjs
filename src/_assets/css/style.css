@@ -12,7 +12,7 @@ html {
 
 html.Home,
 .Home body {
-	/* overflow: hidden;	 TODO - Commented as it causes issue in React SPA*/
+	overflow: hidden;
 }
 
 html,
@@ -6721,6 +6721,16 @@ input[type='range']::-ms-thumb {
 #date-selector {
 	width: 50%;
 	float: right;
+}
+
+#barchart {
+	position: relative;
+}
+
+#barchart div {
+	width: 100% !important;
+	height: 100px !important;
+	position: relative;
 }
 
 #piechart {

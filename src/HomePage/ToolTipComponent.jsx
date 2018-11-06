@@ -26,6 +26,7 @@ class ToolTipComponent extends React.Component {
       modal2Show: false,
       modal3Show: false
     });
+    document.getElementsByTagName('html')[0].classList.remove('Home');
   }
 
   model1NextHandleClick(e) {
@@ -68,7 +69,7 @@ class ToolTipComponent extends React.Component {
       modal3Show: false
     });
 
-    document.getElementsByTagName('html')[0].classList.add('Home');
+    document.getElementsByTagName('html')[0].classList.remove('Home');
   }
 
   model3CloseHandleClick() {

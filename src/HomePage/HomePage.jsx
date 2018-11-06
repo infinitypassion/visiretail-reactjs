@@ -4,7 +4,6 @@ import DateRangePicker from 'react-bootstrap-daterangepicker';
 import moment from 'moment';
 
 import { graphImg } from '../_helpers';
-import { drawChart, drawRegionsMap } from '../_helpers/chart';
 
 import { WelcomeSectionComponent } from './WelcomeSectionComponent';
 import { GraphSectionComponent } from './GraphSectionComponent';
@@ -39,7 +38,6 @@ const DRP_LOCALE = {
   "firstDay": 0
 };
 
-// TODO - Need to stop scroll when model is opened
 class HomePage extends React.Component {
   constructor() {
     super();
@@ -65,9 +63,6 @@ class HomePage extends React.Component {
         }, 1000);
       });
     });
-
-    drawChart();
-    drawRegionsMap();
   }
 
   componentWillUnmount() {
