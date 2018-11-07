@@ -9,10 +9,16 @@ class SalesTopPointItem extends React.Component {
   }
 
   // Start -- React lifecycle methods
+  componentWillReceiveProps(nextProps) {
+    if (this.props.isMobile && nextProps.currentTopPointSalePointId > -1 && nextProps.currentTopPointSalePointId != this.props.campaignSale.id) {
+      this.setState({ collapse: false });
+    }
+  }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
   toggle() {
+    this.props.updateCurrentTopPointSalePointId(this);
     if (this.props.isMobile) {
       this.setState({ collapse: !this.state.collapse });
     }
