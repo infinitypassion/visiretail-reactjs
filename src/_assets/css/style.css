@@ -4138,7 +4138,7 @@ tr.collapsible.active {
 }
 
 .content {
-	height: 0;
+	height: 172px;
 	overflow: hidden;
 	transition: height 0.2s ease-out;
 }
@@ -6898,6 +6898,7 @@ input[type='range']::-ms-thumb {
 	padding: 20px;
 	margin-top: 5px;
 	border-radius: 5px;
+	width: 100%;
 }
 
 .conver_title h5 {

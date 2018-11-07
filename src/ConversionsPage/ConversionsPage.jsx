@@ -20,36 +20,6 @@ class ConversionsPage extends React.Component {
 
     window.addEventListener('mousewheel', this.mouseWheelEvent);
     window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
-
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        var coll2 = document.getElementsByClassName("collapsible");
-
-        var this_element = this;
-
-        for (var j = 0; j < coll2.length; j++) {
-          if (this !== coll2[j]) {
-            coll2[j].classList.remove('active');
-            coll2[j].nextElementSibling.querySelector('.content').style.height = 0;
-          }
-        }
-
-        setTimeout(function () {
-          this_element.classList.toggle("active");
-
-          var content = this_element.nextElementSibling.querySelector('.content');
-
-          if (this_element.classList.contains('active')) {
-            content.style.height = content.scrollHeight + "px";
-          } else {
-            content.style.height = 0;
-          }
-        }, 100);
-      });
-    }
   }
 
   componentWillUnmount() {
@@ -116,7 +86,7 @@ class ConversionsPage extends React.Component {
                             {
                               this.state.myFormsConversions.map((conversion, key) => {
                                 return (
-                                  <ConversionPage key={key} conversion={conversion} />
+                                  <ConversionPage key={key} conversion={conversion} isMobile={false} />
                                 );
                               })
                             }
@@ -141,7 +111,7 @@ class ConversionsPage extends React.Component {
                             {
                               this.state.myAppealsConversions.map((conversion, key) => {
                                 return (
-                                  <ConversionPage key={key} conversion={conversion} />
+                                  <ConversionPage key={key} conversion={conversion} isMobile={false} />
                                 );
                               })
                             }
@@ -150,54 +120,28 @@ class ConversionsPage extends React.Component {
                       </TabPane>
                     </TabContent>
                   </div>
-                  {/* TODO - Tab wise content is missing for mobile view
-                  */}
+                  {/* Mobile view */}
                   <div className="col-sm-12 col-xs-12 conversions_mobile">
-                    <div className="conver_box">
-                      <div className="conver_title">
-                        <h5>Nenot Baptiste</h5>
-                        <label>Visiperf</label>
-                      </div>
-                      <div className="date">01-05-2018</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. </p>
-                      <a href="#" className="btn-primary">Répondre par e-mail</a>
-                    </div>
-                    <div className="conver_box">
-                      <div className="conver_title">
-                        <h5>Marie Rosalie</h5>
-                        <label>Orixa Média</label>
-                      </div>
-                      <div className="date">01-05-2018</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. </p>
-                      <a href="#" className="btn-primary">Répondre par e-mail</a>
-                    </div>
-                    <div className="conver_box">
-                      <div className="conver_title">
-                        <h5>Boulanger Adrien</h5>
-                        <label>Carglass</label>
-                      </div>
-                      <div className="date">01-05-2018</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. </p>
-                      <a href="#" className="btn-primary">Répondre par e-mail</a>
-                    </div>
-                    <div className="conver_box">
-                      <div className="conver_title">
-                        <h5>Bernard Clémence</h5>
-                        <label>N/R</label>
-                      </div>
-                      <div className="date">01-05-2018</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. </p>
-                      <a href="#" className="btn-primary">Répondre par e-mail</a>
-                    </div>
-                    <div className="conver_box">
-                      <div className="conver_title">
-                        <h5>Guillaume Katell</h5>
-                        <label>N/R</label>
-                      </div>
-                      <div className="date">01-05-2018</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac molestie nibh. In hac habitasse platea dictumst. Quisque pretium purus vel vehicula tincidunt. Proin ut molestie justo. Morbi at leo ac orci faucibus vehicula. Praesent porttitor egestas mauris, nec maximus ex. Sed id lobortis lorem. Suspendisse non nulla a sem efficitur cursus consectetur et neque. </p>
-                      <a href="#" className="btn-primary">Répondre par e-mail</a>
-                    </div>
+                    <TabContent>
+                      <TabPane eventKey="mes-formulaires">
+                        {
+                          this.state.myFormsConversions.map((conversion, key) => {
+                            return (
+                              <ConversionPage key={key} conversion={conversion} isMobile={true} />
+                            );
+                          })
+                        }
+                      </TabPane>
+                      <TabPane eventKey="mes-appels">
+                        {
+                          this.state.myAppealsConversions.map((conversion, key) => {
+                            return (
+                              <ConversionPage key={key} conversion={conversion} isMobile={true} />
+                            );
+                          })
+                        }
+                      </TabPane>
+                    </TabContent>
                   </div>
                 </div>
               </TabContainer>
