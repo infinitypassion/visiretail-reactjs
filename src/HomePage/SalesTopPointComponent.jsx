@@ -1,6 +1,9 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 import { homeCampaignSalesTopFakeData } from '../_helpers/fake-data';
+
+import { SalesTopPointItem } from './SalesTopPointItem';
 
 class SalesTopPointComponent extends React.Component {
   constructor() {
@@ -36,45 +39,12 @@ class SalesTopPointComponent extends React.Component {
                     this.state.campaignSales.map((campaignSale, key) => {
                       return (
                         <li key={key}>
-                          <div className="sell_point_raw">
-                            <div className="sell_left">
-                              {
-                                campaignSale.sellPostionImg ?
-                                  (<span className="sell_no"><img src={campaignSale.sellPostionImg} className="img-responsive" alt="#" /></span>) : (<span className="sell_no bg">{campaignSale.sellPostionNo}</span>)
-                              }
-                              <div className="sell_des">
-                                <h6>{campaignSale.agencyName}</h6>
-                                <p>{campaignSale.campaignName}</p>
-                              </div>
-                            </div>
-                            <div className="sell_right">
-                              <div className="sell_type">
-                                <ul>
-                                  <li>
-                                    <h6>Impressions</h6>
-                                    <p>{campaignSale.impressions}</p>
-                                  </li>
-                                  <li>
-                                    <h6>Clics</h6>
-                                    <p>{campaignSale.clicks}</p>
-                                  </li>
-                                  <li>
-                                    <h6>Conversions</h6>
-                                    <p>{campaignSale.conversions}</p>
-                                  </li>
-                                  <li>
-                                    <h6>Budget</h6>
-                                    <p>{campaignSale.budgetSpent}</p>
-                                  </li>
-                                  <li>
-                                    <h6>Coût du lead</h6>
-                                    <p className="green">{campaignSale.costPerClick}</p>
-                                  </li>
-                                </ul>
-                              </div>
-                              <a href="#">détails du point de vente</a>
-                            </div>
-                          </div>
+                          <MediaQuery query="(min-device-width: 1224px)">
+                            <SalesTopPointItem campaignSale={campaignSale} isMobile={false} />
+                          </MediaQuery>
+                          <MediaQuery query="(max-device-width: 1224px)">
+                            <SalesTopPointItem campaignSale={campaignSale} isMobile={true} />
+                          </MediaQuery>
                         </li>
                       );
                     })
