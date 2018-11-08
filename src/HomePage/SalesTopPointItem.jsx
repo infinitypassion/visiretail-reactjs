@@ -18,8 +18,8 @@ class SalesTopPointItem extends React.Component {
 
   // Start -- Custom methods
   toggle() {
-    this.props.updateCurrentTopPointSalePointId(this);
     if (this.props.isMobile) {
+      this.props.updateCurrentTopPointSalePointId(this);
       this.setState({ collapse: !this.state.collapse });
     }
   }
