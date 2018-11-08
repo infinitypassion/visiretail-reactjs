@@ -10,10 +10,16 @@ class ConversionPage extends React.Component {
   }
 
   // Start -- React lifecycle methods
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentConversionId > -1 && nextProps.currentConversionId != this.props.conversion.id) {
+      this.setState({ collapse: false });
+    }
+  }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
   toggle() {
+    this.props.updateCurrentConversionId(this);
     this.setState({ collapse: !this.state.collapse });
   }
   // End -- Custom methods

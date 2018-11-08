@@ -11,7 +11,12 @@ class ConversionsPage extends React.Component {
     super();
 
     // Load fake data
-    this.state = conversionsFakeData;
+    this.conversionsFakeData = conversionsFakeData;
+
+    this.state = {
+      currentConversionId: -1
+    }
+    this.updateCurrentConversionId = this.updateCurrentConversionId.bind(this);
   }
 
   // Start -- React lifecycle methods
@@ -38,6 +43,10 @@ class ConversionsPage extends React.Component {
     if (delta > 0) document.getElementById('conversions').classList.remove('closed');
     else document.getElementById('conversions').classList.add('closed');
     return true; // this line is only added so the whole page won't scroll in the demo
+  }
+
+  updateCurrentConversionId(event) {
+    this.setState({ currentConversionId: event.props.conversion.id })
   }
   // End -- Custom methods
 
@@ -84,9 +93,9 @@ class ConversionsPage extends React.Component {
                           </thead>
                           <tbody>
                             {
-                              this.state.myFormsConversions.map((conversion, key) => {
+                              this.conversionsFakeData.myFormsConversions.map((conversion, key) => {
                                 return (
-                                  <ConversionPage key={key} conversion={conversion} isMobile={false} />
+                                  <ConversionPage key={key} conversion={conversion} isMobile={false} currentConversionId={this.state.currentConversionId} updateCurrentConversionId={this.updateCurrentConversionId} />
                                 );
                               })
                             }
@@ -109,9 +118,9 @@ class ConversionsPage extends React.Component {
                           </thead>
                           <tbody>
                             {
-                              this.state.myAppealsConversions.map((conversion, key) => {
+                              this.conversionsFakeData.myAppealsConversions.map((conversion, key) => {
                                 return (
-                                  <ConversionPage key={key} conversion={conversion} isMobile={false} />
+                                  <ConversionPage key={key} conversion={conversion} isMobile={false} currentConversionId={this.state.currentConversionId} updateCurrentConversionId={this.updateCurrentConversionId} />
                                 );
                               })
                             }
@@ -125,18 +134,18 @@ class ConversionsPage extends React.Component {
                     <TabContent>
                       <TabPane eventKey="mes-formulaires">
                         {
-                          this.state.myFormsConversions.map((conversion, key) => {
+                          this.conversionsFakeData.myFormsConversions.map((conversion, key) => {
                             return (
-                              <ConversionPage key={key} conversion={conversion} isMobile={true} />
+                              <ConversionPage key={key} conversion={conversion} isMobile={true} currentConversionId={this.state.currentConversionId} updateCurrentConversionId={this.updateCurrentConversionId} />
                             );
                           })
                         }
                       </TabPane>
                       <TabPane eventKey="mes-appels">
                         {
-                          this.state.myAppealsConversions.map((conversion, key) => {
+                          this.conversionsFakeData.myAppealsConversions.map((conversion, key) => {
                             return (
-                              <ConversionPage key={key} conversion={conversion} isMobile={true} />
+                              <ConversionPage key={key} conversion={conversion} isMobile={true} currentConversionId={this.state.currentConversionId} updateCurrentConversionId={this.updateCurrentConversionId} />
                             );
                           })
                         }

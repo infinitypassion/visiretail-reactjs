@@ -8,13 +8,20 @@ import { SalesTopPointItem } from './SalesTopPointItem';
 class SalesTopPointComponent extends React.Component {
   constructor() {
     super();
-    this.state = homeCampaignSalesTopFakeData;
+    this.homeCampaignSalesTopFakeData = homeCampaignSalesTopFakeData;
+    this.state = {
+      currentTopPointSalePointId: -1
+    }
+    this.updateCurrentTopPointSalePointId = this.updateCurrentTopPointSalePointId.bind(this);
   }
 
   // Start -- React lifecycle methods
   // End -- React lifecycle methods
 
   // Start -- Custom methods
+  updateCurrentTopPointSalePointId(event) {
+    this.setState({ currentTopPointSalePointId: event.props.campaignSale.id })
+  }
   // End -- Custom methods
 
   // Render
@@ -36,14 +43,14 @@ class SalesTopPointComponent extends React.Component {
                 <label>Point de vente le plus performant</label>
                 <ul>
                   {
-                    this.state.campaignSales.map((campaignSale, key) => {
+                    this.homeCampaignSalesTopFakeData.campaignSales.map((campaignSale, key) => {
                       return (
                         <li key={key}>
                           <MediaQuery query="(min-device-width: 1224px)">
                             <SalesTopPointItem campaignSale={campaignSale} isMobile={false} />
                           </MediaQuery>
                           <MediaQuery query="(max-device-width: 1224px)">
-                            <SalesTopPointItem campaignSale={campaignSale} isMobile={true} />
+                            <SalesTopPointItem campaignSale={campaignSale} isMobile={true} currentTopPointSalePointId={this.state.currentTopPointSalePointId} updateCurrentTopPointSalePointId={this.updateCurrentTopPointSalePointId} />
                           </MediaQuery>
                         </li>
                       );
