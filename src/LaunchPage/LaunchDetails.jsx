@@ -71,14 +71,17 @@ class LaunchDetails extends React.Component {
             <div className="launch_campaign section">
               <div className="container">
                 <div className="row">
-                  <div className="col-sm-12 col-xs-12">
-                    <span>Lancer une campagne</span>
-                    <h1>Lancer une campagne</h1>
+                  <div className="col-sm-12 col-xs-12 ">
+                    <div className="details_tilte">
+                      <span>Lancer une campagne</span>
+                      <h1>Lancer une campagne</h1>
+                    </div>
                     <div className="description_box">
                       <div className="row">
-                        {/* <div className="col-sm-12 col-xs-12">
-                          <button id="demo-btn" style={{ float: 'left', marginTop: '-80px' }} className="btn-primary">Demo Button for jquery</button>
-                        </div> */}
+                        <div className="col-sm-12 col-xs-12">
+                          {/* <button id="demo-btn" style={{ float: 'left', marginTop: '-80px' }} className="btn-primary">Demo Button for jquery</button>*/}
+                        </div>
+
                         <div className="col-sm-3 col-xs-12 campain_left lefttSidebar">
                           <div className="campain_det">
                             <span className="cate popular">populaire</span>
