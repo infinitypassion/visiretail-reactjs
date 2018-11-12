@@ -1,8 +1,9 @@
 import React from 'react';
 import { PanelGroup, Panel, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter, Button } from 'react-bootstrap';
-import StickyBox from 'react-sticky-box';
 
 import { festivitiesImg, icGoogleImg, icBingImg, icYahooImg, icSMSImg, icWazeImg, icDisplayImg, icRemarketingImg, rentreeScolaireImg, saintValentinImg, laSemaineImg, icUserImg, icSubtractImg, lemondeImg, leboncoinImg, youTubeLogoImg, logo20MinutesBleucertisImg, cdiscountImg, banner1Img, banner2Img, banner3Img, banner4Img } from '../_helpers'
+
+import '../_helpers/theia-sticky-sidebar';
 
 class LaunchDetails extends React.Component {
   constructor() {
@@ -20,6 +21,11 @@ class LaunchDetails extends React.Component {
   // Start -- React lifecycle methods
   componentDidMount() {
     $(document).ready(function () {
+      $('.lefttSidebar')
+        .theiaStickySidebar({
+          additionalMarginTop: 100
+        });
+
       $('#camain-action').hide();
       $(window).scroll(function () {
         if ($(document).scrollTop() > 100) {
@@ -31,14 +37,14 @@ class LaunchDetails extends React.Component {
       });
     });
 
-    var element3 = document.querySelector('#demo-btn');
-    if (document.contains(element3)) {
-      $("#demo-btn").click(function () {
-        $('html, body').animate({
-          scrollTop: $(".campain_right").offset().top
-        }, 800);
-      });
-    }
+    // var element3 = document.querySelector('#demo-btn');
+    // if (document.contains(element3)) {
+    //   $("#demo-btn").click(function () {
+    //     $('html, body').animate({
+    //       scrollTop: $(".campain_right").offset().top
+    //     }, 800);
+    //   });
+    // }
   }
   // End -- React lifecycle methods
 
@@ -65,46 +71,46 @@ class LaunchDetails extends React.Component {
             <div className="launch_campaign section">
               <div className="container">
                 <div className="row">
-                  <div className="col-sm-12 col-xs-12">
-                    <span>Lancer une campagne</span>
-                    <h1>Lancer une campagne</h1>
+                  <div className="col-sm-12 col-xs-12 ">
+                    <div className="details_tilte">
+                      <span>Lancer une campagne</span>
+                      <h1>Lancer une campagne</h1>
+                    </div>
                     <div className="description_box">
                       <div className="row">
                         <div className="col-sm-12 col-xs-12">
-                          <button id="demo-btn" style={{ float: 'left', marginTop: '-80px' }} className="btn-primary">Demo Button for jquery</button>
+                          {/* <button id="demo-btn" style={{ float: 'left', marginTop: '-80px' }} className="btn-primary">Demo Button for jquery</button>*/}
                         </div>
+
                         <div className="col-sm-3 col-xs-12 campain_left lefttSidebar">
-                          {/* TODO - Need to fix sticky issue while scroll */}
-                          <StickyBox offsetTop={20} offsetBottom={20}>
-                            <div className="campain_det">
-                              <span className="cate popular">populaire</span>
-                              <div className="imgwrap">
-                                <img src={festivitiesImg} alt="#" className="img-responsive" />
-                              </div>
-                              <div className="campain_moblie section">
-                                <h2>Fête de fin d’année</h2>
-                                <span className="price purple">299,00€ TTC</span>
-                                <ul className="social_list">
-                                  <li className="checked"><span className="support_ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span></li>
-                                  <li className="checked"><span className="support_ico"><img src={icBingImg} alt="bing" className="img-responsive" /></span></li>
-                                  <li className="checked"><span className="support_ico"><img src={icYahooImg} alt="yahoo" className="img-responsive" /></span></li>
-                                  <li><span className="support_ico"><img src={icSMSImg} alt="sms" className="img-responsive" /></span></li>
-                                  <li className="checked"><span className="support_ico"><img src={icWazeImg} alt="waze" className="img-responsive" /></span></li>
-                                  <li><span className="support_ico"><img src={icDisplayImg} alt="display" className="img-responsive" /></span></li>
-                                  <li><span className="support_ico"><img src={icRemarketingImg} alt="remarketing" className="img-responsive" /></span></li>
-                                </ul>
-                                <span className="date">18/01/18 - 16/02/18</span>
-                              </div>
-                              <ul>
-                                <li><span><img src={icUserImg} className="img-responsive" alt="user" /></span>87% des franchisés ont lancé la campagne</li>
-                                <li><span><img src={icSubtractImg} className="img-responsive" alt="subtract" /></span>Il vous reste 6 jours pour profiter de cette campagne</li>
-                              </ul>
-                              <div className="camain_action" id="camain-action">
-                                <a href="#" className="btn-primary">Acheter maintenant</a>
-                                <a href="#" className="btn-primary default">Ajouter au panier</a>
-                              </div>
+                          <div className="campain_det">
+                            <span className="cate popular">populaire</span>
+                            <div className="imgwrap">
+                              <img src={festivitiesImg} alt="#" className="img-responsive" />
                             </div>
-                          </StickyBox>
+                            <div className="campain_moblie section">
+                              <h2>Fête de fin d’année</h2>
+                              <span className="price purple">299,00€ TTC</span>
+                              <ul className="social_list">
+                                <li className="checked"><span className="support_ico"><img src={icGoogleImg} alt="google" className="img-responsive" /></span></li>
+                                <li className="checked"><span className="support_ico"><img src={icBingImg} alt="bing" className="img-responsive" /></span></li>
+                                <li className="checked"><span className="support_ico"><img src={icYahooImg} alt="yahoo" className="img-responsive" /></span></li>
+                                <li><span className="support_ico"><img src={icSMSImg} alt="sms" className="img-responsive" /></span></li>
+                                <li className="checked"><span className="support_ico"><img src={icWazeImg} alt="waze" className="img-responsive" /></span></li>
+                                <li><span className="support_ico"><img src={icDisplayImg} alt="display" className="img-responsive" /></span></li>
+                                <li><span className="support_ico"><img src={icRemarketingImg} alt="remarketing" className="img-responsive" /></span></li>
+                              </ul>
+                              <span className="date">18/01/18 - 16/02/18</span>
+                            </div>
+                            <ul>
+                              <li><span><img src={icUserImg} className="img-responsive" alt="user" /></span>87% des franchisés ont lancé la campagne</li>
+                              <li><span><img src={icSubtractImg} className="img-responsive" alt="subtract" /></span>Il vous reste 6 jours pour profiter de cette campagne</li>
+                            </ul>
+                            <div className="camain_action" id="camain-action">
+                              <a href="#" className="btn-primary">Acheter maintenant</a>
+                              <a href="#" className="btn-primary default">Ajouter au panier</a>
+                            </div>
+                          </div>
                         </div>
                         <div className="col-sm-9 col-xs-12 campain_right">
                           <div className="campain_des">

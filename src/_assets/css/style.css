@@ -856,6 +856,11 @@ i.effect {
 	background: #13D60F !important;
 }
 
+.performance_nav .react-bootstrap-daterangepicker-container {
+	float: left;
+	width: 100%;
+}
+
 .tooltip_wrap {
 	background: #FFFFFF;
 	display: inline-block;
@@ -1096,10 +1101,10 @@ section {
 }
 
 .nav-toggle.active .top {
-	-webkit-transform: translateY(12px) translateX(0) rotate(45deg);
-	-ms-transform: translateY(12px) translateX(0) rotate(45deg);
-	transform: translateY(12px) translateX(0) rotate(45deg);
-	background: #FFFFFF;
+	-webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+	-ms-transform: translateY(7px) translateX(0) rotate(45deg);
+	transform: translateY(7px) translateX(0) rotate(45deg);
+	background: #333;
 }
 
 .nav-toggle.active .middle {
@@ -1111,7 +1116,7 @@ section {
 	-webkit-transform: translateY(-7px) translateX(0) rotate(-45deg);
 	-ms-transform: translateY(-7px) translateX(0) rotate(-45deg);
 	transform: translateY(-7px) translateX(0) rotate(-45deg);
-	background: #FFFFFF;
+	background: #333;
 }
 
 .nav-toggle span {
@@ -2455,13 +2460,13 @@ body.closed .notification_list {
 	margin-right: 0
 }
 
-.menu_main ul li span {
+.menu_main ul li .menu_img {
 	float: left;
 	width: 100%;
 	height: 165px;
 }
 
-.menu_main ul li span img {
+.menu_main ul li .menu_img img {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
@@ -5498,7 +5503,6 @@ input:checked~.checkmark:after {
 }
 
 .range-slider span {
-	float: left;
 	width: auto;
 	font-size: 16px;
 	color: #6E6E6E;
@@ -5513,6 +5517,13 @@ input:checked~.checkmark:after {
 .range-slider.km_range {
 	width: 38%;
 	color: #6E6E6E;
+	position: relative;
+	padding-left: 35px;
+}
+.rangekm {
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .range-slider.km_range input {
@@ -6828,7 +6839,7 @@ input[type='range']::-ms-thumb {
 }
 
 .mclick {
-	background: url(../images/purple-click.svg) no-repeat left center;
+	background: url(../images/purple-click.svg) no-repeat left top 4px;
 	background-color: transparent;
 	display: none;
 	float: left;
@@ -6839,6 +6850,7 @@ input[type='range']::-ms-thumb {
 	font-weight: 500;
 	clear: both;
 	color: #8E54E9;
+	line-height: 140%;
 
 }
 
@@ -7014,4 +7026,89 @@ input[type='range']::-ms-thumb {
 	vertical-align: middle;
 	width: 5px;
 	height: 20px;
+}
+
+.slider.slider-horizontal{
+	width: 80%;
+	margin: 0 20px;
+}
+.slider-handle{
+	background-image: none;
+	background: #00CC47;
+}
+.slider.slider-horizontal .slider-track{
+	height: 4px;
+	margin-top: -2px;
+}
+.slider-track{
+	background-image: none;
+	background: #E2E2E2;
+	box-shadow: none;
+	border-radius: 0;
+}
+.slider-selection{
+	background: #00CC47;
+	border-radius: 0;
+}
+.slider .tooltip.top{
+	display: none;
+}
+
+.timepicker .rdtPicker{
+	width: auto;
+}
+.rdtCounter .rdtBtn{
+	color: #6E6E6E;
+}
+.rdtCounter .rdtCount, .rdtPicker td,
+.rdtPicker .dow, .rdtPicker th.rdtSwitch{
+	color: #333;
+	font-size: 14px;
+}
+.rdtPicker td, .rdtPicker th{
+	line-height: 28px;
+}
+
+.rdtPicker th.rdtNext, .rdtPicker th.rdtPrev{
+	font-size: 28px;
+}
+.rdtPicker td.rdtToday::before {
+	border-bottom-color: #8e54e9 ;
+}
+.rdtPicker td.rdtActive, .rdtPicker td.rdtActive:hover{
+	background-color: #8e54e9 ;
+}
+.mcampagne_btn{
+	float: left;
+	width: auto;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	z-index: 9;
+	display: none;
+}
+.mcampagne_btn a{
+	float: left;
+	background: url(../images/ic-launch.svg) no-repeat center #8E54E9;
+	width: 55px;
+	height: 55px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	position: relative;
+}
+.mcampagne_btn a span{
+	background: #D60F0F;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	text-align: center;
+	color: #fff;
+	font-weight: 500;
 }

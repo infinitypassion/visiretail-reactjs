@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Collapse } from 'react-bootstrap';
 
 class SalesTopPointItem extends React.Component {
@@ -39,6 +39,7 @@ class SalesTopPointItem extends React.Component {
           <div className="sell_des">
             <h6>{campaignSale.agencyName}</h6>
             <p>{campaignSale.campaignName}</p>
+            <span className="mclick">{campaignSale.clicks}</span>
           </div>
         </div>
         <Collapse in={this.state.collapse}>
