@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import DateTimePicker from 'react-datetime';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
@@ -134,17 +134,18 @@ class SMSCampaignPage extends React.Component {
                       <label>Âge</label>
                     </div>
                     <div className="schedule_r">
-                      {/* TODO - Need to fix CSS */}
-                      <span>{this.sexRange.min}</span>
-                      <ReactBootstrapSlider
-                        value={this.sexRange.current}
-                        change={this.sexCurrentValue.bind(this)}
-                        step={1}
-                        max={this.sexRange.max}
-                        min={this.sexRange.min}
-                        orientation="horizontal"
-                        tooltip="show" />
-                      <span>{this.sexRange.current}</span>
+                      <div className="range-slider">
+                        <span>{this.sexRange.min}</span>
+                        <ReactBootstrapSlider
+                          value={this.sexRange.current}
+                          change={this.sexCurrentValue.bind(this)}
+                          step={1}
+                          max={this.sexRange.max}
+                          min={this.sexRange.min}
+                          orientation="horizontal"
+                          tooltip="show" />
+                        <span>{this.sexRange.current}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -184,16 +185,17 @@ class SMSCampaignPage extends React.Component {
                       <label>Proximité</label>
                     </div>
                     <div className="schedule_r">
-                      {/* TODO - Need to fix CSS */}
-                      <ReactBootstrapSlider
-                        value={this.kmRange.current}
-                        change={this.kmCurrentValue.bind(this)}
-                        step={1}
-                        max={this.kmRange.max}
-                        min={this.kmRange.min}
-                        orientation="horizontal"
-                        tooltip="show" />
-                      <span>{this.kmRange.current}</span>km
+                      <div className="range-slider km_range">
+                        <ReactBootstrapSlider
+                          value={this.kmRange.current}
+                          change={this.kmCurrentValue.bind(this)}
+                          step={1}
+                          max={this.kmRange.max}
+                          min={this.kmRange.min}
+                          orientation="horizontal"
+                          tooltip="show" />
+                        <div className="rangekm"><span>{this.kmRange.current}</span>km</div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Collapse } from 'react-bootstrap';
 
 class SalesTopPointItem extends React.Component {
@@ -9,17 +9,11 @@ class SalesTopPointItem extends React.Component {
   }
 
   // Start -- React lifecycle methods
-  componentWillReceiveProps(nextProps) {
-    if (this.props.isMobile && nextProps.currentTopPointSalePointId > -1 && nextProps.currentTopPointSalePointId != this.props.campaignSale.id) {
-      this.setState({ collapse: false });
-    }
-  }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
   toggle() {
     if (this.props.isMobile) {
-      this.props.updateCurrentTopPointSalePointId(this);
       this.setState({ collapse: !this.state.collapse });
     }
   }
@@ -39,6 +33,7 @@ class SalesTopPointItem extends React.Component {
           <div className="sell_des">
             <h6>{campaignSale.agencyName}</h6>
             <p>{campaignSale.campaignName}</p>
+            <span className="mclick">{campaignSale.clicks}</span>
           </div>
         </div>
         <Collapse in={this.state.collapse}>

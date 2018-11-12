@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 class FooterComponent extends React.Component {
   constructor() {
@@ -20,6 +20,9 @@ class FooterComponent extends React.Component {
             <p className="copy_right">visiretail ®</p>
             <p className="powered">Powered with <span /> by Visiperf</p>
           </div>
+        </div>
+        <div className="mcampagne_btn">
+          <a href="#"><span>1</span></a>
         </div>
       </footer>
     );

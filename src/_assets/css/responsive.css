@@ -756,6 +756,9 @@
 	.menu_main ul li {
 		padding: 0 1%;
 	}
+	.menu_main ul li .menu_img{
+		height: 105px;
+	}
 
 	.menu_con {
 		width: 90%;
@@ -1897,9 +1900,18 @@
 		transform: none;
 	}
 
-	.menu_main ul li span {
+	.menu_main ul li .menu_img{
 		width: 70px;
 		height: 45px;
+	}
+	.menu_main ul li span{
+		background: url(../images/sub-menu-arrow.svg) no-repeat right center;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
 	}
 
 	.performance_nav {
@@ -2006,6 +2018,7 @@
 	}
 
 	.sell_left {
+		background: url(../images/expand-arrow.svg) no-repeat right 15px center;
 		padding: 0 20px;
 		text-align: left;
 	}
@@ -2070,6 +2083,7 @@
 	}
 
 	.budget_title {
+		background: url(../images/statistiques-arrow.svg) no-repeat right 15px center;
 		float: left;
 		width: 100%;
 		padding: 20px 25px;
@@ -2627,8 +2641,27 @@
 
 	/*-------------------------*/
 
-
-
+	.instru_model.modal-open, .slide_main,
+	.sell_point_raw .sell_des p, .launch_campaign .details_tilte{
+		display: none;
+	}
+	html.Home, .Home body{
+		overflow: inherit !important; 	
+	}
+	.Home body.closed .header_btm {
+		top: 0;
+	}
+	.sell_right .sell_type ul li:nth-child(2) h6,
+	.sell_right .sell_type ul li:nth-child(2) p {
+		color: #8e54e9;
+	}
+	.budgtes_box .budeget_des ul li:nth-child(2) span,
+	.budgtes_box .budeget_des ul li:nth-child(2) strong {
+		color: #34a953;
+	}
+	.mcampagne_btn{
+		display: block;
+	}
 
 
 
@@ -4199,6 +4232,9 @@
 		font-size: 16px;
 	}
 
+	.shortly .progrss_box h5 {
+		font-size: 12px;
+	}
 	.sms_head .local_ico,
 	.sms_head .more_btn {
 		float: none;

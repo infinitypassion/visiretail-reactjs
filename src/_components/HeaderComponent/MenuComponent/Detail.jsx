@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { tableauDeBordImg, mesPointsDeVenteImg, mesCampagnesImg, facturationImg } from '../../../_helpers';
@@ -24,14 +24,15 @@ class Detail extends React.Component {
             <ul>
               <li>
                 <div className="menu_con">
-                  <span><img src={tableauDeBordImg} alt="tableau-de-bord" className="img-responsive" /></span>
+                  <div className="menu_img"><img src={tableauDeBordImg} alt="tableau-de-bord" className="img-responsive" /></div >
                   <a href="#">tableau de bord</a>
                 </div>
               </li>
               <li>
                 <div className="menu_con">
-                  <span><img src={mesPointsDeVenteImg} alt="mes points de vente" className="img-responsive" /></span>
+                  <div className="menu_img"><img src={mesPointsDeVenteImg} alt="mes points de vente" className="img-responsive" /></div>
                   <a href="#">mes points de vente</a>
+                  <span></span>
                   <ul className="has_sub">
                     <li><Link to="/app/networkOverview" onClick={closeElement.bind(this)}>Vue d’ensemble du réseau</Link></li>
                     <li><Link to="/app/pointSaleDetails" onClick={closeElement.bind(this)}>Détail par point de vente</Link></li>
@@ -40,8 +41,9 @@ class Detail extends React.Component {
               </li>
               <li>
                 <div className="menu_con">
-                  <span><img src={mesCampagnesImg} alt="mes-campagnes" className="img-responsive" /></span>
+                  <div className="menu_img"><img src={mesCampagnesImg} alt="mes-campagnes" className="img-responsive" /></div>
                   <Link to="/app/campaigns" onClick={closeElement.bind(this)}>mes campagnes</Link>
+                  <span></span>
                   <ul className="has_sub">
                     <li><Link to="/app/campaigns" onClick={closeElement.bind(this)}>Camapagnes en cours</Link></li>
                     <li><Link to="/app/campaigns" onClick={closeElement.bind(this)}>Campagnes à venir</Link></li>
@@ -52,7 +54,7 @@ class Detail extends React.Component {
               </li>
               <li>
                 <div className="menu_con">
-                  <span><img src={facturationImg} alt="facturation" className="img-responsive" /></span>
+                  <div className="menu_img"><img src={facturationImg} alt="facturation" className="img-responsive" /></div>
                   <a href="#">facturation</a>
                 </div>
               </li>
