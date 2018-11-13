@@ -174,6 +174,7 @@ class CartPage extends React.Component {
                       </ul>
                     </div>
                     <Link to="/app/payment" className="btn-primary">continuer</Link>
+                    <p className="btm_text">Si vous souhaitez acheter une campagne pour le compte d’un franchisé, merci de vous rendre sur la version desktop de Visiretail®</p>
                   </div>
                 </div>
                 <div className="col-sm-4 col-xs-12 pull-right recipients">

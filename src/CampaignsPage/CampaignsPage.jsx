@@ -25,7 +25,7 @@ class CampaignsPage extends React.Component {
   render() {
     return (
       <section>
-        <div className="main section">
+        <div className="main section mes_campagnes">
           <div className="main_wraper">
             <div className="container">
               <TabContainer id="my-campaigns-tab-container" defaultActiveKey={this.campaginState}>
