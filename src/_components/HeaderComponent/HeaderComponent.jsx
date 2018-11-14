@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MediaQuery from 'react-responsive';
 
 import { logoImg } from '../../_helpers';
 
@@ -49,7 +50,12 @@ class HeaderComponent extends React.Component {
           </div>
         </div>
 
-        <MenuComponentDetail></MenuComponentDetail>
+        <MediaQuery query="(min-device-width: 1224px)">
+          <MenuComponentDetail isMobile={false}></MenuComponentDetail>
+        </MediaQuery>
+        <MediaQuery query="(max-device-width: 1224px)">
+          <MenuComponentDetail isMobile={true}></MenuComponentDetail>
+        </MediaQuery>
 
       </header>
     );
