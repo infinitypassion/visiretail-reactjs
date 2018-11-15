@@ -1655,6 +1655,9 @@
 	.main {
 		margin-top: 90px;
 	}
+	.launch_des.main{
+		margin-top: 60px;
+	}
 
 	.main.single_sale,
 	.main.homewraper,
@@ -2019,10 +2022,18 @@
 
 	.sell_left {
 		background: url(../images/expand-arrow.svg) no-repeat right 15px center;
+		background-size: 14px;
 		padding: 0 20px;
 		text-align: left;
+		transition: all 0.25s ease 0s;
+		-webkit-transition: all 0.25s ease 0s;
+	    	-moz-transition: all 0.25s ease 0s;
 	}
 
+	.sell_point_raw.open .sell_left{
+		background: url(../images/expand-arrow-open.svg) no-repeat right 15px center;
+		background-size: 14px;
+	}
 	.sell_des {
 		width: 86%;
 		padding: 0 10px;
@@ -2084,9 +2095,18 @@
 
 	.budget_title {
 		background: url(../images/statistiques-arrow.svg) no-repeat right 15px center;
+		background-size: 14px;
 		float: left;
 		width: 100%;
 		padding: 20px 25px;
+		transition: all 0.25s ease 0s;
+		-webkit-transition: all 0.25s ease 0s;
+	    	-moz-transition: all 0.25s ease 0s;
+	}
+
+	.budgtes_box.open .budget_title{
+		background: url(../images/statistiques-arrow-open.svg) no-repeat right 15px center;
+		background-size: 14px;
 	}
 
 	.budgtes_box h3 {
@@ -2500,7 +2520,8 @@
 
 
 	.description_box {
-		padding: 100px 0 40px;
+		padding: 0;
+		margin: 0;
 		background: transparent;
 	}
 
@@ -2571,7 +2592,7 @@
 	}
 
 	.campain_det ul {
-		padding-top: 5px;
+		padding: 5px 15px 0;
 	}
 
 	.campain_moblie .date {
@@ -2598,8 +2619,12 @@
 		width: 100%;
 	}
 
-	.conversions_tab ul li {
+	.conversions_wraper .conversions_tab ul li{
 		width: 50%;
+	}
+	.conversions_tab ul li {
+		width: 33%;
+
 	}
 
 	.conversions_tab .nav-tabs li a {
@@ -2628,6 +2653,12 @@
 		display: block;
 	}
 
+	p.btm_text{
+		padding-top: 20px;	
+		font-style: italic;
+		text-align: center;
+		display: block;
+	}
 	.cart_mobile .summery_list label,
 	.cart_mobile .summery_list p {
 		width: auto;
@@ -2642,7 +2673,8 @@
 	/*-------------------------*/
 
 	.instru_model.modal-open, .slide_main,
-	.sell_point_raw .sell_des p, .launch_campaign .details_tilte{
+	.sell_point_raw .sell_des p, .launch_campaign .details_tilte,
+	.mes_campagnes h1{
 		display: none;
 	}
 	html.Home, .Home body{
@@ -2661,6 +2693,15 @@
 	}
 	.mcampagne_btn{
 		display: block;
+	}
+	.campain_left {
+		padding: 0;
+	}
+	.campain_moblie{
+		padding: 30px 15px 0;
+	}
+	.campain_left .camain_action{
+		padding: 30px 15px 0;
 	}
 
 
@@ -3259,9 +3300,9 @@
 
 
 
-	.campain_left {
-		padding-right: 15px;
-	}
+
+
+
 
 	.campain_det ul li span {
 		top: -3px;
@@ -3276,7 +3317,7 @@
 	}
 
 	.campain_right {
-		padding: 40px 15px 0;
+		padding: 20px 15px 0;
 	}
 
 	.camain_action .btn-primary {
@@ -4257,9 +4298,10 @@
 
 
 
-	.campain_left {
-		padding-right: 15px;
-	}
+
+
+
+
 
 	.campain_det ul li span {
 		top: -3px;

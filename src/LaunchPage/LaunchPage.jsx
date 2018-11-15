@@ -309,6 +309,9 @@ class LaunchPage extends React.Component {
                     </div>
                   </a>
                 </div>
+                <div className="col-sm-12 col-xs-12">
+                  <p className="btm_text">Si vous souhaitez acheter une campagne SMS , merci de vous rendre sur la version desktop de Visiretail®</p>
+                </div>
               </div>
             </div>
           </div>

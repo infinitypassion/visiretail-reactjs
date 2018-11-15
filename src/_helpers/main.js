@@ -66,6 +66,10 @@ export function closeElement(e) {
 }
 
 document.onclick = function (e) {
+  if (e.target.parentNode && (e.target.parentNode.id == 'menu-mes-point' || e.target.parentNode.id == 'menu-mes-campaign-point')) {
+    return;
+  }
+
   if (document.getElementsByClassName('basket_wrap')[0] && document.getElementsByClassName('basket_wrap')[0].classList.contains('open')) {
     var element = document.getElementsByClassName('basket_wrap_menu')[0];
 

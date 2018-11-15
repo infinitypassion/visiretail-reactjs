@@ -1935,7 +1935,8 @@ ul {
 	font-size: 13px;
 }
 
-#facebook .statistiques_con .progress-bar {
+#facebook .statistiques_con .progress-bar,
+#statistiques-tab-container-pane-facebook .statistiques_con .progress-bar {
 	background: linear-gradient(0deg, #3B5998, #3B5998);
 }
 
@@ -5031,7 +5032,7 @@ h1.bread_crumb span {
 	border: none;
 }
 
-.mescon_list tr td {
+.mescon_list table tr td {
 	padding: 15px 0;
 	font-size: 15px;
 	font-weight: 500;
@@ -6912,7 +6913,17 @@ input[type='range']::-ms-thumb {
 	border-radius: 5px;
 	width: 100%;
 }
-
+.conversions_head{
+	float: left;
+	width: 100%;
+	height: auto;
+	background: url(../images/expand-arrow.svg) no-repeat right 15px bottom;
+	background-size: 14px;
+}
+.conver_box.open .conversions_head{
+	background: url(../images/expand-arrow-open.svg) no-repeat right 15px bottom;
+	background-size: 14px;
+}
 .conver_title h5 {
 	background: url(../images/ic-mail.svg) no-repeat left center;
 	padding: 0 0 0 25px;
@@ -6932,6 +6943,11 @@ input[type='range']::-ms-thumb {
 	font-size: 13px;
 }
 
+.conversions_body{
+	float: left;
+	width: 100%;
+	height: auto;
+}
 .conver_box p {
 	font-size: 14px;
 	padding-top: 10px;
@@ -7092,16 +7108,21 @@ input[type='range']::-ms-thumb {
 	background: url(../images/ic-launch.svg) no-repeat center #8E54E9;
 	width: 55px;
 	height: 55px;
+	line-height: 50px;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 	border-radius: 100px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	position: relative;
+	transition: all 0.25s ease 0s;
+	-webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
 }
 .mcampagne_btn a span{
 	background: #D60F0F;
 	width: 20px;
 	height: 20px;
+	line-height: 18px;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -7109,6 +7130,10 @@ input[type='range']::-ms-thumb {
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	text-align: center;
+	font-size: 12px;
 	color: #fff;
 	font-weight: 500;
+}
+p.btm_text{
+	display: none;
 }

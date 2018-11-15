@@ -30,7 +30,7 @@ class SalesTopPointItem extends React.Component {
     const campaignSale = this.props.campaignSale;
 
     return (
-      <div className="sell_point_raw">
+      <div className={this.state.collapse ? "sell_point_raw open" : "sell_point_raw"}>
         <div className="sell_left" onClick={this.toggle}>
           {
             campaignSale.sellPostionImg ?

@@ -67,7 +67,7 @@ class LaunchDetails extends React.Component {
     return (
       <React.Fragment>
         <section>
-          <div className="main section">
+          <div className="launch_des main section">
             <div className="launch_campaign section">
               <div className="container">
                 <div className="row">

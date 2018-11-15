@@ -1,8 +1,10 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
 import { Chart } from 'react-google-charts';
+import MediaQuery from 'react-responsive';
 
 import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
+import { GoolgleStatItem } from './GoogleStatItem';
 
 class StatsDetailedComponent extends React.Component {
   constructor() {
@@ -129,9 +131,91 @@ class StatsDetailedComponent extends React.Component {
         height: '45%'
       }
     };
+
+    this.googleStatFakeData = [{
+      id: 1,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 2,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 3,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 4,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 5,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 6,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 7,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 8,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }, {
+      id: 9,
+      mClick: '10 971',
+      impressions: '179 971',
+      clicks: '10 971',
+      conversions: 25,
+      budgetSpent: '299,00€',
+      costOfLead: '1,084€'
+    }];
+
+    this.state = {
+      currentGoogleStatId: -1
+    }
+    this.updateCurrentGoogleStatId = this.updateCurrentGoogleStatId.bind(this);
   }
 
   // Start -- React lifecycle methods
+  updateCurrentGoogleStatId(event) {
+    this.setState({ currentGoogleStatId: event.props.googleStatData.id })
+  }
   // End -- React lifecycle methods
 
   // Start -- Custom methods
@@ -161,213 +245,20 @@ class StatsDetailedComponent extends React.Component {
                     <ProgressBar bsClass="budeget_data" label="1 787,59€" />
                   </ProgressBar>
                   <div className="row google_budgtes">
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">1</span>
-                          <h3>Référencement local</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">2</span>
-                          <h3>Transformation digitale</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">3</span>
-                          <h3>Campagnes marketing</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">4</span>
-                          <h3>Store Locator</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">5</span>
-                          <h3>Display Local</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">6</span>
-                          <h3>Seo Local</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">7</span>
-                          <h3>Remarketing</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">8</span>
-                          <h3>Campagnes Locales</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-4 col-xs-12">
-                      <div className="budgtes_box">
-                        <div className="budget_title">
-                          <span className="number">9</span>
-                          <h3>Drive To Store</h3>
-                          <label className="mclick">10 971</label>
-                        </div>
-                        <div className="budget_type">
-                          <span className="impressions">179 971</span>
-                          <span className="clics">10 971</span>
-                          <span className="conversions">25</span>
-                        </div>
-                        <div className="budeget_des">
-                          <ul>
-                            <li><span>impressions</span><strong>179 971</strong></li>
-                            <li><span>clics</span><strong>10 971</strong></li>
-                            <li><span>conversions</span><strong>25</strong></li>
-                            <li><span>Budget dépensé</span><strong>299,00€</strong></li>
-                            <li><span>Coût du lead</span><strong>1,084€</strong></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    {
+                      this.googleStatFakeData.map((googleStatData, key) => {
+                        return (
+                          <div className="col-sm-4 col-xs-12" key={key}>
+                            <MediaQuery query="(min-device-width: 1224px)">
+                              <GoolgleStatItem googleStatData={googleStatData} isMobile={false} />
+                            </MediaQuery>
+                            <MediaQuery query="(max-device-width: 1224px)">
+                              <GoolgleStatItem googleStatData={googleStatData} isMobile={true} currentGoogleStatId={this.state.currentGoogleStatId} updateCurrentGoogleStatId={this.updateCurrentGoogleStatId} />
+                            </MediaQuery>
+                          </div>
+                        );
+                      })
+                    }
                   </div>
                 </div>
               </TabPane>

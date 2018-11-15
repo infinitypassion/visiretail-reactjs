@@ -57,13 +57,14 @@ class ConversionPage extends React.Component {
       );
     } else {
       return (
-        <div className="conver_box">
+        <div className={this.state.collapse ? "conver_box open" : "conver_box"}>
           <div className="conversions_head" onClick={this.toggle}>
             <div className="conver_title">
               <h5>{this.props.conversion.name + ' ' + this.props.conversion.firstName}</h5>
               <label>{this.props.conversion.society}</label>
             </div>
             <div className="date">{this.props.conversion.dt}</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere sollicitudin pharetra. Mauris augue erat, efficitur et volutpat ac, sagittis id nibh. Integer quis erat iaculis, viverra sem at, posuere lorem. </p>
           </div>
           <Collapse in={this.state.collapse}>
             <div className="conversions_body">
