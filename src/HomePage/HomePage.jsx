@@ -120,7 +120,7 @@ class HomePage extends React.Component {
                     <li><a href="#">le mois dernier</a></li>
                     <li><a href="#">la semaine dernière</a></li>
                     <li>
-                      <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
+                      <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
                         <a>personnalisé...</a>
                       </DateRangePicker>
                     </li>
