@@ -5,18 +5,28 @@ import { ProgressBar, Table } from 'react-bootstrap';
 import { icGoogleImg, icFacebookImg, playButtonImg } from '../_helpers';
 import { campaignDetailFakeData } from '../_helpers/fake-data';
 
+import { CampaignDetailItem } from './CampaignDetailItem';
+
 class CampaignDetailPage extends React.Component {
   constructor() {
     super();
 
     // Load fake data
-    this.state = campaignDetailFakeData;
+    this.campaignDetailFakeData = campaignDetailFakeData;
+
+    this.state = {
+      currentId: -1
+    };
+    this.updateCurrentId = this.updateCurrentId.bind(this);
   }
 
   // Start -- React lifecycle methods
   // End -- React lifecycle methods
 
   // Start -- Custom methods
+  updateCurrentId(event) {
+    this.setState({ currentId: event.props.campaignDetail.id })
+  }
   // End -- Custom methods
 
   // Render
@@ -28,14 +38,14 @@ class CampaignDetailPage extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-sm-6 col-xs-12">
-                  <h1 className="bread_crumb"><Link to="/app/campaigns">Mes Campagnes</Link><span>{this.state.campaign.campaignName}</span></h1>
+                  <h1 className="bread_crumb"><Link to="/app/campaigns">Mes Campagnes</Link><span>{this.campaignDetailFakeData.campaign.campaignName}</span></h1>
                 </div>
                 <div className="col-sm-6 col-xs-12">
                   <div className="campagne_advance">
                     <div className="progress_main">
                       <h6>Avancée</h6>
-                      <ProgressBar now={this.state.campaign.advanced} />
-                      <span>{this.state.campaign.advancedStr}</span>
+                      <ProgressBar now={this.campaignDetailFakeData.campaign.advanced} />
+                      <span>{this.campaignDetailFakeData.campaign.advancedStr}</span>
                     </div>
                   </div>
                 </div>
@@ -44,49 +54,49 @@ class CampaignDetailPage extends React.Component {
                 <ul className="purple">
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.activeFranchise}<sup>/{this.state.campaign.totalFranchise}</sup></h2>
+                      <h2>{this.campaignDetailFakeData.campaign.activeFranchise}<sup>/{this.campaignDetailFakeData.campaign.totalFranchise}</sup></h2>
                       <h5>franchisés actifs</h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.impressions}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.impressions}</h2>
                       <h5>impressions</h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.clicks}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.clicks}</h2>
                       <h5>clics</h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.conversions}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.conversions}</h2>
                       <h5>conversions</h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.google.budget}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.google.budget}</h2>
                       <h5>budget google<span><img src={icGoogleImg} className="img-responsive" alt="google" /></span></h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.facebook.budget}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.facebook.budget}</h2>
                       <h5>budget facebook<span><img src={icFacebookImg} className="img-responsive" alt="facebook" /></span></h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.costPerClick}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.costPerClick}</h2>
                       <h5>coût du clic</h5>
                     </div>
                   </li>
                   <li>
                     <div className="databox">
-                      <h2>{this.state.campaign.budgetSpent}</h2>
+                      <h2>{this.campaignDetailFakeData.campaign.budgetSpent}</h2>
                       <h5>total dépensé</h5>
                     </div>
                   </li>
@@ -110,23 +120,9 @@ class CampaignDetailPage extends React.Component {
                     </thead>
                     <tbody>
                       {
-                        this.state.campaign.franchisees.map((f, key) => {
+                        this.campaignDetailFakeData.campaign.franchisees.map((f, key) => {
                           return (
-                            <tr key={key}>
-                              <td>
-                                {
-                                  f.sellPostionImg ?
-                                    (<span className="number nbg"><img src={f.sellPostionImg} className="img-responsive" alt="#" /></span>) : (<span className="number">{f.sellPostionNo}</span>)
-                                }
-                              </td>
-                              <td>{f.name}</td>
-                              <td>{f.impressions}</td>
-                              <td>{f.clicks}</td>
-                              <td>{f.conversions}</td>
-                              <td>{f.budget}</td>
-                              <td>{f.leadCost}</td>
-                              <td><a href="#" /></td>
-                            </tr>
+                            <CampaignDetailItem campaignDetail={f} isMobile={false} key={key} />
                           );
                         })
                       }
@@ -137,49 +133,9 @@ class CampaignDetailPage extends React.Component {
                   <label>Point de vente le plus performant</label>
                   <ul>
                     {
-                      this.state.campaign.franchisees.map((f, key) => {
+                      this.campaignDetailFakeData.campaign.franchisees.map((f, key) => {
                         return (
-                          <li key={key}>
-                            <div className="sell_point_raw">
-                              <div className="sell_left">
-                                {
-                                  f.sellPostionImg ?
-                                    (<span className="sell_no"><img src={f.sellPostionImg} className="img-responsive" alt="#" /></span>) : (<span className="sell_no bg">{f.sellPostionNo}</span>)
-                                }
-                                <div className="sell_des">
-                                  <h6>{f.name}</h6>
-                                  <span className="mclick">{f.mClicks}</span>
-                                </div>
-                              </div>
-                              <div className="sell_right">
-                                <div className="sell_type">
-                                  <ul>
-                                    <li>
-                                      <h6>Impressions</h6>
-                                      <p>{f.impressions}</p>
-                                    </li>
-                                    <li>
-                                      <h6>Clics</h6>
-                                      <p>{f.clicks}</p>
-                                    </li>
-                                    <li>
-                                      <h6>Conversions</h6>
-                                      <p>{f.conversions}</p>
-                                    </li>
-                                    <li>
-                                      <h6>Budget</h6>
-                                      <p>{f.budget}</p>
-                                    </li>
-                                    <li>
-                                      <h6>Coût du lead</h6>
-                                      <p className="green">{f.leadCost}</p>
-                                    </li>
-                                  </ul>
-                                </div>
-                                <a href="#">détails du point de vente</a>
-                              </div>
-                            </div>
-                          </li>
+                          <CampaignDetailItem campaignDetail={f} isMobile={true} currentId={this.state.currentId} updateCurrentId={this.updateCurrentId} key={key} />
                         );
                       })
                     }
