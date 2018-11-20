@@ -1,18 +1,136 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { TabContainer, Nav, NavItem, Table } from 'react-bootstrap';
 
 import { playButtonImg, sellPostion1Img, sellPostion2Img, sellPostion3Img } from '../_helpers';
 
+import { NetworkOverviewItem } from './NetworkOverviewItem';
+
 class NetworkOverviewPage extends React.Component {
   constructor() {
     super();
+    this.netwworkOverviewFakeData = [{
+      id: 1,
+      name: 'richard lenoir',
+      sellPostionImg: sellPostion1Img,
+      impressions: '879 698',
+      clicks: 9871,
+      conversions: 248,
+      budget: '35 187€',
+      costOfLead: '2,87€'
+    }, {
+      id: 2,
+      name: 'charonne',
+      sellPostionImg: sellPostion2Img,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 3,
+      name: 'voltaire',
+      sellPostionImg: sellPostion3Img,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 4,
+      name: 'nation',
+      sellPostionNo: 4,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 5,
+      name: 'cadet',
+      sellPostionNo: 5,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 6,
+      name: 'belleville',
+      sellPostionNo: 6,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 7,
+      name: 'etoile',
+      sellPostionNo: 7,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 8,
+      name: 'saint-germain-des-prés',
+      sellPostionNo: 8,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 9,
+      name: 'vincennes',
+      sellPostionNo: 9,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 10,
+      sellPostionNo: 10,
+      name: 'saint-mandé',
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 11,
+      name: 'boulogne',
+      sellPostionNo: 11,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }, {
+      id: 12,
+      name: 'sèvres',
+      sellPostionNo: 12,
+      impressions: '789 241',
+      clicks: 8726,
+      conversions: 230,
+      budget: '35 000€',
+      costOfLead: '2,95€'
+    }];
+
+    this.state = {
+      currentId: -1
+    }
+    this.updateCurrentId = this.updateCurrentId.bind(this);
   }
 
   // Start -- React lifecycle methods
   // End -- React lifecycle methods
 
   // Start -- Custom methods
+  updateCurrentId(event) {
+    this.setState({ currentId: event.props.networkOverview.id })
+  }
   // End -- Custom methods
 
   // Render
@@ -43,7 +161,7 @@ class NetworkOverviewPage extends React.Component {
                           </NavItem>
                           <NavItem eventKey="map-overview" href="#/app/mapOverview">
                             <svg version="1.1" width="14.259px" height="14.259px" viewBox="0.737 0.882 14.259 14.259" enableBackground="new 0.737 0.882 14.259 14.259" xmlSpace="preserve">
-                                <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
+                              <path d="M12.908,13.053c1.346-1.348,2.088-3.138,2.088-5.042s-0.742-3.694-2.088-5.041
                                 c-1.348-1.347-3.138-2.088-5.042-2.088S4.171,1.623,2.825,2.97C1.479,4.316,0.737,6.106,0.737,8.011s0.742,3.694,2.088,5.042
                                 c1.347,1.346,3.137,2.088,5.042,2.088S11.561,14.398,12.908,13.053z M12.277,3.6c0.878,0.878,1.462,1.972,1.703,3.162
                                 c-0.188-0.276-0.367-0.379-0.479,0.239c-0.115,1.008-1.041,0.364-1.623,0.722c-0.612-0.413-1.99,0.803-1.756-0.568
@@ -57,7 +175,7 @@ class NetworkOverviewPage extends React.Component {
                                 c0.288-0.132,0.451-0.296,0.174-0.506c-0.215-0.642-1.088-1.502-1.855-1.38c-0.398-0.687-0.66-1.443-0.772-2.235
                                 c0.642-0.212,0.79-0.633,0.652-0.773c-0.327-0.286-0.528-0.69-0.632-1.132C1.92,5.713,2.521,4.534,3.455,3.6
                                 C4.633,2.421,6.2,1.772,7.866,1.772C9.533,1.772,11.1,2.421,12.277,3.6z" />
-                                </svg><span>CARTE</span>
+                            </svg><span>CARTE</span>
                           </NavItem>
                         </Nav>
                       </div>
@@ -110,360 +228,26 @@ class NetworkOverviewPage extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><span className="number nbg"><img src={sellPostion1Img} className="img-responsive" alt="#" /></span></td>
-                        <td>richard lenoir</td>
-                        <td>879 698</td>
-                        <td>9871</td>
-                        <td>248</td>
-                        <td>35 187€</td>
-                        <td>2,87€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number nbg"><img src={sellPostion2Img} className="img-responsive" alt="#" /></span></td>
-                        <td>charonne</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number nbg"><img src={sellPostion3Img} className="img-responsive" alt="#" /></span></td>
-                        <td>voltaire</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">4</span></td>
-                        <td>nation</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">5</span></td>
-                        <td>cadet</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">6</span></td>
-                        <td>belleville</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">7</span></td>
-                        <td>etoile</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">8</span></td>
-                        <td>saint-germain-des-prés</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">9</span></td>
-                        <td>vincennes</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">10</span></td>
-                        <td>saint-mandé</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">11</span></td>
-                        <td>boulogne</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
-                      <tr>
-                        <td><span className="number">12</span></td>
-                        <td>sèvres</td>
-                        <td>789 241</td>
-                        <td>8726</td>
-                        <td>230</td>
-                        <td>35 000€</td>
-                        <td>2,95€</td>
-                        <td><a href="#" /></td>
-                      </tr>
+                      {
+                        this.netwworkOverviewFakeData.map((networkOverview, key) => {
+                          return (
+                            <NetworkOverviewItem networkOverview={networkOverview} isMobile={false} key={key} />
+                          );
+                        })
+                      }
                     </tbody>
                   </Table>
                 </div>
                 <div className="selling_list Mobile section">
                   <label>Point de vente le plus performant</label>
                   <ul>
-                    <li>
-                      <div className="sell_point_raw">
-                        <div className="sell_left">
-                          <span className="sell_no"><img src={sellPostion1Img} className="img-responsive" alt="#" /></span>
-                          <div className="sell_des">
-                            <h6>richard lenoir</h6>
-                            <span className="mclick">890 479</span>
-                          </div>
-                        </div>
-                        <div className="sell_right">
-                          <div className="sell_type">
-                            <ul>
-                              <li>
-                                <h6>Impressions</h6>
-                                <p>1 879 048</p>
-                              </li>
-                              <li>
-                                <h6>Clics</h6>
-                                <p>187 964</p>
-                              </li>
-                              <li>
-                                <h6>Conversions</h6>
-                                <p>1 568</p>
-                              </li>
-                              <li>
-                                <h6>Budget</h6>
-                                <p>35 187€</p>
-                              </li>
-                              <li>
-                                <h6>Coût du lead</h6>
-                                <p className="green">2,87€</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <a href="#">détails du point de vente</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="sell_point_raw">
-                        <div className="sell_left">
-                          <span className="sell_no"><img src={sellPostion2Img} className="img-responsive" alt="#" /></span>
-                          <div className="sell_des">
-                            <h6>Charonne</h6>
-                            <span className="mclick">741 320</span>
-                          </div>
-                        </div>
-                        <div className="sell_right">
-                          <div className="sell_type">
-                            <ul>
-                              <li>
-                                <h6>Impressions</h6>
-                                <p>1 879 048</p>
-                              </li>
-                              <li>
-                                <h6>Clics</h6>
-                                <p>187 964</p>
-                              </li>
-                              <li>
-                                <h6>Conversions</h6>
-                                <p>1 568</p>
-                              </li>
-                              <li>
-                                <h6>Budget</h6>
-                                <p>35 187€</p>
-                              </li>
-                              <li>
-                                <h6>Coût du lead</h6>
-                                <p>2,87€</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <a href="#">détails du point de vente</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="sell_point_raw">
-                        <div className="sell_left">
-                          <span className="sell_no"><img src={sellPostion3Img} className="img-responsive" alt="#" /></span>
-                          <div className="sell_des">
-                            <h6>Voltaire</h6>
-                            <span className="mclick">622 387</span>
-                          </div>
-                        </div>
-                        <div className="sell_right">
-                          <div className="sell_type">
-                            <ul>
-                              <li>
-                                <h6>Impressions</h6>
-                                <p>1 879 048</p>
-                              </li>
-                              <li>
-                                <h6>Clics</h6>
-                                <p>187 964</p>
-                              </li>
-                              <li>
-                                <h6>Conversions</h6>
-                                <p className="green">2 487</p>
-                              </li>
-                              <li>
-                                <h6>Budget</h6>
-                                <p>35 187€</p>
-                              </li>
-                              <li>
-                                <h6>Coût du lead</h6>
-                                <p>2,87€</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <a href="#">détails du point de vente</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="sell_point_raw">
-                        <div className="sell_left">
-                          <span className="sell_no bg">4</span>
-                          <div className="sell_des">
-                            <h6>Nation</h6>
-                            <span className="mclick">410 333</span>
-                          </div>
-                        </div>
-                        <div className="sell_right">
-                          <div className="sell_type">
-                            <ul>
-                              <li>
-                                <h6>Impressions</h6>
-                                <p>1 879 048</p>
-                              </li>
-                              <li>
-                                <h6>Clics</h6>
-                                <p>187 964</p>
-                              </li>
-                              <li>
-                                <h6>Conversions</h6>
-                                <p>1 568</p>
-                              </li>
-                              <li>
-                                <h6>Budget</h6>
-                                <p className="green">68 785€</p>
-                              </li>
-                              <li>
-                                <h6>Coût du lead</h6>
-                                <p>2,87€</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <a href="#">détails du point de vente</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="sell_point_raw">
-                        <div className="sell_left">
-                          <span className="sell_no bg">5</span>
-                          <div className="sell_des">
-                            <h6>Cadet</h6>
-                            <span className="mclick">405 910</span>
-                          </div>
-                        </div>
-                        <div className="sell_right">
-                          <div className="sell_type">
-                            <ul>
-                              <li>
-                                <h6>Impressions</h6>
-                                <p>1 879 048</p>
-                              </li>
-                              <li>
-                                <h6>Clics</h6>
-                                <p>405 910</p>
-                              </li>
-                              <li>
-                                <h6>Conversions</h6>
-                                <p>1 568</p>
-                              </li>
-                              <li>
-                                <h6>Budget</h6>
-                                <p>35 187€</p>
-                              </li>
-                              <li>
-                                <h6>Coût du lead</h6>
-                                <p>2,87€</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <a href="#">détails du point de vente</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="sell_point_raw">
-                        <div className="sell_left">
-                          <span className="sell_no bg">6</span>
-                          <div className="sell_des">
-                            <h6>Belleville</h6>
-                            <span className="mclick">405 910</span>
-                          </div>
-                        </div>
-                        <div className="sell_right">
-                          <div className="sell_type">
-                            <ul>
-                              <li>
-                                <h6>Impressions</h6>
-                                <p>1 879 048</p>
-                              </li>
-                              <li>
-                                <h6>Clics</h6>
-                                <p>405 910</p>
-                              </li>
-                              <li>
-                                <h6>Conversions</h6>
-                                <p>1 568</p>
-                              </li>
-                              <li>
-                                <h6>Budget</h6>
-                                <p>35 187€</p>
-                              </li>
-                              <li>
-                                <h6>Coût du lead</h6>
-                                <p>2,87€</p>
-                              </li>
-                            </ul>
-                          </div>
-                          <a href="#">détails du point de vente</a>
-                        </div>
-                      </div>
-                    </li>
+                    {
+                      this.netwworkOverviewFakeData.map((networkOverview, key) => {
+                        return (
+                          <NetworkOverviewItem networkOverview={networkOverview} isMobile={true} currentId={this.state.currentId} updateCurrentId={this.updateCurrentId} key={key} />
+                        );
+                      })
+                    }
                   </ul>
                   <a href="#" className="more">Voir tous mes points de vente</a>
                 </div>

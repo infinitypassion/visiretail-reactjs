@@ -56,7 +56,8 @@ class StatsDetailedComponent extends React.Component {
       ['55-64', 512, '#D1D1D1', '512'],
       ['65+', 385, '#D1D1D1', '385']
     ];
-    this.barOptions = {
+
+    this.verticalBarOptions = {
       chartArea: {
         left: "5%",
         top: 0,
@@ -84,6 +85,42 @@ class StatsDetailedComponent extends React.Component {
       },
       annotations: {
         alwaysOutside: false,
+        textStyle: {
+          fontName: 'Barlow',
+          fontSize: 11,
+          color: '#93A1AD'
+        }
+      }
+    };
+
+    this.horizontalBarOptions = {
+      chartArea: {
+        left: "10%",
+        top: 0,
+        width: '60%',
+        height: '50%'
+      },
+      bar: { groupWidth: '50%' },
+      legend: { position: "none" },
+      hAxis: {
+        textPosition: 'none', baselineColor: 'none',
+        ticks: []
+      },
+      vAxis: {
+        viewWindowMode: 'maximized',
+        baselineColor: 'none',
+        ticks: [],
+        textStyle: {
+          fontName: 'Barlow',
+          fontSize: 11,
+          color: '#93A1AD'
+        }
+      },
+      tooltip: {
+        trigger: 'none'
+      },
+      annotations: {
+        alwaysOutside: true,
         textStyle: {
           fontName: 'Barlow',
           fontSize: 11,
@@ -386,11 +423,20 @@ class StatsDetailedComponent extends React.Component {
                         <div className="spent_box">
                           <div className="spent_top">
                             <div id="barchart">
-                              <Chart
-                                chartType="ColumnChart"
-                                data={this.barData}
-                                options={this.barOptions}
-                              />
+                              <MediaQuery query="(min-device-width: 1224px)">
+                                <Chart
+                                  chartType="ColumnChart"
+                                  data={this.barData}
+                                  options={this.verticalBarOptions}
+                                />
+                              </MediaQuery>
+                              <MediaQuery query="(max-device-width: 1224px)">
+                                <Chart
+                                  chartType="BarChart"
+                                  data={this.barData}
+                                  options={this.horizontalBarOptions}
+                                />
+                              </MediaQuery>
                             </div>
                           </div>
                           <div className="spent_des">
