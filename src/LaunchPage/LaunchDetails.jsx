@@ -1,5 +1,7 @@
 import React from 'react';
 import { PanelGroup, Panel, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter, Button } from 'react-bootstrap';
+import Slider from 'react-slick';
+import MediaQuery from 'react-responsive';
 
 import { festivitiesImg, icGoogleImg, icBingImg, icYahooImg, icSMSImg, icWazeImg, icDisplayImg, icRemarketingImg, rentreeScolaireImg, saintValentinImg, laSemaineImg, icUserImg, icSubtractImg, lemondeImg, leboncoinImg, youTubeLogoImg, logo20MinutesBleucertisImg, cdiscountImg, banner1Img, banner2Img, banner3Img, banner4Img } from '../_helpers'
 
@@ -15,6 +17,15 @@ class LaunchDetails extends React.Component {
     this.state = {
       activePanelKey: '',
       modalShow: false
+    };
+
+    this.slickSettings = {
+      dots: true,
+      infinite: true,
+      adaptiveHeight: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1
     };
   }
 
@@ -140,13 +151,26 @@ class LaunchDetails extends React.Component {
                           </div>
                           <div className="campaign_raw broadcast_campaign">
                             <h6>Quelques sites sur lesquels cette campagne sera diffusée</h6>
-                            <ul>
-                              <li><a href="#" target="_blank"><img src={lemondeImg} alt="lemonde" className="img-responsive" /></a></li>
-                              <li><a href="#" target="_blank"><img src={leboncoinImg} alt="Leboncoin" className="img-responsive" /></a></li>
-                              <li><a href="#" target="_blank"><img src={youTubeLogoImg} alt="YouTube" className="img-responsive" /></a></li>
-                              <li><a href="#" target="_blank"><img src={logo20MinutesBleucertisImg} alt="20minutes-bleucertis" className="img-responsive" /></a></li>
-                              <li><a href="#" target="_blank"><img src={cdiscountImg} alt="cdiscount" className="img-responsive" /></a></li>
-                            </ul>
+                            <MediaQuery query="(min-device-width: 1224px)">
+                              <ul>
+                                <li><a href="#" target="_blank"><img src={lemondeImg} alt="lemonde" className="img-responsive" /></a></li>
+                                <li><a href="#" target="_blank"><img src={leboncoinImg} alt="Leboncoin" className="img-responsive" /></a></li>
+                                <li><a href="#" target="_blank"><img src={youTubeLogoImg} alt="YouTube" className="img-responsive" /></a></li>
+                                <li><a href="#" target="_blank"><img src={logo20MinutesBleucertisImg} alt="20minutes-bleucertis" className="img-responsive" /></a></li>
+                                <li><a href="#" target="_blank"><img src={cdiscountImg} alt="cdiscount" className="img-responsive" /></a></li>
+                              </ul>
+                            </MediaQuery>
+                            <MediaQuery query="(max-device-width: 1224px)">
+                              <ul>
+                                <Slider {...this.slickSettings}>
+                                  <li><a href="#" target="_blank"><img src={lemondeImg} alt="lemonde" className="img-responsive" /></a></li>
+                                  <li><a href="#" target="_blank"><img src={leboncoinImg} alt="Leboncoin" className="img-responsive" /></a></li>
+                                  <li><a href="#" target="_blank"><img src={youTubeLogoImg} alt="YouTube" className="img-responsive" /></a></li>
+                                  <li><a href="#" target="_blank"><img src={logo20MinutesBleucertisImg} alt="20minutes-bleucertis" className="img-responsive" /></a></li>
+                                  <li><a href="#" target="_blank"><img src={cdiscountImg} alt="cdiscount" className="img-responsive" /></a></li>
+                                </Slider>
+                              </ul>
+                            </MediaQuery>
                           </div>
                           <div className="campaign_raw">
                             <h6>Cette campagne comprend</h6>
