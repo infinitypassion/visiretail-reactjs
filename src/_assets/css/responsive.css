@@ -34,6 +34,11 @@
 		padding: 0 25px;
 	}
 
+	.daterange{
+		margin: 2px 0 0;
+	}
+
+
 	.progress {
 		width: 44px;
 	}
@@ -229,6 +234,10 @@
 
 	.menu_con {
 		width: 90%;
+	}
+
+	.daterange{
+		margin: 2px 2% 0 0;
 	}
 
 
@@ -1919,7 +1928,7 @@
 
 	.performance_nav {
 		width: 100%;
-		padding-top: 45px;
+		padding-top: 75px;
 	}
 
 	.performance_nav h5 {
@@ -1957,6 +1966,14 @@
 		width: 100%;
 		text-align: center;
 		margin: 0;
+		position: fixed;
+		left: 0;
+		top: 0;
+		padding: 10px 15px;
+		transform: translateY(60px);
+		z-index: 9;
+		background: #fff;
+		border-bottom: 1px solid #dbdbdb;
 	}
 
 	.daterange .for_date {
@@ -1984,7 +2001,7 @@
 		background-size: 16px;
 		width: 16px;
 		height: 20px;
-		top: 12px;
+		top: 20px;
 		border: none;
 	}
 
@@ -2706,6 +2723,24 @@
 
 
 
+	.daterangepicker {
+		left: 0 !important;
+		right: 0 !important;
+		top: 465px !important;
+		width: 92% !important;
+		margin: 0 auto;
+	}
+	.daterangepicker .drp-calendar{
+		width: 100%;
+		max-width: inherit;
+	}
+	.daterangepicker .drp-calendar.left{
+		padding: 10px;
+	}
+
+
+
+
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -2916,7 +2951,7 @@
 
 
 	.daterange {
-		padding: 0 10%;
+		padding: 10px 10%;
 	}
 
 
@@ -3193,13 +3228,6 @@
 		margin: 800px 0 0;
 	}
 
-	.daterangepicker {
-		left: inherit !important;
-		right: 15px !important;
-		top: 230px !important;
-		width: 402px !important;
-	}
-
 	.daterangepicker .calendar-table th,
 	.daterangepicker .calendar-table td {
 		width: 26px;
@@ -3219,11 +3247,6 @@
 	.drp-buttons {
 		margin-top: 10px;
 	}
-
-	body.closed .daterangepicker {
-		top: 42px !important;
-	}
-
 	.copy_right {
 		float: left;
 	}
@@ -4179,12 +4202,7 @@
 		margin: 800px 0 0;
 	}
 
-	.daterangepicker {
-		left: inherit !important;
-		right: 0 !important;
-		top: 265px !important;
-		width: 330px !important;
-	}
+
 
 	.daterangepicker .calendar-table th,
 	.daterangepicker .calendar-table td {
@@ -4209,10 +4227,6 @@
 
 	.drp-buttons {
 		margin-top: 10px;
-	}
-
-	body.closed .daterangepicker {
-		top: 42px !important;
 	}
 
 	.copy_right {
@@ -4343,6 +4357,12 @@
 
 	.campaign_raw {
 		padding-top: 30px;
+	}
+	.campaign_raw .slick-slide{
+		margin: 0 5px;
+	}
+	.campaign_raw .slick-arrow{
+		display: none !important;
 	}
 
 	.campaign_raw .panel-title a {
@@ -4709,10 +4729,6 @@
 	.activity_l {
 		width: 40%;
 		padding-right: 12px;
-	}
-
-	.daterangepicker {
-		right: 15px !important;
 	}
 
 	.databox {
