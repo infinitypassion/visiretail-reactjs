@@ -1,6 +1,7 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
+import MediaQuery from 'react-responsive';
 import moment from 'moment';
 
 import { graphImg } from '../_helpers';
@@ -120,9 +121,16 @@ class HomePage extends React.Component {
                     <li><a href="#">le mois dernier</a></li>
                     <li><a href="#">la semaine dernière</a></li>
                     <li>
-                      <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
-                        <a>personnalisé...</a>
-                      </DateRangePicker>
+                      <MediaQuery query="(min-device-width: 1224px)">
+                        <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
+                          <a>personnalisé...</a>
+                        </DateRangePicker>
+                      </MediaQuery>
+                      <MediaQuery query="(max-device-width: 1224px)">
+                        <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
+                          <a>personnalisé...</a>
+                        </DateRangePicker>
+                      </MediaQuery>
                     </li>
                   </ul>
                 </div>
