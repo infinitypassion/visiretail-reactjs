@@ -6917,11 +6917,11 @@ input[type='range']::-ms-thumb {
 	float: left;
 	width: 100%;
 	height: auto;
-	background: url(../images/expand-arrow.svg) no-repeat right 15px bottom;
+	background: url(../images/expand-arrow.svg) no-repeat right 15px top 30px;
 	background-size: 14px;
 }
 .conver_box.open .conversions_head{
-	background: url(../images/expand-arrow-open.svg) no-repeat right 15px bottom;
+	background: url(../images/expand-arrow-open.svg) no-repeat right 15px top 30px;
 	background-size: 14px;
 }
 .conver_title h5 {

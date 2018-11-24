@@ -2115,6 +2115,7 @@
 		background-size: 14px;
 		float: left;
 		width: 100%;
+		height: auto;
 		padding: 20px 25px;
 		transition: all 0.25s ease 0s;
 		-webkit-transition: all 0.25s ease 0s;
@@ -2722,7 +2723,9 @@
 	}
 
 
-
+	.drp-calendar.right {
+	  	display: none !important;
+	}
 	.daterangepicker {
 		left: 0 !important;
 		right: 0 !important;

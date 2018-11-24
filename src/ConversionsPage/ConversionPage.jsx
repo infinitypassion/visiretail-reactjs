@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Collapse } from 'react-bootstrap';
 
 class ConversionPage extends React.Component {
@@ -64,7 +64,7 @@ class ConversionPage extends React.Component {
               <label>{this.props.conversion.society}</label>
             </div>
             <div className="date">{this.props.conversion.dt}</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere sollicitudin pharetra.</p>
+          {/*   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </div>
           <Collapse in={this.state.collapse}>
             <div className="conversions_body">

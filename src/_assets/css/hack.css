@@ -22,12 +22,6 @@ input[type=text] {
 	-moz-appearance: none;
 }
 
-/* TODO - need to move to responsive.css */
-.drp-calendar.right {
-  	display: none !important;
-}
-.drp-calendar.left {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-}
+
+
+
