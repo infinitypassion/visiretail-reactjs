@@ -228,6 +228,17 @@ class PointSaleDetailPage extends React.Component {
                             </div>
                           </div>
                           <div className="budget_main section">
+                            <div className="daterange">
+                              <input style={{ display: 'none' }} type="text" defaultValue="personnalisé..." className="daterangepicker2" />
+                              <div className="for_date">
+                                <h6>Début</h6>
+                                <label className="from">{this.state.from}</label>
+                              </div>
+                              <div className="for_date">
+                                <h6>Fin</h6>
+                                <label className="to">{this.state.to}</label>
+                              </div>
+                            </div>
                             <div className="performance_nav">
                               <ul>
                                 <li><a href="#">l’an dernier</a></li>
@@ -241,17 +252,18 @@ class PointSaleDetailPage extends React.Component {
                                 </li>
                               </ul>
                             </div>
-                            <div className="daterange">
-                              <input style={{ display: 'none' }} type="text" defaultValue="personnalisé..." className="daterangepicker2" />
-                              <div className="for_date">
-                                <h6>Début</h6>
-                                <label className="from">{this.state.from}</label>
-                              </div>
-                              <div className="for_date">
-                                <h6>Fin</h6>
-                                <label className="to">{this.state.to}</label>
-                              </div>
-                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
                           </div>
                           <h6>Activité <span>Les 6 derniers mois</span></h6>
                         </div>

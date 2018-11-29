@@ -3,7 +3,7 @@ import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 're
 import { Chart } from 'react-google-charts';
 import MediaQuery from 'react-responsive';
 
-import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg } from '../_helpers';
+import { icGoogleImg, icFacebookImg, countryGraphImg, clicksImg, icClicsImg, impressionsImg, icImpressionsImg, icCtrImg, icPorteeImg, porteeImg, icGenreImg, icCumulImg, icMoyenImg, coutMoyenImg, icClickMobileImg, icImpressionsMobileImg } from '../_helpers';
 import { GoolgleStatItem } from './GoogleStatItem';
 
 class StatsDetailedComponent extends React.Component {
@@ -362,7 +362,7 @@ class StatsDetailedComponent extends React.Component {
                             <h3>987</h3>
                           </div>
                           <div className="spent_des">
-                            <h5><i><img src={icClicsImg} alt="Clics" className="img-responsive" /></i>Clics</h5>
+                            <h5><i><img src={icClickMobileImg} alt="Clics" className="img-responsive" /></i>Clics</h5>
                             <p>Think of reach as the number of unique people who see your content. In a perfect world.	</p>
                           </div>
                         </div>
@@ -374,7 +374,7 @@ class StatsDetailedComponent extends React.Component {
                             <h3>19 785</h3>
                           </div>
                           <div className="spent_des">
-                            <h5><i><img src={icImpressionsImg} alt="Impressions" className="img-responsive" /></i>Impressions</h5>
+                            <h5><i><img src={icImpressionsMobileImg} alt="Impressions" className="img-responsive" /></i>Impressions</h5>
                             <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
                           </div>
                         </div>
