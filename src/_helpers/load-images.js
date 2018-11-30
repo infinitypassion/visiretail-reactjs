@@ -67,6 +67,8 @@ import banner4Img from '../_assets/images/banner4.svg';
 import graphImg from '../_assets/images/graph.jpg';
 import icClicsGreenImg from '../_assets/images/ic-clics-green.svg';
 import icClicsRedImg from '../_assets/images/ic-clics-red.svg';
+import icClickMobileImg from '../_assets/images/ic-click-mobile.svg';
+import icImpressionsMobileImg from '../_assets/images/ic-impressions-mobile.svg';
 
 export {
   logoImg,
@@ -137,5 +139,7 @@ export {
   banner4Img,
   graphImg,
   icClicsGreenImg,
-  icClicsRedImg
+  icClicsRedImg,
+  icClickMobileImg,
+  icImpressionsMobileImg
 };

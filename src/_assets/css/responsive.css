@@ -101,6 +101,12 @@
 		padding: 15px 40px 0;
 	}
 
+	.campaign_raw .slick-slide{
+		margin: 0 5px;
+	}
+	.campaign_raw .slick-arrow{
+		display: none !important;
+	}
 	.campagne_wraper .campagne_main {
 		padding: 70px 5% 50px;
 	}
@@ -441,6 +447,12 @@
 		padding: 15px 0 0 40px;
 	}
 
+	.campaign_raw .slick-slide{
+		margin: 0 5px;
+	}
+	.campaign_raw .slick-arrow{
+		display: none !important;
+	}
 
 	h1.bread_crumb {
 		font-size: 28px;
@@ -1213,6 +1225,17 @@
 
 	.campain_right {
 		padding: 15px 35px 0;
+	}
+
+	.campaign_raw{
+		padding-top: 40px;
+	}
+
+	.campaign_raw .slick-slide{
+		margin: 0 5px;
+	}
+	.campaign_raw .slick-arrow{
+		display: none !important;
 	}
 
 	.camain_action .btn-primary {
@@ -2006,7 +2029,7 @@
 	}
 
 	.welcome .left_con {
-		padding-top: 0;
+		padding-top: 30px;
 		text-align: center;
 	}
 
@@ -2044,7 +2067,7 @@
 		text-align: left;
 		transition: all 0.25s ease 0s;
 		-webkit-transition: all 0.25s ease 0s;
-	    	-moz-transition: all 0.25s ease 0s;
+	    -moz-transition: all 0.25s ease 0s;
 	}
 
 	.sell_point_raw.open .sell_left{
@@ -2742,6 +2765,59 @@
 	}
 
 
+	.campaign_raw .slick-slide{
+		margin: 0 5px;
+	}
+	.campaign_raw .slick-arrow{
+		display: none !important;
+	}
+
+
+	.budget_main{
+		padding-bottom: 30px;
+	}
+	.budget_spent {
+		padding-top: 15px;
+		text-align: left;
+	}
+	.budget_main .daterange{
+		position: relative;
+		transform: none;
+		border: none;
+	}
+	.budget_main .performance_nav{
+		padding: 0;
+	}
+
+
+	#camain-action {
+	    opacity: 1 !important;
+	    display: block !important;
+	    position: fixed;
+	    left: 0;
+	    right: 0;
+	    margin: 0 auto;
+	    bottom: 20px;
+	    z-index: 99;
+	}
+	#camain-action .btn-primary.default{
+		display: none;
+	}
+
+
+	.campagne_desktop{
+		display: none;
+	}
+
+	.campagne_mobile{
+		display: block;
+	}
+
+	.main::before, .main::after{
+		display: none;
+	}
+
+
 
 
 }
@@ -3259,11 +3335,6 @@
 	.campagnes_main {
 		padding: 40px 0;
 	}
-
-	.budget_spent {
-		padding-top: 15px;
-	}
-
 	.campagnes_wrap .franchi_campaign {
 		padding: 30px 0;
 	}
@@ -3334,9 +3405,6 @@
 		top: -3px;
 	}
 
-	#camain-action {
-		display: none !important;
-	}
 
 	.campain_left .camain_action .btn-primary {
 		padding: 0 15px;
@@ -4246,10 +4314,6 @@
 		padding: 40px 0;
 	}
 
-	.budget_spent {
-		padding-top: 15px;
-	}
-
 	.campagnes_wrap .franchi_campaign {
 		padding: 30px 0;
 	}
@@ -4361,12 +4425,7 @@
 	.campaign_raw {
 		padding-top: 30px;
 	}
-	.campaign_raw .slick-slide{
-		margin: 0 5px;
-	}
-	.campaign_raw .slick-arrow{
-		display: none !important;
-	}
+
 
 	.campaign_raw .panel-title a {
 		padding: 12px 10px 12px 70px;

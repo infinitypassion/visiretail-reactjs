@@ -1,52 +1,19 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
 import MediaQuery from 'react-responsive';
-import moment from 'moment';
 
 import { graphImg } from '../_helpers';
 
+import { DateRangeComponent } from './DateRangeComponent';
 import { WelcomeSectionComponent } from './WelcomeSectionComponent';
 import { GraphSectionComponent } from './GraphSectionComponent';
 import { SalesTopPointComponent } from './SalesTopPointComponent';
 import { StatsDetailedComponent } from './StatsDetailedComponent';
 import { ToolTipComponent } from './ToolTipComponent';
 
-const DRP_LOCALE = {
-  "daysOfWeek": [
-    "DI",
-    "LU",
-    "MA",
-    "ME",
-    "JE",
-    "VE",
-    "SA"
-  ],
-  "monthNames": [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro"
-  ],
-  "firstDay": 0
-};
-
 class HomePage extends React.Component {
   constructor() {
     super();
-
-    this.state = {
-      from: moment().format('DD-MM-YYYY'),
-      to: moment().format('DD-MM-YYYY')
-    };
   }
 
   // Start -- React lifecycle methods
@@ -84,10 +51,6 @@ class HomePage extends React.Component {
     return true; // this line is only added so the whole page won't scroll in the demo
   }
 
-  handleDRPApplyEvent(event, picker) {
-    this.setState({ from: picker.startDate.format('DD-MM-YYYY'), to: picker.endDate.format('DD-MM-YYYY') });
-  }
-
   active() {
     var element = document.getElementById("campagne_wraper");
     element.classList.toggle("active");
@@ -100,42 +63,12 @@ class HomePage extends React.Component {
       <div>
         <section>
           <div className="main homewraper section">
-            <div className="header_btm section">
-              <div className="container">
-                <div className="daterange">
-                  <input style={{ display: 'none' }} type="text" defaultValue="personnalisé..." className="daterangepicker2" />
-                  <div className="for_date">
-                    <h6>Début</h6>
-                    <label className="from"> {this.state.from} </label>
-                  </div>
-                  <div className="for_date">
-                    <h6>Fin</h6>
-                    <label className="to"> {this.state.to} </label>
-                  </div>
-                </div>
-                <div className="performance_nav">
-                  <h5>Séléctionnez une période</h5>
-                  <ul>
-                    <li><a href="#">l’an dernier</a></li>
-                    <li><a href="#">les 6 derniers mois </a></li>
-                    <li><a href="#">le mois dernier</a></li>
-                    <li><a href="#">la semaine dernière</a></li>
-                    <li>
-                      <MediaQuery query="(min-device-width: 1224px)">
-                        <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
-                          <a>personnalisé...</a>
-                        </DateRangePicker>
-                      </MediaQuery>
-                      <MediaQuery query="(max-device-width: 1224px)">
-                        <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
-                          <a>personnalisé...</a>
-                        </DateRangePicker>
-                      </MediaQuery>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <MediaQuery query="(min-device-width: 1224px)">
+              <DateRangeComponent isMobile={false} />
+            </MediaQuery>
+            <MediaQuery query="(max-device-width: 1224px)">
+              <DateRangeComponent isMobile={true} />
+            </MediaQuery>
 
             <WelcomeSectionComponent></WelcomeSectionComponent>
             <div className="graph section" onClick={this.active.bind(this)}>
