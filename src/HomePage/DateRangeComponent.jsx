@@ -60,44 +60,42 @@ class DateRangeComponent extends React.Component {
   // Render
   render() {
     return (
-      <div className="header_btm section">
-        <div className="container">
-          <div className="daterange" onClick={this.toggle}>
-            <input style={{ display: 'none' }} type="text" defaultValue="personnalisé..." className="daterangepicker2" />
-            <div className="for_date">
-              <h6>Début</h6>
-              <label className="from"> {this.state.from} </label>
-            </div>
-            <div className="for_date">
-              <h6>Fin</h6>
-              <label className="to"> {this.state.to} </label>
-            </div>
+      <React.Fragment>
+        <div className="daterange" onClick={this.toggle}>
+          <input style={{ display: 'none' }} type="text" defaultValue="personnalisé..." className="daterangepicker2" />
+          <div className="for_date">
+            <h6>Début</h6>
+            <label className="from"> {this.state.from} </label>
           </div>
-          <Collapse in={this.state.collapse}>
-            <div className="performance_nav">
-              <h5>Séléctionnez une période</h5>
-              <ul>
-                <li><a href="#">l’an dernier</a></li>
-                <li><a href="#">les 6 derniers mois </a></li>
-                <li><a href="#">le mois dernier</a></li>
-                <li><a href="#">la semaine dernière</a></li>
-                <li>
-                  <MediaQuery query="(min-device-width: 1224px)">
-                    <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
-                      <a>personnalisé...</a>
-                    </DateRangePicker>
-                  </MediaQuery>
-                  <MediaQuery query="(max-device-width: 1224px)">
-                    <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
-                      <a>personnalisé...</a>
-                    </DateRangePicker>
-                  </MediaQuery>
-                </li>
-              </ul>
-            </div>
-          </Collapse>
+          <div className="for_date">
+            <h6>Fin</h6>
+            <label className="to"> {this.state.to} </label>
+          </div>
         </div>
-      </div>
+        <Collapse in={this.state.collapse}>
+          <div className="performance_nav">
+            <h5>Séléctionnez une période</h5>
+            <ul>
+              <li><a href="#">l’an dernier</a></li>
+              <li><a href="#">les 6 derniers mois </a></li>
+              <li><a href="#">le mois dernier</a></li>
+              <li><a href="#">la semaine dernière</a></li>
+              <li>
+                <MediaQuery query="(min-device-width: 1224px)">
+                  <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
+                    <a>personnalisé...</a>
+                  </DateRangePicker>
+                </MediaQuery>
+                <MediaQuery query="(max-device-width: 1224px)">
+                  <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
+                    <a>personnalisé...</a>
+                  </DateRangePicker>
+                </MediaQuery>
+              </li>
+            </ul>
+          </div>
+        </Collapse>
+      </React.Fragment>
     );
   }
 }
