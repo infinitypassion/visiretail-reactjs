@@ -1,48 +1,17 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
-import DateRangePicker from 'react-bootstrap-daterangepicker';
-import moment from 'moment';
+import MediaQuery from 'react-responsive';
 
 import { pointSalesFakeData } from '../_helpers/fake-data';
 import { graphImg, icImpressionsImg, icClicsRedImg, icClicsImg, icConversionsImg, icEuroImg, rentreeScolaireImg, icClicsGreenImg, laSemaineImg, saintValentinImg } from '../_helpers';
 
+import { DateRangeComponent } from '../HomePage/DateRangeComponent';
 import { StatsDetailedComponent } from '../HomePage/StatsDetailedComponent';
 import { GraphSectionComponent } from '../HomePage/GraphSectionComponent';
 
-const DRP_LOCALE = {
-  "daysOfWeek": [
-    "DI",
-    "LU",
-    "MA",
-    "ME",
-    "JE",
-    "VE",
-    "SA"
-  ],
-  "monthNames": [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro"
-  ],
-  "firstDay": 0
-};
 class PointSaleDetailPage extends React.Component {
   constructor() {
     super();
-
-    this.state = {
-      from: moment().format('DD-MM-YYYY'),
-      to: moment().format('DD-MM-YYYY')
-    };
   }
 
   // Start -- React lifecycle methods
@@ -154,10 +123,6 @@ class PointSaleDetailPage extends React.Component {
     return true; // this line is only added so the whole page won't scroll in the demo
   }
 
-  handleDRPApplyEvent(event, picker) {
-    this.setState({ from: picker.startDate.format('DD-MM-YYYY'), to: picker.endDate.format('DD-MM-YYYY') });
-  }
-
   active() {
     var element = document.getElementById("campagne_wraper");
     element.classList.toggle("active");
@@ -228,42 +193,12 @@ class PointSaleDetailPage extends React.Component {
                             </div>
                           </div>
                           <div className="budget_main section">
-                            <div className="daterange">
-                              <input style={{ display: 'none' }} type="text" defaultValue="personnalisé..." className="daterangepicker2" />
-                              <div className="for_date">
-                                <h6>Début</h6>
-                                <label className="from">{this.state.from}</label>
-                              </div>
-                              <div className="for_date">
-                                <h6>Fin</h6>
-                                <label className="to">{this.state.to}</label>
-                              </div>
-                            </div>
-                            <div className="performance_nav">
-                              <ul>
-                                <li><a href="#">l’an dernier</a></li>
-                                <li><a href="#">les 6 derniers mois</a></li>
-                                <li><a href="#">le mois dernier</a></li>
-                                <li><a href="#">la semaine dernière</a></li>
-                                <li>
-                                  <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
-                                    <a>personnalisé...</a>
-                                  </DateRangePicker>
-                                </li>
-                              </ul>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
+                            <MediaQuery query="(min-device-width: 1224px)">
+                              <DateRangeComponent isMobile={false} />
+                            </MediaQuery>
+                            <MediaQuery query="(max-device-width: 1224px)">
+                              <DateRangeComponent isMobile={true} />
+                            </MediaQuery>
                           </div>
                           <h6>Activité <span>Les 6 derniers mois</span></h6>
                         </div>

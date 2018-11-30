@@ -63,12 +63,16 @@ class HomePage extends React.Component {
       <div>
         <section>
           <div className="main homewraper section">
-            <MediaQuery query="(min-device-width: 1224px)">
-              <DateRangeComponent isMobile={false} />
-            </MediaQuery>
-            <MediaQuery query="(max-device-width: 1224px)">
-              <DateRangeComponent isMobile={true} />
-            </MediaQuery>
+            <div className="header_btm section">
+              <div className="container">
+                <MediaQuery query="(min-device-width: 1224px)">
+                  <DateRangeComponent isMobile={false} />
+                </MediaQuery>
+                <MediaQuery query="(max-device-width: 1224px)">
+                  <DateRangeComponent isMobile={true} />
+                </MediaQuery>
+              </div>
+            </div>
 
             <WelcomeSectionComponent></WelcomeSectionComponent>
             <div className="graph section" onClick={this.active.bind(this)}>
