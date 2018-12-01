@@ -1,5 +1,6 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
+import ReactHighcharts from 'react-highcharts';
 import { Chart } from 'react-google-charts';
 import MediaQuery from 'react-responsive';
 
@@ -129,44 +130,84 @@ class StatsDetailedComponent extends React.Component {
       }
     };
 
-    this.pieData = [
-      ['Cumulative', 'Clicks'],
-      ['Hommes : 63.45%', 63],
-      ['Femmes : 25.12%', 25],
-      ['Inconnu : 12.06%', 12],
-    ];
-    this.pieOptions = {
-      pieStartAngle: 130,
-      pieSliceText: 'none',
+    this.pieHighChartConfig = {
+      chart: {
+        type: 'pie',
+        margin: [-90, 0, 0, 0],
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        spacingRight: 0
+      },
+      title: {
+        text: null
+      },
       tooltip: {
-        trigger: 'none'
+        enabled: false
       },
-      sliceVisibilityThreshold: 0,
-      slices: {
-        0: {
-          color: '#3B5998'
-        },
-        1: {
-          color: '#AFBDD4'
-        },
-        2: {
-          color: '#D1D1D1'
-        },
-      },
-      legendShape: 'square',
-      legend: {
-        textStyle: {
-          color: '#6E6E6E',
-          fontName: 'Barlow',
-          fontSize: 14
+      plotOptions: {
+        pie: {
+          size:'40%',
+          dataLabels: {
+            enabled: false,
+          },
+          allowPointSelect: true,
+          cursor: 'pointer',
+          showInLegend: true,
+          startAngle: 130,
+          center: ["18%", "80%"]
         }
       },
-      chartArea: {
-        left: 0,
-        top: 0,
-        width: '60%',
-        height: '45%'
-      }
+      legend: {
+        itemStyle: {
+          color: '#6E6E6E',
+          fontName: 'Barlow',
+          fontSize: 14,
+          fontWeight: 'normal'
+        },
+        enabled: true,
+        floating: true,
+        verticalAlign: 'xbottom',
+        align:'right',
+        layout: 'vertical',
+        itemMarginBottom: 9,
+        x: -10,
+        labelFormatter : function() { 
+            var total = 0, percentage; $.each(this.series.data, function() { total+=this.y; });
+            percentage=((this.y/total)*100).toFixed(2); 
+            return this.name; 
+        }
+      },
+      credits: {
+        enabled: false
+      },
+      series: [
+        {
+          type: 'pie',
+          name: "Clicks",
+          colorByPoint: true,
+          data: [
+            {
+              name: "Hommes : 63.45%",
+              y: 63,
+              color: '#3B5998',
+              drilldown: null
+            },
+            {
+              name: "Femmes : 25.12%",
+              y: 25,
+              color: '#AFBDD4',
+              drilldown: null
+            },
+            {
+              name: "Inconnu : 12.06%",
+              y: 12,
+              color: '#d1d1d1',
+              drilldown: null
+            }
+          ]
+        }
+      ],
     };
 
     this.googleStatFakeData = [{
@@ -406,11 +447,7 @@ class StatsDetailedComponent extends React.Component {
                         <div className="spent_box">
                           <div className="spent_top">
                             <div id="piechart">
-                              <Chart
-                                chartType="PieChart"
-                                data={this.pieData}
-                                options={this.pieOptions}
-                              />
+                              <ReactHighcharts config={this.pieHighChartConfig}></ReactHighcharts>
                             </div>
                           </div>
                           <div className="spent_des">

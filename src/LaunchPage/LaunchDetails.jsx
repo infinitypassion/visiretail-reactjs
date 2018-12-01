@@ -39,7 +39,9 @@ class LaunchDetails extends React.Component {
 
       $('#camain-action').hide();
       $(window).scroll(function () {
-        if ($(document).scrollTop() > 100) {
+        let element = document.getElementById('camain-action-right');
+        var rect = element.getBoundingClientRect();
+        if (rect.top < 10) {
           $('#camain-action').fadeIn('slow');
         }
         else {
@@ -47,6 +49,8 @@ class LaunchDetails extends React.Component {
         }
       });
     });
+
+    document.getElementById('mcampagne_btn').classList.toggle("mcampagne_btn_hide");
 
     // var element3 = document.querySelector('#demo-btn');
     // if (document.contains(element3)) {
@@ -56,6 +60,10 @@ class LaunchDetails extends React.Component {
     //     }, 800);
     //   });
     // }
+  }
+
+  componentWillUnmount() {
+    document.getElementById('mcampagne_btn').classList.toggle("mcampagne_btn_hide");
   }
   // End -- React lifecycle methods
 
@@ -130,7 +138,7 @@ class LaunchDetails extends React.Component {
                             <span className="date">18/01/18 - 16/02/18</span>
                             <p>Cette campagne est complémentaire de la campagne fil rouge. Surpression locale en visibilité internet sur la thématique de Noël et Nouvel An. Mise en avant de la promotion Noël dans les annonces et les bannières. Durée de la Prestation 15 jours avant le 25 décembre, avec accélération de la visibilité jusqu'au jour J.</p>
                           </div>
-                          <div className="camain_action">
+                          <div className="camain_action" id="camain-action-right">
                             <a href="#" className="btn-primary">Acheter maintenant</a>
                             <a href="#" className="btn-primary default">Ajouter au panier</a>
                             <span className="price">299,00€ TTC</span>

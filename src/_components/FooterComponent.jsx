@@ -21,7 +21,7 @@ class FooterComponent extends React.Component {
             <p className="powered">Powered with <span /> by Visiperf</p>
           </div>
         </div>
-        <div className="mcampagne_btn">
+        <div id="mcampagne_btn" className="mcampagne_btn">
           <a href="#"><span>1</span></a>
         </div>
       </footer>

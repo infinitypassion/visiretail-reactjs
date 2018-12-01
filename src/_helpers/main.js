@@ -15,6 +15,9 @@ export function opbasket(event) {
 /** Start MENU related ******************************************************************************************* */
 export function menu(event) {
   event.stopPropagation();
+  var resNavigationMenu = document.getElementById("trigger-overlay");
+  resNavigationMenu.classList.toggle("active");
+
   var element = document.getElementById("hamburger");
   element.classList.toggle("active");
 

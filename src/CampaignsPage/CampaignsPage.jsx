@@ -1,9 +1,10 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
+import MediaQuery from 'react-responsive';
 
 import { campaignsFakeData } from '../_helpers/fake-data';
 
-import { CampaignPage } from './CampaignPage';
+import { CampaignItems } from './CampaignItems';
 
 class CampaignsPage extends React.Component {
   constructor() {
@@ -47,31 +48,40 @@ class CampaignsPage extends React.Component {
                   <div className="mescampagn_wraper">
                     <TabContent>
                       <TabPane eventKey="en-cours">
-                        {
-                          this.state.campaigns.inProgress.map((campagin, key) => {
-                            return (
-                              <CampaignPage key={key} campagin={campagin} />
-                            );
-                          })
-                        }
+                        <MediaQuery query="(min-device-width: 1224px)">
+                          <div className="campagne_desktop">
+                            <CampaignItems campaigns={this.state.campaigns.inProgress} isMobile={false} />
+                          </div>
+                        </MediaQuery>
+                        <MediaQuery query="(max-device-width: 1224px)">
+                          <div className="campagne_mobile">
+                            <CampaignItems campaigns={this.state.campaigns.inProgress} isMobile={true} />
+                          </div>
+                        </MediaQuery>
                       </TabPane>
                       <TabPane eventKey="venir">
-                        {
-                          this.state.campaigns.future.map((campagin, key) => {
-                            return (
-                              <CampaignPage key={key} campagin={campagin} />
-                            );
-                          })
-                        }
+                        <MediaQuery query="(min-device-width: 1224px)">
+                          <div className="campagne_desktop">
+                            <CampaignItems campaigns={this.state.campaigns.future} isMobile={false} />
+                          </div>
+                        </MediaQuery>
+                        <MediaQuery query="(max-device-width: 1224px)">
+                          <div className="campagne_mobile">
+                            <CampaignItems campaigns={this.state.campaigns.future} isMobile={true} />
+                          </div>
+                        </MediaQuery>
                       </TabPane>
                       <TabPane eventKey="passees">
-                        {
-                          this.state.campaigns.past.map((campagin, key) => {
-                            return (
-                              <CampaignPage key={key} campagin={campagin} />
-                            );
-                          })
-                        }
+                        <MediaQuery query="(min-device-width: 1224px)">
+                          <div className="campagne_desktop">
+                            <CampaignItems campaigns={this.state.campaigns.past} isMobile={false} />
+                          </div>
+                        </MediaQuery>
+                        <MediaQuery query="(max-device-width: 1224px)">
+                          <div className="campagne_mobile">
+                            <CampaignItems campaigns={this.state.campaigns.past} isMobile={true} />
+                          </div>
+                        </MediaQuery>
                       </TabPane>
                     </TabContent>
                   </div>
