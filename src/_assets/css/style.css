@@ -6757,14 +6757,13 @@ input[type='range']::-ms-thumb {
 
 #piechart div {
 	width: 100% !important;
-	height: 100px !important;
 	position: relative;
 }
 
-#piechart div svg {
+/* #piechart div svg {
 	height: 100px !important;
 	width: 330px;
-}
+} */
 
 /* #piechart div svg rect {
 	height: 100px !important;

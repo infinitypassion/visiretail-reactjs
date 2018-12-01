@@ -133,11 +133,12 @@ class StatsDetailedComponent extends React.Component {
     this.pieHighChartConfig = {
       chart: {
         type: 'pie',
-        margin: [-90, 0, 0, 0],
+        marginTop: -90,
         spacingTop: 0,
         spacingBottom: 0,
         spacingLeft: 0,
-        spacingRight: 0
+        spacingRight: 0,
+        height: 100
       },
       title: {
         text: null
@@ -147,7 +148,7 @@ class StatsDetailedComponent extends React.Component {
       },
       plotOptions: {
         pie: {
-          size:'40%',
+          size: '40%',
           dataLabels: {
             enabled: false,
           },
@@ -168,14 +169,92 @@ class StatsDetailedComponent extends React.Component {
         enabled: true,
         floating: true,
         verticalAlign: 'xbottom',
-        align:'right',
+        align: 'right',
         layout: 'vertical',
         itemMarginBottom: 9,
         x: -10,
-        labelFormatter : function() { 
-            var total = 0, percentage; $.each(this.series.data, function() { total+=this.y; });
-            percentage=((this.y/total)*100).toFixed(2); 
-            return this.name; 
+        labelFormatter: function () {
+          return this.name;
+        }
+      },
+      credits: {
+        enabled: false
+      },
+      series: [
+        {
+          type: 'pie',
+          name: "Clicks",
+          colorByPoint: true,
+          data: [
+            {
+              name: "Hommes : 63.45%",
+              y: 63,
+              color: '#3B5998',
+              drilldown: null
+            },
+            {
+              name: "Femmes : 25.12%",
+              y: 25,
+              color: '#AFBDD4',
+              drilldown: null
+            },
+            {
+              name: "Inconnu : 12.06%",
+              y: 12,
+              color: '#d1d1d1',
+              drilldown: null
+            }
+          ]
+        }
+      ],
+    };
+
+    this.pieHighChartMobileViewConfig = {
+      chart: {
+        type: 'pie',
+        marginTop: -90,
+        spacingTop: 0,
+        spacingBottom: 60,
+        spacingLeft: 0,
+        spacingRight: 0,
+        height: 160,
+      },
+      title: {
+        text: null
+      },
+      tooltip: {
+        enabled: false
+      },
+      plotOptions: {
+        pie: {
+          size: '40%',
+          dataLabels: {
+            enabled: false,
+          },
+          allowPointSelect: true,
+          cursor: 'pointer',
+          showInLegend: true,
+          startAngle: 130,
+          center: ["18%", "80%"]
+        }
+      },
+      legend: {
+        itemStyle: {
+          color: '#6E6E6E',
+          fontName: 'Barlow',
+          fontSize: 14,
+          fontWeight: 'normal'
+        },
+        enabled: true,
+        floating: true,
+        verticalAlign: 'bottom',
+        align: 'left',
+        layout: 'vertical',
+        itemMarginBottom: 10,
+        y: 75,
+        useHTML: true,
+        labelFormatter: function () {
+          return this.name;
         }
       },
       credits: {
@@ -444,17 +523,32 @@ class StatsDetailedComponent extends React.Component {
                         </div>
                       </li>
                       <li>
-                        <div className="spent_box">
-                          <div className="spent_top">
-                            <div id="piechart">
-                              <ReactHighcharts config={this.pieHighChartConfig}></ReactHighcharts>
+                        <MediaQuery query="(min-device-width: 1224px)">
+                          <div className="spent_box">
+                            <div className="spent_top">
+                              <div id="piechart">
+                                <ReactHighcharts config={this.pieHighChartConfig}></ReactHighcharts>
+                              </div>
+                            </div>
+                            <div className="spent_des">
+                              <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
+                              <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
                             </div>
                           </div>
-                          <div className="spent_des">
-                            <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
-                            <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
+                        </MediaQuery>
+                        <MediaQuery query="(max-device-width: 1224px)">
+                          <div className="spent_box">
+                            <div className="spent_des">
+                              <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
+                              <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
+                            </div>
+                            <div className="spent_top">
+                              <div id="piechart">
+                                <ReactHighcharts config={this.pieHighChartMobileViewConfig}></ReactHighcharts>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        </MediaQuery>
                       </li>
                       <li>
                         <div className="spent_box">
