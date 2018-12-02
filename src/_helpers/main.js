@@ -69,6 +69,13 @@ export function closeElement(e) {
 }
 
 document.onclick = function (e) {
+  var resNavigationMenu = document.getElementById("trigger-overlay");
+  if (resNavigationMenu && resNavigationMenu.classList.contains('active')) {
+    if (!resNavigationMenu.contains(e.target)) {
+      resNavigationMenu.classList.remove('active');
+    }
+  }
+  
   if (e.target.parentNode && (e.target.parentNode.id == 'menu-mes-point' || e.target.parentNode.id == 'menu-mes-campaign-point')) {
     return;
   }
