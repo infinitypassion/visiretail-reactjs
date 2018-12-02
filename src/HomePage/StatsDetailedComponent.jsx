@@ -59,75 +59,161 @@ class StatsDetailedComponent extends React.Component {
     ];
 
     this.verticalBarOptions = {
-      chartArea: {
-        left: "5%",
-        top: 0,
-        width: '70%',
-        height: '40%'
+      chart: {
+        type: 'column'
       },
-      bar: { groupWidth: '35%' },
-      legend: { position: "none" },
-      vAxis: {
-        textPosition: 'none', baselineColor: 'none',
-        ticks: []
+      title: {
+        text: null
       },
-      hAxis: {
-        viewWindowMode: 'maximized',
-        baselineColor: 'none',
-        ticks: [],
-        textStyle: {
-          fontName: 'Barlow',
-          fontSize: 11,
-          color: '#93A1AD'
-        }
+      xAxis: {
+        visible: false
+      },
+      yAxis: {
+        visible: false
+      },
+      legend: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
       },
       tooltip: {
-        trigger: 'none'
+        enabled: false
       },
-      annotations: {
-        alwaysOutside: false,
-        textStyle: {
-          fontName: 'Barlow',
-          fontSize: 11,
-          color: '#93A1AD'
+      series: [{
+        type: 'column',
+        name: 'AgeGroup_Clicks',
+        data: [
+          {
+            name: "18-24",
+            y: 242,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "25-34",
+            y: 398,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "35-44",
+            y: 487,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "45-54",
+            y: 741,
+            color: '#3B5998',
+            drilldown: null
+          },
+          {
+            name: "55-64",
+            y: 512,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "65+",
+            y: 385,
+            color: '#D1D1D1',
+            drilldown: null
+          }
+        ],
+        dataLabels: {
+          // inside: true,
+          enabled: true,
+          // verticalAlign: 'top',
+          crop: false,
+          overflow: 'none',
+          style: {
+            fontSize: '11px',
+            fontFamily: 'Barlow',
+            fontWeight: 'normal'
+          }
         }
-      }
+      }]
     };
 
     this.horizontalBarOptions = {
-      chartArea: {
-        left: "10%",
-        top: 0,
-        width: '60%',
-        height: '50%'
+      chart: {
+        type: 'bar',
+        marginTop: 0,
       },
-      bar: { groupWidth: '50%' },
-      legend: { position: "none" },
-      hAxis: {
-        textPosition: 'none', baselineColor: 'none',
-        ticks: []
+      title: {
+        text: null
       },
-      vAxis: {
-        viewWindowMode: 'maximized',
-        baselineColor: 'none',
-        ticks: [],
-        textStyle: {
-          fontName: 'Barlow',
-          fontSize: 11,
-          color: '#93A1AD'
-        }
+      xAxis: {
+        visible: false
+      },
+      yAxis: {
+        visible: false
+      },
+      legend: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
       },
       tooltip: {
-        trigger: 'none'
+        enabled: false
       },
-      annotations: {
-        alwaysOutside: true,
-        textStyle: {
-          fontName: 'Barlow',
-          fontSize: 11,
-          color: '#93A1AD'
+      series: [{
+        type: 'bar',
+        name: 'AgeGroup_Clicks',
+        pointWidth: 10,
+        data: [
+          {
+            name: "18-24",
+            y: 242,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "25-34",
+            y: 398,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "35-44",
+            y: 487,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "45-54",
+            y: 741,
+            color: '#3B5998',
+            drilldown: null
+          },
+          {
+            name: "55-64",
+            y: 512,
+            color: '#D1D1D1',
+            drilldown: null
+          },
+          {
+            name: "65+",
+            y: 385,
+            color: '#D1D1D1',
+            drilldown: null
+          }
+        ],
+        dataLabels: {
+          // inside: true,
+          enabled: true,
+          // verticalAlign: 'top',
+          crop: false,
+          overflow: 'none',
+          style: {
+            fontSize: '11px',
+            fontFamily: 'Barlow',
+            fontWeight: 'normal'
+          }
         }
-      }
+      }]
     };
 
     this.pieHighChartConfig = {
@@ -162,7 +248,7 @@ class StatsDetailedComponent extends React.Component {
       legend: {
         itemStyle: {
           color: '#6E6E6E',
-          fontName: 'Barlow',
+          fontFamily: 'Barlow',
           fontSize: 14,
           fontWeight: 'normal'
         },
@@ -171,7 +257,7 @@ class StatsDetailedComponent extends React.Component {
         verticalAlign: 'xbottom',
         align: 'right',
         layout: 'vertical',
-        itemMarginBottom: 9,
+        itemMarginBottom: 7,
         x: -10,
         labelFormatter: function () {
           return this.name;
@@ -241,7 +327,7 @@ class StatsDetailedComponent extends React.Component {
       legend: {
         itemStyle: {
           color: '#6E6E6E',
-          fontName: 'Barlow',
+          fontFamily: 'Barlow',
           fontSize: 14,
           fontWeight: 'normal'
         },
@@ -555,18 +641,10 @@ class StatsDetailedComponent extends React.Component {
                           <div className="spent_top">
                             <div id="barchart">
                               <MediaQuery query="(min-device-width: 1224px)">
-                                <Chart
-                                  chartType="ColumnChart"
-                                  data={this.barData}
-                                  options={this.verticalBarOptions}
-                                />
+                                <ReactHighcharts config={this.verticalBarOptions}></ReactHighcharts>
                               </MediaQuery>
                               <MediaQuery query="(max-device-width: 1224px)">
-                                <Chart
-                                  chartType="BarChart"
-                                  data={this.barData}
-                                  options={this.horizontalBarOptions}
-                                />
+                                <ReactHighcharts config={this.horizontalBarOptions}></ReactHighcharts>
                               </MediaQuery>
                             </div>
                           </div>
