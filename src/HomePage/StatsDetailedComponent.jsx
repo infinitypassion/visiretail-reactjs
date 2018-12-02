@@ -1,5 +1,6 @@
 import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
+import ReactHighcharts from 'react-highcharts';
 import { Chart } from 'react-google-charts';
 import MediaQuery from 'react-responsive';
 
@@ -129,44 +130,163 @@ class StatsDetailedComponent extends React.Component {
       }
     };
 
-    this.pieData = [
-      ['Cumulative', 'Clicks'],
-      ['Hommes : 63.45%', 63],
-      ['Femmes : 25.12%', 25],
-      ['Inconnu : 12.06%', 12],
-    ];
-    this.pieOptions = {
-      pieStartAngle: 130,
-      pieSliceText: 'none',
+    this.pieHighChartConfig = {
+      chart: {
+        type: 'pie',
+        marginTop: -90,
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        spacingRight: 0,
+        height: 100
+      },
+      title: {
+        text: null
+      },
       tooltip: {
-        trigger: 'none'
+        enabled: false
       },
-      sliceVisibilityThreshold: 0,
-      slices: {
-        0: {
-          color: '#3B5998'
-        },
-        1: {
-          color: '#AFBDD4'
-        },
-        2: {
-          color: '#D1D1D1'
-        },
-      },
-      legendShape: 'square',
-      legend: {
-        textStyle: {
-          color: '#6E6E6E',
-          fontName: 'Barlow',
-          fontSize: 14
+      plotOptions: {
+        pie: {
+          size: '40%',
+          dataLabels: {
+            enabled: false,
+          },
+          allowPointSelect: true,
+          cursor: 'pointer',
+          showInLegend: true,
+          startAngle: 130,
+          center: ["18%", "80%"]
         }
       },
-      chartArea: {
-        left: 0,
-        top: 0,
-        width: '60%',
-        height: '45%'
-      }
+      legend: {
+        itemStyle: {
+          color: '#6E6E6E',
+          fontName: 'Barlow',
+          fontSize: 14,
+          fontWeight: 'normal'
+        },
+        enabled: true,
+        floating: true,
+        verticalAlign: 'xbottom',
+        align: 'right',
+        layout: 'vertical',
+        itemMarginBottom: 9,
+        x: -10,
+        labelFormatter: function () {
+          return this.name;
+        }
+      },
+      credits: {
+        enabled: false
+      },
+      series: [
+        {
+          type: 'pie',
+          name: "Clicks",
+          colorByPoint: true,
+          data: [
+            {
+              name: "Hommes : 63.45%",
+              y: 63,
+              color: '#3B5998',
+              drilldown: null
+            },
+            {
+              name: "Femmes : 25.12%",
+              y: 25,
+              color: '#AFBDD4',
+              drilldown: null
+            },
+            {
+              name: "Inconnu : 12.06%",
+              y: 12,
+              color: '#d1d1d1',
+              drilldown: null
+            }
+          ]
+        }
+      ],
+    };
+
+    this.pieHighChartMobileViewConfig = {
+      chart: {
+        type: 'pie',
+        marginTop: -90,
+        spacingTop: 0,
+        spacingBottom: 60,
+        spacingLeft: 0,
+        spacingRight: 0,
+        height: 160,
+      },
+      title: {
+        text: null
+      },
+      tooltip: {
+        enabled: false
+      },
+      plotOptions: {
+        pie: {
+          size: '40%',
+          dataLabels: {
+            enabled: false,
+          },
+          allowPointSelect: true,
+          cursor: 'pointer',
+          showInLegend: true,
+          startAngle: 130,
+          center: ["18%", "80%"]
+        }
+      },
+      legend: {
+        itemStyle: {
+          color: '#6E6E6E',
+          fontName: 'Barlow',
+          fontSize: 14,
+          fontWeight: 'normal'
+        },
+        enabled: true,
+        floating: true,
+        verticalAlign: 'bottom',
+        align: 'left',
+        layout: 'vertical',
+        itemMarginBottom: 10,
+        y: 75,
+        useHTML: true,
+        labelFormatter: function () {
+          return this.name;
+        }
+      },
+      credits: {
+        enabled: false
+      },
+      series: [
+        {
+          type: 'pie',
+          name: "Clicks",
+          colorByPoint: true,
+          data: [
+            {
+              name: "Hommes : 63.45%",
+              y: 63,
+              color: '#3B5998',
+              drilldown: null
+            },
+            {
+              name: "Femmes : 25.12%",
+              y: 25,
+              color: '#AFBDD4',
+              drilldown: null
+            },
+            {
+              name: "Inconnu : 12.06%",
+              y: 12,
+              color: '#d1d1d1',
+              drilldown: null
+            }
+          ]
+        }
+      ],
     };
 
     this.googleStatFakeData = [{
@@ -403,21 +523,32 @@ class StatsDetailedComponent extends React.Component {
                         </div>
                       </li>
                       <li>
-                        <div className="spent_box">
-                          <div className="spent_top">
-                            <div id="piechart">
-                              <Chart
-                                chartType="PieChart"
-                                data={this.pieData}
-                                options={this.pieOptions}
-                              />
+                        <MediaQuery query="(min-device-width: 1224px)">
+                          <div className="spent_box">
+                            <div className="spent_top">
+                              <div id="piechart">
+                                <ReactHighcharts config={this.pieHighChartConfig}></ReactHighcharts>
+                              </div>
+                            </div>
+                            <div className="spent_des">
+                              <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
+                              <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
                             </div>
                           </div>
-                          <div className="spent_des">
-                            <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
-                            <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
+                        </MediaQuery>
+                        <MediaQuery query="(max-device-width: 1224px)">
+                          <div className="spent_box">
+                            <div className="spent_des">
+                              <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
+                              <p>There is also a 2:1 ratio of male to all other age groups combined.</p>
+                            </div>
+                            <div className="spent_top">
+                              <div id="piechart">
+                                <ReactHighcharts config={this.pieHighChartMobileViewConfig}></ReactHighcharts>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        </MediaQuery>
                       </li>
                       <li>
                         <div className="spent_box">

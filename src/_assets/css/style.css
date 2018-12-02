@@ -6752,24 +6752,24 @@ input[type='range']::-ms-thumb {
 
 #piechart {
 	position: relative;
+	height: 100% !important;
 }
 
 #piechart div {
 	width: 100% !important;
-	height: 100px !important;
 	position: relative;
 }
 
-#piechart div svg {
+/* #piechart div svg {
 	height: 100px !important;
 	width: 330px;
-}
+} */
 
-#piechart div svg rect {
+/* #piechart div svg rect {
 	height: 100px !important;
 	position: relative !important;
 	display: none;
-}
+} */
 
 #piechart:before,
 #piechart:after {
@@ -7098,6 +7098,9 @@ input[type='range']::-ms-thumb {
 }
 .rdtPicker td.rdtActive, .rdtPicker td.rdtActive:hover{
 	background-color: #8e54e9 ;
+}
+.mcampagne_btn_hide{
+	display: none !important;
 }
 .mcampagne_btn{
 	float: left;
