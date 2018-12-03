@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { TabContainer, Nav, NavItem, TabContent, TabPane, ProgressBar } from 'react-bootstrap';
 import ReactHighcharts from 'react-highcharts';
 import { Chart } from 'react-google-charts';
@@ -48,25 +48,22 @@ class StatsDetailedComponent extends React.Component {
       resolution: 'provinces'
     };
 
-    this.barData = [
-      ['AgeGroup', 'Clicks', { role: 'style' }, { role: 'annotation', calc: "stringify" }],
-      ['18-24', 242, '#D1D1D1', '242'],
-      ['25-34', 398, '#D1D1D1', '398'],
-      ['35-44', 487, '#D1D1D1', '487'],
-      ['45-54', 741, '#3B5998', '741'],
-      ['55-64', 512, '#D1D1D1', '512'],
-      ['65+', 385, '#D1D1D1', '385']
-    ];
-
     this.verticalBarOptions = {
       chart: {
-        type: 'column'
+        type: 'column',
+        height: 100
       },
       title: {
         text: null
       },
       xAxis: {
-        visible: false
+        lineWidth: 0,
+        minorGridLineWidth: 0,
+        lineColor: 'transparent',
+        minorTickLength: 0,
+        tickLength: 0,
+        categories: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
+        visible: true
       },
       yAxis: {
         visible: false
@@ -140,12 +137,19 @@ class StatsDetailedComponent extends React.Component {
       chart: {
         type: 'bar',
         marginTop: 0,
+        height: 150
       },
       title: {
         text: null
       },
       xAxis: {
-        visible: false
+        lineWidth: 0,
+        minorGridLineWidth: 0,
+        lineColor: 'transparent',
+        minorTickLength: 0,
+        tickLength: 0,
+        categories: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
+        visible: true
       },
       yAxis: {
         visible: false
@@ -249,7 +253,7 @@ class StatsDetailedComponent extends React.Component {
         itemStyle: {
           color: '#6E6E6E',
           fontFamily: 'Barlow',
-          fontSize: 14,
+          fontSize: 16,
           fontWeight: 'normal'
         },
         enabled: true,
@@ -321,7 +325,7 @@ class StatsDetailedComponent extends React.Component {
           cursor: 'pointer',
           showInLegend: true,
           startAngle: 130,
-          center: ["18%", "80%"]
+          center: ["45%", "75%"]
         }
       },
       legend: {
@@ -492,10 +496,10 @@ class StatsDetailedComponent extends React.Component {
                       this.googleStatFakeData.map((googleStatData, key) => {
                         return (
                           <div className="col-sm-4 col-xs-12" key={key}>
-                            <MediaQuery query="(min-device-width: 1224px)">
+                            <MediaQuery query="(min-device-width: 768px)">
                               <GoolgleStatItem googleStatData={googleStatData} isMobile={false} />
                             </MediaQuery>
-                            <MediaQuery query="(max-device-width: 1224px)">
+                            <MediaQuery query="(max-device-width: 767px)">
                               <GoolgleStatItem googleStatData={googleStatData} isMobile={true} currentGoogleStatId={this.state.currentGoogleStatId} updateCurrentGoogleStatId={this.updateCurrentGoogleStatId} />
                             </MediaQuery>
                           </div>
@@ -609,7 +613,7 @@ class StatsDetailedComponent extends React.Component {
                         </div>
                       </li>
                       <li>
-                        <MediaQuery query="(min-device-width: 1224px)">
+                        <MediaQuery query="(min-device-width: 768px)">
                           <div className="spent_box">
                             <div className="spent_top">
                               <div id="piechart">
@@ -622,7 +626,7 @@ class StatsDetailedComponent extends React.Component {
                             </div>
                           </div>
                         </MediaQuery>
-                        <MediaQuery query="(max-device-width: 1224px)">
+                        <MediaQuery query="(max-device-width: 767px)">
                           <div className="spent_box">
                             <div className="spent_des">
                               <h5><i><img src={icGenreImg} alt="genre" className="img-responsive" /></i>Clics cumulés par genre</h5>
@@ -640,10 +644,10 @@ class StatsDetailedComponent extends React.Component {
                         <div className="spent_box">
                           <div className="spent_top">
                             <div id="barchart">
-                              <MediaQuery query="(min-device-width: 1224px)">
+                              <MediaQuery query="(min-device-width: 768px)">
                                 <ReactHighcharts config={this.verticalBarOptions}></ReactHighcharts>
                               </MediaQuery>
-                              <MediaQuery query="(max-device-width: 1224px)">
+                              <MediaQuery query="(max-device-width: 767px)">
                                 <ReactHighcharts config={this.horizontalBarOptions}></ReactHighcharts>
                               </MediaQuery>
                             </div>

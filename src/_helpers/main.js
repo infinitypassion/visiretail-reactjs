@@ -65,19 +65,26 @@ export function oprofile(event) {
 export function closeElement(e) {
   if (document.getElementsByClassName('hamburger')[0].classList.contains('active')) {
     document.getElementsByClassName('hamburger')[0].classList.remove('active');
+
+    var resNavigationMenu = document.getElementById("trigger-overlay");
+    if (resNavigationMenu && resNavigationMenu.classList.contains('active')) {
+      if (!resNavigationMenu.contains(e.target)) {
+        resNavigationMenu.classList.remove('active');
+      }
+    }
   }
 }
 
 document.onclick = function (e) {
+  if (e.target.parentNode && (e.target.parentNode.id == 'menu-mes-point' || e.target.parentNode.id == 'menu-mes-campaign-point')) {
+    return;
+  }
+
   var resNavigationMenu = document.getElementById("trigger-overlay");
   if (resNavigationMenu && resNavigationMenu.classList.contains('active')) {
     if (!resNavigationMenu.contains(e.target)) {
       resNavigationMenu.classList.remove('active');
     }
-  }
-  
-  if (e.target.parentNode && (e.target.parentNode.id == 'menu-mes-point' || e.target.parentNode.id == 'menu-mes-campaign-point')) {
-    return;
   }
 
   if (document.getElementsByClassName('basket_wrap')[0] && document.getElementsByClassName('basket_wrap')[0].classList.contains('open')) {

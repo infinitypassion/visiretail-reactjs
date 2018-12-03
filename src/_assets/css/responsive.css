@@ -955,7 +955,7 @@
 	.spent_des p {
 		min-height: 90px;
 	}
-
+/*
 	#piechart {
 		display: inline-block;
 		transform: scale(0.8);
@@ -966,7 +966,7 @@
 		left: -55px;
 		position: relative;
 		width: 290px;
-	}
+	}*/
 
 	g text {
 		font-size: 12px !important;
@@ -1950,8 +1950,12 @@
 	}
 
 	.performance_nav {
+		background: #fff;
 		width: 100%;
-		padding-top: 75px;
+		padding: 15px;
+		position: fixed;
+		left: 0;
+		top: 122px;
 	}
 
 	.performance_nav h5 {
@@ -1982,6 +1986,14 @@
 	.performance_nav ul li:last-child a {
 		border-radius: 0 0 3px 3px;
 	}
+	.header_btm {
+		top: 0;
+		position: relative;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		height: 63px;
+	}
 
 	.daterange {
 		float: none;
@@ -1997,6 +2009,7 @@
 		z-index: 9;
 		background: #fff;
 		border-bottom: 1px solid #dbdbdb;
+
 	}
 
 	.daterange .for_date {
@@ -2005,8 +2018,16 @@
 		padding: 12px 20px;
 		border: 1px solid #E3E3E3;
 		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		transition: all 0.25s ease 0s;
+		-webkit-transition: all 0.25s ease 0s;
+	    -moz-transition: all 0.25s ease 0s;
 	}
 
+	.daterange:hover .for_date, .daterange:focus .for_date{
+		border-color: #13D60F;
+	}
 	.daterange .for_date:last-child {
 		float: right;
 	}
@@ -2749,13 +2770,14 @@
 	.drp-calendar.right {
 	  	display: none !important;
 	}
-	.daterangepicker {
+	.daterangepicker,  	body.closed .daterangepicker {
 		left: 0 !important;
 		right: 0 !important;
-		top: 465px !important;
+		top: 190px !important;
 		width: 92% !important;
 		margin: 0 auto;
 	}
+
 	.daterangepicker .drp-calendar{
 		width: 100%;
 		max-width: inherit;
@@ -3016,13 +3038,7 @@
 		padding: 5px 0 5px 25px;
 	}
 
-	.header_btm {
-		top: 0;
-		position: relative;
-		box-shadow: none;
-		-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-	}
+
 
 	.hamburger.active {
 		overflow: auto;
@@ -3992,15 +4008,6 @@
 		padding: 5px 0 5px 25px;
 	}
 
-	.header_btm {
-		top: 0;
-		position: relative;
-		box-shadow: none;
-		-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-	}
-
-
 
 
 	.main::before {
@@ -4099,28 +4106,29 @@
 
 	#piechart {
 		display: inline-block;
-		width: 260px !important;
+		width: 100%;
+		margin-top: 15px;
+		text-align: center;
+	}
+
+	#piechart div{
+		width: 150px !important;
+		margin: 0 auto !important;
 	}
 
 
-
-	#piechart div svg {
-		position: relative;
-		left: -25px;
-		width: 290px;
-	}
-
-	g text {
-		font-size: 12px !important;
+	#piechart .highcharts-legend span {
+		font-size: 14px !important;
 	}
 
 	#piechart::before {
-		left: 0;
+		left: 30%;
+	}
+	#piechart:after{
+		left: 60%;
 	}
 
-	#piechart::after {
-		left: 90px;
-	}
+
 
 
 
