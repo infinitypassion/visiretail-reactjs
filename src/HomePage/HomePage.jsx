@@ -65,10 +65,10 @@ class HomePage extends React.Component {
           <div className="main homewraper section">
             <div className="header_btm section">
               <div className="container">
-                <MediaQuery query="(min-device-width: 1224px)">
+                <MediaQuery query="(min-device-width: 768px)">
                   <DateRangeComponent isMobile={false} />
                 </MediaQuery>
-                <MediaQuery query="(max-device-width: 1224px)">
+                <MediaQuery query="(max-device-width: 767px)">
                   <DateRangeComponent isMobile={true} />
                 </MediaQuery>
               </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import MediaQuery from 'react-responsive';
 import { Collapse } from 'react-bootstrap';
@@ -81,12 +81,12 @@ class DateRangeComponent extends React.Component {
               <li><a href="#">le mois dernier</a></li>
               <li><a href="#">la semaine dernière</a></li>
               <li>
-                <MediaQuery query="(min-device-width: 1224px)">
+                <MediaQuery query="(min-device-width: 768px)">
                   <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)}>
                     <a>personnalisé...</a>
                   </DateRangePicker>
                 </MediaQuery>
-                <MediaQuery query="(max-device-width: 1224px)">
+                <MediaQuery query="(max-device-width: 767px)">
                   <DateRangePicker locale={DRP_LOCALE} onApply={this.handleDRPApplyEvent.bind(this)} linkedCalendars={false}>
                     <a>personnalisé...</a>
                   </DateRangePicker>

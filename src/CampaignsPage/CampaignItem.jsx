@@ -115,10 +115,10 @@ class CampaignItem extends React.Component {
               </ProgressBar>
               <div className="progress_compare">
                 <div className="compare left">
-                  <h6>{this.props.campaign.google.budget}<span>({this.props.campaign.google.progress})</span></h6>
+                  <h6>{this.props.campaign.google.budget}<span>({this.props.campaign.google.progressStr})</span></h6>
                 </div>
                 <div className="compare right">
-                  <h6>{this.props.campaign.facebook.budget}<span>({this.props.campaign.facebook.progress})</span></h6>
+                  <h6>{this.props.campaign.facebook.budget}<span>({this.props.campaign.facebook.progressStr})</span></h6>
                 </div>
               </div>
             </div>

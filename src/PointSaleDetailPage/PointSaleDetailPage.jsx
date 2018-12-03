@@ -193,10 +193,10 @@ class PointSaleDetailPage extends React.Component {
                             </div>
                           </div>
                           <div className="budget_main section">
-                            <MediaQuery query="(min-device-width: 1224px)">
+                            <MediaQuery query="(min-device-width: 768px)">
                               <DateRangeComponent isMobile={false} />
                             </MediaQuery>
-                            <MediaQuery query="(max-device-width: 1224px)">
+                            <MediaQuery query="(max-device-width: 767px)">
                               <DateRangeComponent isMobile={true} />
                             </MediaQuery>
                           </div>

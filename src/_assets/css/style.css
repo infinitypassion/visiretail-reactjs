@@ -6746,7 +6746,7 @@ input[type='range']::-ms-thumb {
 
 #barchart div {
 	width: 100% !important;
-	height: 100px !important;
+	height: 100% !important;
 	position: relative;
 }
 
@@ -6755,11 +6755,11 @@ input[type='range']::-ms-thumb {
 	height: 100% !important;
 }
 
-#piechart div {
+/*#piechart div {
 	width: 100% !important;
 	position: relative;
 }
-
+*/
 /* #piechart div svg {
 	height: 100px !important;
 	width: 330px;
@@ -6779,6 +6779,7 @@ input[type='range']::-ms-thumb {
 	width: 15px;
 	height: 15px;
 	content: "";
+	z-index: 1;	
 }
 
 #piechart:before {
@@ -6789,6 +6790,10 @@ input[type='range']::-ms-thumb {
 	background: url(../images/ic-female.svg) no-repeat center;
 	left: 110px;
 
+}
+
+#piechart tspan{
+	font-size: 14px;
 }
 
 .instru_model .modal {
@@ -7210,8 +7215,10 @@ p.btm_text{
 .campagne_mobile .campagne_main .progress-bar{
 	border-radius: 0;
 	background: #34A953;
+	font-size: 0;
 }
 .campagne_mobile .campagne_main .progress-bar:last-child{
+	float: right;
 	animation-name: animateLeft;
 	background: #3B5998;
 }

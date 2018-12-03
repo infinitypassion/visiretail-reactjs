@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import MediaQuery from 'react-responsive';
 
 import { homeCampaignSalesTopFakeData } from '../_helpers/fake-data';
@@ -46,10 +46,10 @@ class SalesTopPointComponent extends React.Component {
                     this.homeCampaignSalesTopFakeData.campaignSales.map((campaignSale, key) => {
                       return (
                         <li key={key}>
-                          <MediaQuery query="(min-device-width: 1224px)">
+                          <MediaQuery query="(min-device-width: 768px)">
                             <SalesTopPointItem campaignSale={campaignSale} isMobile={false} />
                           </MediaQuery>
-                          <MediaQuery query="(max-device-width: 1224px)">
+                          <MediaQuery query="(max-device-width: 767px)">
                             <SalesTopPointItem campaignSale={campaignSale} isMobile={true} currentTopPointSalePointId={this.state.currentTopPointSalePointId} updateCurrentTopPointSalePointId={this.updateCurrentTopPointSalePointId} />
                           </MediaQuery>
                         </li>
