@@ -48,36 +48,36 @@ class CampaignsPage extends React.Component {
                   <div className="mescampagn_wraper">
                     <TabContent>
                       <TabPane eventKey="en-cours">
-                        <MediaQuery query="(min-device-width: 1224px)">
+                        <MediaQuery query="(min-device-width: 768px)">
                           <div className="campagne_desktop">
                             <CampaignItems campaigns={this.state.campaigns.inProgress} isMobile={false} />
                           </div>
                         </MediaQuery>
-                        <MediaQuery query="(max-device-width: 1224px)">
+                        <MediaQuery query="(max-device-width: 767px)">
                           <div className="campagne_mobile">
                             <CampaignItems campaigns={this.state.campaigns.inProgress} isMobile={true} />
                           </div>
                         </MediaQuery>
                       </TabPane>
                       <TabPane eventKey="venir">
-                        <MediaQuery query="(min-device-width: 1224px)">
+                        <MediaQuery query="(min-device-width: 768px)">
                           <div className="campagne_desktop">
                             <CampaignItems campaigns={this.state.campaigns.future} isMobile={false} />
                           </div>
                         </MediaQuery>
-                        <MediaQuery query="(max-device-width: 1224px)">
+                        <MediaQuery query="(max-device-width: 767px)">
                           <div className="campagne_mobile">
                             <CampaignItems campaigns={this.state.campaigns.future} isMobile={true} />
                           </div>
                         </MediaQuery>
                       </TabPane>
                       <TabPane eventKey="passees">
-                        <MediaQuery query="(min-device-width: 1224px)">
+                        <MediaQuery query="(min-device-width: 768px)">
                           <div className="campagne_desktop">
                             <CampaignItems campaigns={this.state.campaigns.past} isMobile={false} />
                           </div>
                         </MediaQuery>
-                        <MediaQuery query="(max-device-width: 1224px)">
+                        <MediaQuery query="(max-device-width: 767px)">
                           <div className="campagne_mobile">
                             <CampaignItems campaigns={this.state.campaigns.past} isMobile={true} />
                           </div>

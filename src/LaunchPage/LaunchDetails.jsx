@@ -40,12 +40,14 @@ class LaunchDetails extends React.Component {
       $('#camain-action').hide();
       $(window).scroll(function () {
         let element = document.getElementById('camain-action-right');
-        var rect = element.getBoundingClientRect();
-        if (rect.top < 10) {
-          $('#camain-action').fadeIn('slow');
-        }
-        else {
-          $('#camain-action').fadeOut('slow');
+        if (element) {
+          var rect = element.getBoundingClientRect();
+          if (rect.top < 10) {
+            $('#camain-action').fadeIn('slow');
+          }
+          else {
+            $('#camain-action').fadeOut('slow');
+          }
         }
       });
     });
@@ -159,7 +161,7 @@ class LaunchDetails extends React.Component {
                           </div>
                           <div className="campaign_raw broadcast_campaign">
                             <h6>Quelques sites sur lesquels cette campagne sera diffusée</h6>
-                            <MediaQuery query="(min-device-width: 1224px)">
+                            <MediaQuery query="(min-device-width: 768px)">
                               <ul>
                                 <li><a href="#" target="_blank"><img src={lemondeImg} alt="lemonde" className="img-responsive" /></a></li>
                                 <li><a href="#" target="_blank"><img src={leboncoinImg} alt="Leboncoin" className="img-responsive" /></a></li>
@@ -168,7 +170,7 @@ class LaunchDetails extends React.Component {
                                 <li><a href="#" target="_blank"><img src={cdiscountImg} alt="cdiscount" className="img-responsive" /></a></li>
                               </ul>
                             </MediaQuery>
-                            <MediaQuery query="(max-device-width: 1224px)">
+                            <MediaQuery query="(max-device-width: 767px)">
                               <ul>
                                 <Slider {...this.slickSettings}>
                                   <li><a href="#" target="_blank"><img src={lemondeImg} alt="lemonde" className="img-responsive" /></a></li>

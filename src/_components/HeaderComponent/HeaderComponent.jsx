@@ -50,10 +50,10 @@ class HeaderComponent extends React.Component {
           </div>
         </div>
 
-        <MediaQuery query="(min-device-width: 1224px)">
+        <MediaQuery query="(min-device-width: 768px)">
           <MenuComponentDetail isMobile={false}></MenuComponentDetail>
         </MediaQuery>
-        <MediaQuery query="(max-device-width: 1224px)">
+        <MediaQuery query="(max-device-width: 767px)">
           <MenuComponentDetail isMobile={true}></MenuComponentDetail>
         </MediaQuery>
 
