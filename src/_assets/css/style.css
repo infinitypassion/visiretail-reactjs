@@ -4350,6 +4350,13 @@ span.value {
 	z-index: 9;
 }
 
+#points-sale .daterangepicker{
+	top: 370px !important;
+}
+#points-sale.closed .daterangepicker{
+	top: 60px !important;
+}
+
 body.closed .daterangepicker {
 	top: 60px !important;
 }
@@ -7624,6 +7631,10 @@ p.btm_text{
     transform: rotate(360deg); }
  }
 
+
+rect.highcharts-background{
+	fill: transparent;
+}
 
 
 
