@@ -15,20 +15,22 @@ const DRP_LOCALE = {
     "SA"
   ],
   "monthNames": [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro"
+    "janvier",
+    "février",
+    "mars",
+    "avril",
+    "mai",
+    "juin",
+    "juillet",
+    "aout",
+    "septembre",
+    "octobre",
+    "novembre",
+    "décembre"
   ],
-  "firstDay": 0
+  "firstDay": 0,
+  applyLabel: 'Appliquer',
+  cancelLabel: 'Annuler'
 };
 
 class DateRangeComponent extends React.Component {
@@ -47,7 +49,10 @@ class DateRangeComponent extends React.Component {
 
   // Start -- Custom methods
   handleDRPApplyEvent(event, picker) {
-    this.setState({ from: picker.startDate.format('DD-MM-YYYY'), to: picker.endDate.format('DD-MM-YYYY'), collapse: this.state.collapse });
+    this.setState({
+      from: picker.startDate.format('DD-MM-YYYY'),
+      to: picker.endDate.format('DD-MM-YYYY'), collapse: this.state.collapse
+    });
   }
 
   toggle() {
